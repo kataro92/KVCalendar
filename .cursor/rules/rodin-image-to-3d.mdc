@@ -1,0 +1,14 @@
+---
+description: Rodin chỉ nhận ảnh tham chiếu qua Image-to-3D
+alwaysApply: true
+---
+
+- Chỉ dùng ảnh tham chiếu đã duyệt với tính năng Image-to-3D.
+- Cấm Text-to-3D và mọi lượt tạo chỉ có prompt chữ.
+- Prompt, nếu có, chỉ bổ sung cho thông tin đã thể hiện trong ảnh.
+- Không dùng ảnh tìm kiếm, lịch thương mại hoặc artwork của đối thủ làm reference.
+- Không dùng Rodin để tạo Quốc kỳ, ngôi sao, chữ Việt hoặc logo.
+- Output là phôi, phải qua cleanup, LOD/bake, poster tĩnh, kiểm tra quyền, văn hóa và hiệu năng.
+- Rodin chỉ dùng trước phát hành; không gọi runtime và không đưa API key vào app.
+- Làm theo `.agents/workflows/rodin-image-to-3d.md` và lưu asset manifest.
+

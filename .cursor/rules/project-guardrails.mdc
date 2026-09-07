@@ -1,0 +1,13 @@
+---
+description: Ranh giới sản phẩm và giai đoạn hiện tại của Lịch Nhà
+alwaysApply: true
+---
+
+- Đây là dự án Lịch Nhà, một lịch bloc Việt Nam trên iOS.
+- Sản phẩm miễn phí, không quảng cáo, không paywall, không đăng nhập và chạy offline ở chức năng cốt lõi.
+- Giai đoạn hiện tại chỉ nghiên cứu và viết tài liệu. Không tạo mã ứng dụng hoặc asset production khi chưa có yêu cầu rõ.
+- Đọc `AGENTS.md`, `README.md` và tài liệu liên quan trước khi thay đổi quyết định.
+- Không đọc `.env` nếu nhiệm vụ không yêu cầu và người dùng chưa cho phép.
+- Không sao chép nội dung, ảnh hoặc giao diện của ứng dụng/lịch thương mại.
+- Giữ provenance cho nguồn nghiên cứu, artwork, âm thanh và model.
+

@@ -1,0 +1,15 @@
+---
+description: Quy tắc âm nền và âm sự kiện của Lịch Nhà
+globs: "**/*.{md,swift,json}"
+alwaysApply: false
+---
+
+- Tách ba lớp: nền tập trung, phản hồi giấy và cue sự kiện.
+- Hiên sớm là nền mặc định có điều kiện; nó chỉ fade in sau khi nội dung lịch đã hiện.
+- Không tự phát nếu iPhone ở Silent, VoiceOver bật hoặc audio khác cần được ưu tiên.
+- Nút tắt nền nằm ngay trên màn hình lịch, có vùng chạm 44 pt, label/state và nhớ lựa chọn.
+- Âm giấy và cue sự kiện tắt mặc định, kể cả khi nền đang chạy.
+- Nền không có nhạc, lời, chuông hoặc transient; không tuyên bố tăng tập trung hay điều trị.
+- Không tự tăng âm lượng hệ thống. Tắt âm không làm mất thông tin hoặc phản hồi bắt buộc.
+- Audio ship cùng app, có provenance/license; ElevenLabs chỉ tạo phôi trước release, không gọi runtime.
+- Đọc `docs/10-moc-son-diu-va-am-nen.md` trước khi đổi thiết kế âm.

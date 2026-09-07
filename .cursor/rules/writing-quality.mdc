@@ -1,0 +1,14 @@
+---
+description: Văn phong tự nhiên, cụ thể cho tài liệu Lịch Nhà
+globs: "**/*.md"
+alwaysApply: false
+---
+
+- Dùng giọng tài liệu rõ, cụ thể và bình tĩnh; tránh giọng quảng cáo.
+- Ưu tiên câu có chủ thể và hành động rõ. Cắt mở bài vòng vo và đoạn kết chỉ lặp lại nội dung.
+- Tránh danh sách đối xứng được dựng cho đủ ý; giữ danh sách khi nó giúp quét thông tin.
+- Không biến mọi đoạn thành tiêu đề, chữ đậm hoặc câu khẩu hiệu.
+- Giữ nguyên dữ kiện, mức độ chắc chắn, bảng, trích dẫn, URL và thuật ngữ cần thiết.
+- Với bản sửa đáng kể, làm theo `.agents/workflows/writing-review.md`.
+- Không dùng detector để kết luận danh tính tác giả.
+

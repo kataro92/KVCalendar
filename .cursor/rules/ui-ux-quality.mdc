@@ -1,0 +1,15 @@
+---
+description: Kiểm soát chất lượng UI/UX cho lịch bloc Mộc Son Dịu
+globs: "**/*.{md,swift}"
+alwaysApply: false
+---
+
+- Đọc `design-system/lich-nha/MASTER.md` trước khi đề xuất UI.
+- Thiết kế trước cho người 16–34 tuổi quan tâm lịch âm Việt; người lớn tuổi là nhóm accessibility, không phải phong cách mặc định.
+- Giữ ngôn ngữ lịch bloc bằng giấy, gỗ, sơn son và đồng; thêm pastel dịu, hình khối mềm và nét dễ thương trưởng thành.
+- Tránh dashboard/card/form iOS chung chung, claymorphism dày, màu kẹo, chibi và giao diện trẻ em.
+- Số ngày dương là điểm đọc đầu tiên. Hiệu ứng không được che hoặc tranh vai với nội dung lịch.
+- Mọi điều khiển custom phải có semantics, VoiceOver, Dynamic Type, focus và vùng chạm ít nhất 44 pt.
+- Mọi gesture kéo/bóc phải có nút hoặc action thay thế.
+- Mỗi cảnh chỉ có một hero effect và phải có Reduce Motion, Dim Flashing Lights, Low Power cùng poster tĩnh.
+- Khi cần nghiên cứu pattern, làm theo `.agents/workflows/ui-ux-review.md`.

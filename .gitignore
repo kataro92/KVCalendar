@@ -1,0 +1,33 @@
+# Local secrets
+.env
+.env.*
+!.env.example
+
+# macOS and Xcode user state
+.DS_Store
+DerivedData/
+*.xcuserstate
+*.xccheckout
+*.xcscmblueprint
+xcuserdata/
+*.xcodeproj/xcuserdata/
+*.xcworkspace/xcuserdata/
+
+# Swift local build products
+.build/
+.swiftpm/xcode/package.xcworkspace/xcuserdata/
+
+# Raw user-research material must not enter Git
+research/raw/
+research/recordings/
+research/exports/
+
+# Local temporary files
+*.tmp
+*.swp
+Thumbs.db
+
+# Generated Python caches
+__pycache__/
+*.py[cod]
+.pytest_cache/
