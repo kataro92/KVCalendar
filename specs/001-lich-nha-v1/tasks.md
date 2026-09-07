@@ -24,17 +24,17 @@ gom theo sáu user story trong specification.
 
 **Purpose**: Trả lời các câu hỏi có thể thay đổi sản phẩm trước khi tạo Xcode project.
 
-- [ ] T001 Viết research brief, câu hỏi và ngưỡng Gate 1–7 trong `research/research-brief.md`
-- [ ] T002 [P] Viết screener và ma trận tuyển 20 người, gồm nhóm tuổi, vùng, thiết bị, diaspora và VoiceOver trong `research/participants/recruitment-matrix.md`
-- [ ] T003 [P] Viết consent, chính sách ẩn danh và thời hạn xóa recording trong `research/participants/consent-and-retention.md`
+- [x] T001 Viết research brief, câu hỏi và ngưỡng Gate 1–7 trong `research/research-brief.md`
+- [x] T002 [P] Viết screener và ma trận tuyển 20 người, gồm nhóm tuổi, vùng, thiết bị, diaspora và VoiceOver trong `research/participants/recruitment-matrix.md`
+- [x] T003 [P] Viết consent, chính sách ẩn danh và thời hạn xóa recording trong `research/participants/consent-and-retention.md`
 - [ ] T004 [P] Audit 6–10 lịch bloc có quyền quan sát và ghi pattern, không sao chép artwork, trong `research/physical-calendar-audit.md`
-- [ ] T005 [P] Tạo prototype tĩnh A Mộc Son Dịu cùng annotation trong `research/prototypes/a-moc-son-diu.md`
-- [ ] T006 [P] Tạo prototype tĩnh B Giấy Mộc với cùng nội dung A trong `research/prototypes/b-giay-moc.md`
-- [ ] T007 [P] Tạo prototype tĩnh C Gốm Lam với cùng nội dung A trong `research/prototypes/c-gom-lam.md`
-- [ ] T008 Tạo motion study ba mức page curl và action không kéo trong `research/prototypes/page-curl-study.md`
-- [ ] T009 [P] Tạo storyboard Quốc khánh, Lập Xuân, ngày thường cùng bản Reduce Motion/Dim Flashing Lights trong `research/prototypes/effect-storyboards.md`
+- [x] T005 [P] Tạo prototype tĩnh A Mộc Son Dịu cùng annotation trong `research/prototypes/a-moc-son-diu.md`
+- [x] T006 [P] Tạo prototype tĩnh B Giấy Mộc với cùng nội dung A trong `research/prototypes/b-giay-moc.md`
+- [x] T007 [P] Tạo prototype tĩnh C Gốm Lam với cùng nội dung A trong `research/prototypes/c-gom-lam.md`
+- [x] T008 Tạo motion study ba mức page curl và action không kéo trong `research/prototypes/page-curl-study.md`
+- [x] T009 [P] Tạo storyboard Quốc khánh, Lập Xuân, ngày thường cùng bản Reduce Motion/Dim Flashing Lights trong `research/prototypes/effect-storyboards.md`
 - [ ] T010 [P] Chuẩn bị ba mẫu nghe im lặng, Hiên sớm, Mưa xa và protocol blind test trong `research/prototypes/audio-study.md`
-- [ ] T011 Viết moderator guide và 10 tác vụ không dẫn dắt từ kế hoạch kiểm chứng trong `research/session-guide.md`
+- [x] T011 Viết moderator guide và 10 tác vụ không dẫn dắt từ kế hoạch kiểm chứng trong `research/session-guide.md`
 - [ ] T012 Thực hiện 20 buổi khám phá, lưu ghi chú ẩn danh theo mẫu `research/sessions/SESSION-ID.md`
 - [ ] T013 [P] Thực hiện vòng accessibility chuyên biệt với VoiceOver, chữ 200% và nhóm 55+ trong `research/sessions/accessibility-summary.md`
 - [ ] T014 [P] Phỏng vấn tối thiểu hai người Việt ở nước ngoài về ngày đổi và giờ nhắc trong `research/sessions/diaspora-timezone-summary.md`
