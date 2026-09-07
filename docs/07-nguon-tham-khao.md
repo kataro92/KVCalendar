@@ -229,6 +229,14 @@ Ngày truy cập chung: **07/09/2026**. Với nguồn động như App Store, Ap
 - Loại: M + U
 - Dùng cho: giá Premium tại mốc khảo sát, breadth, nhận xét giao diện và lỗi nội dung.
 
+### Lịch Vạn Niên — Phan Hanh
+
+- URL: https://apps.apple.com/vn/app/id1071624317
+- URL review: https://apps.apple.com/vn/app/id1071624317?platform=iphone&see-all=reviews
+- Loại: M + U
+- Dùng cho: quy mô category tại lát cắt, IAP bỏ quảng cáo, review về quảng cáo và thử nghiệm Pomodoro/nhạc nền trong version history.
+- Lưu ý: rating count không phải active users; review tự chọn không đại diện dân số.
+
 ### Lịch Vạn Niên Việt — Lịch 2026
 
 - URL: https://apps.apple.com/vn/app/l%E1%BB%8Bch-v%E1%BA%A1n-ni%C3%AAn-vi%E1%BB%87t-l%E1%BB%8Bch-2026/id6757463234
@@ -264,6 +272,19 @@ Ngày truy cập chung: **07/09/2026**. Với nguồn động như App Store, Ap
 - URL: https://apps.apple.com/vn/app/lunar-xinh-lunar-calendar/id6759712122?platform=ipad
 - Loại: M
 - Dùng cho: art direction mặt trăng/ánh sáng, offline, widget và IAP.
+
+### vLunar
+
+- URL: https://apps.apple.com/vn/app/id1531851878
+- Loại: M + U
+- Dùng cho: giao diện gọn/hiện đại, widget, Watch, event, GMT+7 claim và tín hiệu review “đẹp, tiện”.
+- Lưu ý: metadata, IAP và review không cho biết tuổi, retention hoặc hành vi thực tế.
+
+### Lịch Âm Việt Nam Lunar
+
+- URL: https://apps.apple.com/vn/app/id6477778908
+- Loại: M + U
+- Dùng cho: widget/Lock Screen/Watch, reminder âm lịch và version history về tháng nhuận/ngày 30.
 
 ## 7. Lịch bloc vật lý
 
@@ -398,7 +419,87 @@ Ngày truy cập chung: **07/09/2026**. Với nguồn động như App Store, Ap
 - Dùng cho: mức nghe trung bình dưới 80 dB, ảnh hưởng của cường độ/thời lượng và nguyên tắc không tự tăng volume.
 - Lưu ý: app không thể suy ra chính xác dB tại tai chỉ từ mức gain của file; cần tránh tuyên bố an toàn tuyệt đối.
 
-## 12. Nguồn không được dùng làm “sự thật”
+## 12. Nguồn bổ sung cho vòng nghiên cứu tổng hợp
+
+### Quyết định 134/2002/QĐ-TTg
+
+- URL: https://vbpl.vn/TW/Pages/vbpq-toanvan.aspx?ItemID=21982
+- Loại: P
+- Dùng cho: múi giờ thứ 7 là giờ chính thức của Việt Nam; thay nguồn phổ thông ở quyết định Calendar Core.
+
+### Bản tin VAST 02/2019
+
+- URL: https://isdi.vast.vn/bantin/BantinKHCN022019.pdf
+- Loại: P/S (cơ quan khoa học và ý kiến chuyên gia)
+- Dùng cho: Sóc, Khí, tháng 29/30, tháng nhuận, biên gần nửa đêm và giới hạn dữ liệu lịch đã được duyệt tại thời điểm bài viết.
+- Lưu ý: không suy rộng phạm vi được duyệt lúc đó thành chứng nhận chính thức cho 1900–2100.
+
+### Hong Kong Observatory — 24 tiết khí
+
+- URL: https://www.hko.gov.hk/en/gts/time/24solarterms.htm
+- URL thời điểm theo năm: https://www.hko.gov.hk/en/gts/astronomy/Solar_Term.htm
+- Loại: P
+- Dùng cho: 24 phần 15°, Trung khí và oracle thời điểm.
+- Lưu ý: bảng HKO dùng UTC+8; phải đổi sang UTC+7 trước khi đối chiếu ngày Việt Nam.
+
+### Sắc lệnh số 5 về Quốc kỳ
+
+- URL: https://vbpl.vn/TW/Pages/vbpq-print.aspx?ItemID=819
+- Loại: P
+- Dùng cho: tỷ lệ cờ, tâm và bán kính đỉnh lồi/góc lõm của sao.
+- Lưu ý: văn bản không cho mã sRGB/hex; màu số là master asset do dự án duyệt.
+
+### Nghị định 137/2020/NĐ-CP
+
+- URL: https://vbpl.vn/TW/Pages/vbpq-toanvan.aspx?ItemID=146476
+- Loại: P
+- Dùng cho: căn cứ dùng pháo hoa như liên tưởng dịp 2/9.
+- Lưu ý: địa phương quyết định theo thực tế; không nói mọi nơi đều bắn.
+
+### Báo Giác Ngộ — giỗ trong năm nhuận
+
+- URL: https://m.giacngo.vn/cung-tieu-tuong-va-huy-nhat-vao-nam-nhuan-post76652.html
+- Loại: S
+- Dùng cho: một thông lệ trong bối cảnh Phật giáo về tháng trùng tên.
+- Lưu ý: không coi là phong tục phổ quát; chưa có nguồn đủ mạnh cho ngày 30 tháng thiếu.
+
+### IANA time-zone database
+
+- URL: https://data.iana.org/time-zones/tz-link.html
+- Loại: P cho triển khai
+- Dùng cho: lưu timezone ID và xử lý DST của notification/ngày dân sự.
+- Lưu ý: không trả lời preference của người Việt ở nước ngoài.
+
+### Nielsen Norman Group — Synthetic Users
+
+- URL: https://www.nngroup.com/articles/synthetic-users/
+- Loại: S
+- Dùng cho: synthetic users hỗ trợ hypothesis/desk research nhưng không thay dữ liệu người thật hay quyết định cuối.
+
+### Whose Personae? Synthetic Persona Experiments in LLM Research
+
+- URL: https://ojs.aaai.org/index.php/AIES/article/download/36553/38691/40628
+- Loại: P (review 63 nghiên cứu)
+- Dùng cho: yêu cầu minh bạch về task/population, empirical grounding, ecological validity, reproducibility và generalizability.
+
+### De Paoli — User personas, ideation and large language models
+
+- URL DOI: https://doi.org/10.1016/j.ijhcs.2025.103690
+- URL bản tác giả: https://rke.abertay.ac.uk/ws/files/101920220/DePaoli_UserPersonas_Published_2025.pdf
+- Loại: P
+- Dùng cho: LLM hỗ trợ ideation dưới giám sát; nguy cơ bias, stereotype và factual error.
+- Lưu ý: nghiên cứu dùng 26 phỏng vấn thật làm đầu vào; panel KVCalendar yếu hơn vì chưa có transcript.
+
+### Bối cảnh người trẻ và truyền thống
+
+- URL DataReportal: https://datareportal.com/reports/digital-2025-vietnam
+- URL UNICEF: https://www.unicef.org/innocenti/media/4181/file/DH-Viet-Nam-Report-2022.pdf
+- URL Q&Me: https://qandme.net/vi/baibaocao/ky-vong-cua-nguoi-viet-vao-dip-tet-2022.html
+- Loại: S
+- Dùng cho: bối cảnh sử dụng internet/smartphone và ý nghĩa gia đình–phong tục.
+- Lưu ý: không chứng minh nhu cầu iOS, lịch âm, pastel, hiệu ứng hoặc bóc lịch của nhóm 16–34.
+
+## 13. Nguồn không được dùng làm “sự thật”
 
 - kết quả tìm kiếm hình ảnh;
 - bài SEO “xem ngày tốt” không nêu phương pháp;
@@ -409,7 +510,7 @@ Ngày truy cập chung: **07/09/2026**. Với nguồn động như App Store, Ap
 - một thư viện GitHub không rõ test/license/maintenance;
 - văn bản pháp luật cũ đã hết hiệu lực.
 
-## 13. Việc cần bổ sung trước implementation
+## 14. Việc cần bổ sung trước implementation
 
 - nguồn lịch pháp định Việt Nam cho các mốc lịch sử 1900–1975;
 - chuyên gia/biên tập viên chịu trách nhiệm cho ruleset hoàng đạo;

@@ -1,6 +1,6 @@
 # 10 — Mộc Son Dịu và âm nền tập trung
 
-Trạng thái: quyết định sản phẩm để đưa vào prototype, chưa triển khai mã nguồn hoặc tạo asset production.  
+Trạng thái: quyết định sản phẩm để đưa vào prototype, chưa triển khai mã nguồn hoặc tạo asset production.
 Ngày cập nhật: 07/09/2026.
 
 ## 1. Định vị mới
@@ -73,31 +73,31 @@ Minh họa dùng nét 1.25–1.75 pt, đầu nét tròn, bề mặt mờ và bó
 
 | Lớp | Mặc định ở bản cài mới | Hành vi |
 |---|---|---|
-| Âm nền tập trung | Bật có điều kiện | bắt đầu sau khi tờ lịch đã hiện, fade in chậm, chỉ chạy ở tiền cảnh |
+| Âm nền tập trung | Yên | chỉ bắt đầu sau khi người dùng chọn một nền, tờ lịch đã hiện; fade in chậm, chỉ chạy ở tiền cảnh |
 | Phản hồi giấy | Tắt | tiếng lật/xé ngắn khi bóc hoặc mở tờ |
 | Cue sự kiện | Tắt | pháo hoa xa, vải lay, cành cây hoặc âm nghi lễ đã duyệt |
 
-“Bật có điều kiện” nghĩa là âm nền không tự phát khi iPhone đang ở Silent, VoiceOver đang bật, cuộc gọi hoặc ghi âm đang hoạt động, hay một ứng dụng khác đang phát audio không nên bị cạnh tranh. Nút loa nằm ngay trên không gian lịch, có vùng chạm 44 pt, trạng thái rõ và nhớ lựa chọn của người dùng.
+Khi người dùng đã chọn một nền, app vẫn không phát nếu iPhone đang ở Silent, VoiceOver đang bật, cuộc gọi hoặc ghi âm đang hoạt động, hay một ứng dụng khác đang phát audio không nên bị cạnh tranh. Nút loa nằm ngay trên không gian lịch, có vùng chạm 44 pt, trạng thái rõ và nhớ lựa chọn của người dùng.
 
 Âm nền không truyền thông tin. Tắt âm không làm mất dấu sự kiện, phản hồi thao tác hoặc nội dung ngày.
 
-## 6. Âm mặc định không phải white noise thuần
+## 6. Hiên sớm là lựa chọn, không phải lời hứa tập trung
 
 White noise thật có năng lượng trên toàn dải tần và thường nghe như tiếng xì. Nó không phải lựa chọn dễ chịu cho mọi người. Một tổng quan hệ thống năm 2024 tìm thấy lợi ích nhỏ của white/pink noise trong các bài kiểm tra ở trẻ em và người trẻ có ADHD hoặc triệu chứng chú ý cao, nhưng hiệu quả âm ở nhóm đối chứng không ADHD. Lịch Nhà không được quảng cáo âm nền là cách tăng tập trung hay điều trị: [PubMed, DOI 10.1016/j.jaac.2023.12.014](https://pubmed.ncbi.nlm.nih.gov/38428577/).
 
-Âm mặc định đề xuất là **Hiên sớm**:
+Nền đầu tiên để prototype là **Hiên sớm**:
 
 - lõi pink noise rất nhẹ thay cho tiếng xì trắng sáng;
 - room tone ấm, gió qua lá ở xa và gần như không có transient;
 - không nhạc, không lời, không chuông, không chim hót lặp lại;
 - không đổi theo ngày lễ để người dùng học hoặc làm việc không bị gián đoạn.
 
-Ba lựa chọn đầu tiên:
+Bốn lựa chọn đầu tiên:
 
-1. **Hiên sớm:** pink noise ấm và lá xa, là mặc định.
-2. **Mưa xa:** mưa đều ngoài hiên, không sấm và không giọt rơi sắc.
-3. **Quạt trưa:** dải thấp mềm gần brown noise, không có tiếng motor lặp rõ.
-4. **Yên:** tắt hoàn toàn.
+1. **Yên:** mặc định bản cài mới cho tới khi Gate 7 có dữ liệu người thật.
+2. **Hiên sớm:** pink noise ấm và lá xa, ứng viên prototype chính.
+3. **Mưa xa:** mưa đều ngoài hiên, không sấm và không giọt rơi sắc.
+4. **Quạt trưa:** dải thấp mềm gần brown noise, không có tiếng motor lặp rõ.
 
 Tên trong UI mô tả khung cảnh, không hứa tác dụng sức khỏe.
 
@@ -143,3 +143,5 @@ Ghi nhận:
 - khác biệt giữa loa máy và tai nghe.
 
 Không giữ mặc định bật nếu hơn 25% người thử tắt ngay hoặc nếu nền làm kết quả tác vụ giảm có hệ thống. Cũng không dùng điểm “dễ thương” trung bình làm quyết định duy nhất: người thử phải vẫn nhận ra lịch bloc Việt Nam và đọc đúng thông tin chính.
+
+Cho tới khi test này được thực hiện, không suy ra tỷ lệ tắt từ persona tổng hợp và không tự phát Hiên sớm ở bản phát hành.

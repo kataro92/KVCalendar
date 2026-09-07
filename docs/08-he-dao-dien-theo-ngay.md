@@ -1,7 +1,7 @@
 # 08 — Hệ đạo diễn theo mùa và sự kiện
 
-Phiên bản tài liệu: 0.1  
-Trạng thái: đặc tả sản phẩm và pipeline asset, chưa triển khai mã nguồn  
+Phiên bản tài liệu: 0.1
+Trạng thái: đặc tả sản phẩm và pipeline asset, chưa triển khai mã nguồn
 Giả định tên công cụ người dùng nêu: **“elenevlab” = ElevenLabs**
 
 ## 1. Quyết định sản phẩm
@@ -87,7 +87,7 @@ Người dùng không phải đợi pha nào kết thúc mới chạm, bóc lị
 ### 4.3. Âm thanh và haptic
 
 - âm nền tập trung, phản hồi giấy và cue sự kiện là ba lớp độc lập;
-- “Hiên sớm” bật có điều kiện ở bản cài mới, fade in sau khi nội dung ngày đã hiện và chỉ chạy ở tiền cảnh;
+- bản cài mới mặc định Yên; “Hiên sớm” chỉ fade in sau khi người dùng chủ động chọn, nội dung ngày đã hiện và app ở tiền cảnh;
 - âm giấy và cue sự kiện tắt mặc định; một cảnh chỉ có tối đa một cue ngắn;
 - không tự phát nền khi Silent, VoiceOver hoặc audio ưu tiên khác đang hoạt động;
 - pháo hoa không tạo chuỗi haptic; haptic vẫn dành chủ yếu cho hành động bóc giấy;
@@ -101,7 +101,7 @@ Người dùng không phải đợi pha nào kết thúc mới chạm, bóc lị
 
 1. Tờ lịch và nội dung ngày xuất hiện trước.
 2. Ánh nắng ấm lướt rất nhẹ trên gỗ khánh trong 400–600 ms.
-3. Hai hoặc ba chùm pháo hoa đỏ–vàng nở **phía sau khánh**, lệch vùng số ngày; tổng thời gian khoảng 2.5–3.2 giây.
+3. Hai hoặc ba chùm pháo hoa đỏ–vàng nở **phía sau khánh**, lệch vùng số ngày; tổng thời gian khoảng 2.5–3.2 giây. Đây là liên tưởng lễ hội: địa phương có tổ chức hay không còn tùy quyết định thực tế, app không mô tả pháo hoa như sự kiện diễn ra ở mọi nơi.
 4. Một lá cờ Việt Nam nhỏ gắn vào cạnh khánh đón một nhịp gió, sau đó lắng xuống.
 5. Dấu son “Quốc khánh” giữ lại trên tờ; không còn hạt sáng liên tục.
 
@@ -109,7 +109,9 @@ Nếu người dùng bật âm thanh: chỉ nghe 2–3 tiếng pháo hoa ở xa,
 
 ### Quy tắc bất khả xâm phạm với Quốc kỳ
 
-Điều 13 Hiến pháp 2013 xác định Quốc kỳ là hình chữ nhật, chiều rộng bằng hai phần ba chiều dài, nền đỏ và ngôi sao vàng năm cánh ở giữa. Asset gốc phải tuân đúng đặc điểm này: [Hiến pháp 2013 — Quốc hội](https://quochoi.vn/content/tintuc/Lists/News/Attachments/30174/Hien%20phap%202013.pdf).
+Điều 13 Hiến pháp 2013 xác định Quốc kỳ là hình chữ nhật, chiều rộng bằng hai phần ba chiều dài, nền đỏ và ngôi sao vàng năm cánh ở giữa. Sắc lệnh số 5 năm 1945 cho hình học chi tiết hơn: nếu chiều dài là `a`, chiều rộng là `2/3a`; bán kính từ tâm tới đỉnh lồi của sao là `1/5a`, tới góc lõm là `1/10a`; tâm sao trùng tâm cờ và một đỉnh quay thẳng lên. Asset gốc phải dựng tay theo hai nguồn: [Hiến pháp 2013](https://vanban.chinhphu.vn/hien-phap-nam-2013/chuong-i-che-do-chinh-tri-10052990), [Sắc lệnh số 5](https://vbpl.vn/TW/Pages/vbpq-print.aspx?ItemID=819).
+
+Văn bản dùng mô tả đỏ tươi/vàng tươi, không cho mã sRGB/hex. Màu số là master asset được duyệt, không gọi là “mã màu pháp định”.
 
 - hình học lá cờ phải được dựng thủ công, không giao cho AI 3D tự quyết tỷ lệ;
 - texture phẳng gốc đúng tỷ lệ `2:3`, sao ở tâm, không crop, mirror, đổi màu hoặc thêm logo;
@@ -169,7 +171,9 @@ Không nên tạo 365 scene nặng khác nhau. “Theo từng ngày” được 
 | Sự kiện cá nhân | 3 cue | sinh nhật, kỷ niệm, ngày giỗ/tưởng nhớ |
 | Ngày thường | 12–18 vi cảnh | bóng lá, ấm trà, cửa gỗ, mưa hiên, trăng… luân phiên theo seed ngày |
 
-Mục tiêu hợp lý cho 1.0 là khoảng **40–55 cue** dùng chung 15–20 hệ asset, không phải 365 video hoặc 365 mô hình 3D.
+Mục tiêu có điều kiện cho 1.0 là khoảng **40–55 cue** dùng chung 15–20 hệ asset, không phải 365
+video hoặc 365 mô hình 3D. Gate 6A, cultural/license review và ngân sách T019 quyết định có đạt
+scope này hay chỉ ship flagship/poster rồi dời cảnh mở rộng.
 
 ### 6.2. Cảnh lễ nên ưu tiên
 
@@ -334,7 +338,7 @@ ElevenLabs Sound Effects tạo Foley/ambient từ mô tả, điều khiển th�
 
 | Cue | Độ dài ship mục tiêu | Vai trò |
 |---|---:|---|
-| Hiên sớm | 60–120 s sau khi biên tập | nền tập trung mặc định: pink noise nhẹ, room tone và lá xa |
+| Hiên sớm | 60–120 s sau khi biên tập | nền tập trung opt-in: pink noise nhẹ, room tone và lá xa |
 | Mưa xa | 60–120 s sau khi biên tập | nền tập trung thay thế, không sấm/giọt sắc |
 | Quạt trưa | 60–120 s sau khi biên tập | nền dải thấp mềm, không lộ chu kỳ motor |
 | xé tờ giấy mỏng | 0.18–0.35 s | phản hồi bóc lịch |
@@ -414,7 +418,7 @@ Các con số dưới đây là target ban đầu để profile, không phải g
 | Hạt thấy cùng lúc | khoảng 80–150 | khoảng 20–50 | 0 |
 | Live 3D | tối đa 1–2 prop nhỏ | tối đa 1 prop hoặc baked | không |
 | Idle | dừng sau 8–12 s | dừng sau 4–6 s | tĩnh |
-| Âm nền | Hiên sớm nếu đủ điều kiện và người dùng chưa tắt | Hiên sớm với ít lớp hơn | theo lựa chọn âm riêng; không phụ thuộc Reduce Motion |
+| Âm nền | Yên ở bản cài mới; phát lựa chọn đã được người dùng bật | ít lớp hơn nếu đang phát | theo lựa chọn âm riêng; không phụ thuộc Reduce Motion |
 | Âm giấy/cue sự kiện | tắt mặc định | tắt | tắt |
 
 Mục tiêu chung:
@@ -463,13 +467,13 @@ Trong ngăn giấy, thêm nhóm “Không khí ngày” với ngôn ngữ dễ h
 - **Êm** — ít hạt, ít chiều sâu, thời lượng ngắn;
 - **Tĩnh** — minh họa và màu ngày, không chuyển động;
 - **Theo cài đặt iPhone** — luôn là ràng buộc ưu tiên; Reduce Motion có thể hạ về Tĩnh dù app đang chọn Sống động;
-- **Âm nền tập trung** — Hiên sớm, Mưa xa, Quạt trưa hoặc Yên; Hiên sớm bật có điều kiện ở bản cài mới;
+- **Âm nền tập trung** — Yên, Hiên sớm, Mưa xa hoặc Quạt trưa; bản cài mới chọn Yên cho tới khi Gate 7 có dữ liệu;
 - **Âm giấy** — tắt mặc định;
 - **Cue sự kiện** — tắt mặc định, không tự bật theo âm nền;
 - **Vùng cảm hứng** — Bắc, Trung, Nam, Trung tính; chọn tay, không dùng vị trí;
 - **Phát lại hiệu ứng** — action ở từng tờ ngày, không phải công tắc autoplay vô hạn.
 
-Khuyến nghị lần mở đầu: Sống động trên máy đủ khả năng; Hiên sớm chỉ fade in khi thiết bị không ở Silent, VoiceOver không đọc và không có audio khác cần ưu tiên. Nút tắt nền luôn thấy trên màn hình lịch. Nếu Reduce Motion đang bật, vào thẳng Tĩnh nhưng không tự thay đổi lựa chọn âm của người dùng.
+Khuyến nghị lần mở đầu: Sống động trên máy đủ khả năng nhưng âm là Yên. Sau khi người dùng chủ động chọn Hiên sớm, âm chỉ fade in khi thiết bị không ở Silent, VoiceOver không đọc và không có audio khác cần ưu tiên. Nút âm luôn thấy trên màn hình lịch. Nếu Reduce Motion đang bật, vào thẳng Tĩnh nhưng không tự thay đổi lựa chọn âm của người dùng.
 
 ## 15. Quy trình nghệ thuật và duyệt nội dung
 
@@ -546,7 +550,7 @@ Một cảnh chỉ vào 1.0 nếu:
 - ba mức Sống động/Êm/Tĩnh;
 - Reduce Motion, Dim Flashing Lights, Low Power và static poster;
 - asset/license provenance cho Rodin và ElevenLabs;
-- toàn bộ asset chạy offline; Hiên sớm bật có điều kiện, âm giấy và cue sự kiện tắt mặc định.
+- toàn bộ asset chạy offline; bản cài mới chọn Yên, âm giấy và cue sự kiện tắt mặc định.
 
 ### Nên hoãn sau 1.0
 

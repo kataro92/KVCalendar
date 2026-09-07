@@ -1,7 +1,7 @@
 # KVCalendar — hồ sơ nghiên cứu sản phẩm
 
-Trạng thái: **nghiên cứu và đặc tả, chưa triển khai mã nguồn**  
-Mốc nghiên cứu thị trường: **07/09/2026**  
+Trạng thái: **nghiên cứu và đặc tả, chưa triển khai mã nguồn**
+Mốc nghiên cứu thị trường: **07/09/2026**
 Tên sản phẩm trong tài liệu: **Lịch Nhà** (tên làm việc, chưa phải tên phát hành)
 
 ## Kết luận ngắn
@@ -15,7 +15,7 @@ Cam kết sản phẩm đề xuất:
 - thông tin lịch có phạm vi, nguồn và phiên bản rõ ràng;
 - nội dung phong tục được ghi là “tham khảo theo truyền thống”, không giả làm kết luận khoa học;
 - giao diện vẽ riêng theo ngôn ngữ giấy, gỗ, sơn son, đồng và pastel dịu; dễ thương theo kiểu trưởng thành, không giống app trẻ em;
-- âm nền “Hiên sớm” có thể bật mặc định trong tiền cảnh nhưng luôn tôn trọng Silent, VoiceOver và audio khác; âm giấy và cue sự kiện tắt mặc định;
+- bản phát hành mặc định **Yên** cho tới khi có kiểm thử âm với người thật; “Hiên sớm” là lựa chọn chủ động và ứng viên prototype, luôn tôn trọng Silent, VoiceOver và audio khác; âm giấy và cue sự kiện tắt mặc định;
 - hiệu ứng theo ngày chạy cục bộ, ngắn và có bản tĩnh; không gọi dịch vụ AI hoặc tải cảnh khi sử dụng;
 - vẫn tôn trọng VoiceOver, cỡ chữ lớn, Reduce Motion và tương phản — “giao diện riêng” không đồng nghĩa với bỏ khả năng tiếp cận.
 
@@ -34,6 +34,13 @@ Lưu ý tài chính: app có thể miễn phí hoàn toàn với người tải,
 9. [Hệ đạo diễn theo mùa và sự kiện](docs/08-he-dao-dien-theo-ngay.md) — cảnh Quốc khánh/Lập Xuân, luật phối nhiều sự kiện, pipeline Rodin/ElevenLabs, hiệu năng, accessibility và kiểm chứng.
 10. [Quy trình AI và asset](docs/09-quy-trinh-ai-va-asset.md) — cách dùng kỹ năng AI, quy trình Rodin Image-to-3D, provenance và cổng duyệt asset.
 11. [Mộc Son Dịu và âm nền tập trung](docs/10-moc-son-diu-va-am-nen.md) — định vị người trẻ, pastel trưởng thành, ba lớp âm và cách kiểm chứng white/pink noise.
+12. [Nghiên cứu tổng hợp và persona mô phỏng](docs/11-nghien-cuu-tong-hop-va-persona-mo-phong.md) — trả lời tạm 11 câu hỏi, giới hạn của nghiên cứu không người thật và trạng thái sẵn sàng.
+
+Hồ sơ chuẩn bị phát hành và audit tài liệu:
+
+- [Sổ chứng cứ web](research/desk-research/evidence-register.md), [ma trận hoàn tất tài liệu](research/desk-research/documentation-completion-matrix.md) và [biên bản self-discussion](research/synthetic-panel/deliberation.md).
+- [Decision log Gate](research/decisions/001-research-gates.md), [nguồn lịch](research/decisions/002-calendar-sources.md), [ruleset tốt/xấu](research/decisions/003-almanac-ruleset.md), [quyền phát hành](research/decisions/004-release-ownership.md) và [DoR](research/decisions/005-ready-to-code.md).
+- [Storyboard bốn cảnh lễ](assets/storyboards/release-1-holiday-scenes.md), [license ledger](assets/release/license-audit.md), [compliance audit](release/constitution-compliance.md) và các draft trong `release/`.
 
 ## Cấu hình cho AI agent
 
@@ -49,7 +56,7 @@ Kỹ năng và GitHub Spec Kit được chốt theo phiên bản trong [.agents/
 - [Hiến pháp Lịch Nhà](.specify/memory/constitution.md) giữ các nguyên tắc không thương lượng.
 - [Specification 1.0](specs/001-lich-nha-v1/spec.md) gom sáu user story và tiêu chí chấp nhận.
 - [Implementation plan](specs/001-lich-nha-v1/plan.md) chốt ranh giới module và cách kiểm thử.
-- [Tasks 1.0](specs/001-lich-nha-v1/tasks.md) có 162 task theo phụ thuộc. T001–T020 là
+- [Tasks 1.0](specs/001-lich-nha-v1/tasks.md) có 166 task theo phụ thuộc. T001–T020 là
   Definition of Ready; chưa được bắt đầu mã nguồn trước khi T020 pass.
 
 ## Quyết định nên chốt trước khi bắt đầu code
@@ -59,8 +66,8 @@ Các tài liệu đã đưa ra phương án khuyến nghị, nhưng sáu quyết
 1. Dùng tên làm việc **Lịch Nhà** hay chọn một tên khác.
 2. Bản đầu chỉ hỗ trợ iPhone hay làm iPad cùng lúc. Khuyến nghị: iPhone trước, iPad ở giai đoạn kế.
 3. Phạm vi năm công bố: khuyến nghị **1900–2100**, thay vì dùng chữ “vạn niên” nhưng không nói giới hạn.
-4. Có hiển thị “ngày/giờ tốt xấu” trên mặt chính hay chỉ trong mặt sau. Khuyến nghị: một dòng tóm tắt trên mặt chính, giải thích và nguồn ở mặt sau.
-5. Mức hiệu ứng và âm mặc định. Khuyến nghị: **Sống động một lần/ngày rồi lắng; Hiên sớm bật có điều kiện**, tự hạ về Tĩnh theo Reduce Motion/Low Power; âm giấy và cue sự kiện vẫn tắt.
+4. Có giữ “ngày/giờ tốt xấu” trong 1.0 hay không. Khuyến nghị hiện tại: **HOLD**; nếu T018 không có ruleset, chuyên gia và owner chịu trách nhiệm thì loại khỏi 1.0. Nếu được duyệt sau đó, chỉ đặt nhãn tham khảo ở mặt sau và cho tắt toàn bộ.
+5. Mức hiệu ứng và âm mặc định. Khuyến nghị: **Sống động một lần/ngày rồi lắng; bản phát hành mặc định Yên cho tới khi Gate 7 có dữ liệu**, tự hạ về Tĩnh theo Reduce Motion/Low Power; Hiên sớm, âm giấy và cue sự kiện do người dùng chủ động bật.
 6. Mô hình duy trì phí Apple Developer 99 USD/năm. Khuyến nghị: chủ dự án tài trợ hoặc tài trợ công khai; tuyệt đối không biến thành quảng cáo/paywall về sau nếu đã dùng lời hứa “miễn phí hoàn toàn”.
 
 ## Những việc cố ý chưa làm
@@ -69,3 +76,4 @@ Các tài liệu đã đưa ra phương án khuyến nghị, nhưng sáu quyết
 - Chưa tạo logo, artwork, texture hoặc prototype tương tác.
 - Chưa sao chép dữ liệu, bài viết hay hình ảnh từ app/lịch thương mại.
 - Chưa tuyên bố thuật toán đã “chính xác” khi chưa có bộ kiểm thử đối chiếu độc lập.
+- Chưa coi persona mô phỏng là người tham gia hoặc dùng chúng để pass Gate 1–7.

@@ -36,3 +36,6 @@
 - Đặc tả đạt vòng kiểm tra thứ nhất ngày 2026-09-07.
 - Trạng thái “sẵn sàng cho plan” không có nghĩa là sẵn sàng code. Các cổng nghiên cứu trong
   `docs/06-ke-hoach-kiem-chung.md` vẫn chặn implementation.
+- Vòng audit chéo cùng ngày đã làm rõ conditional scope của almanac/effect, danh sách core tasks,
+  Gate 5A–7B, `CivilDate` và DST policy. Checklist này chỉ đánh giá chất lượng requirement; nó
+  không thay T016–T020, Gate, owner hoặc bằng chứng trên build.

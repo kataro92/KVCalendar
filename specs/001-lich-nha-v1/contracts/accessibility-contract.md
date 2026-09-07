@@ -24,5 +24,17 @@ tree; toàn cảnh có tối đa một mô tả ý nghĩa.
 
 ## Release gate
 
-Không phát hành nếu US1, US2 hoặc US3 không hoàn thành được bằng VoiceOver, chữ 200%, Reduce
-Motion hoặc Increase Contrast trên thiết bị mục tiêu.
+Danh sách tác vụ cốt lõi dùng chung cho spec, test và scorecard:
+
+1. đọc thứ, ngày dương, ngày âm và sự kiện/tiết khí của hôm nay;
+2. sang ngày trước/sau bằng action không kéo và về Hôm nay trong một thao tác;
+3. mở tháng, chọn một ngày và quay lại đúng ngữ cảnh;
+4. mở mặt sau, tìm nguồn/phương pháp trong tối đa hai thao tác;
+5. tạo/sửa một event âm gồm policy tháng nhuận/ngày 30 và hiểu trạng thái lưu/notification;
+6. đọc widget và mở đúng ngày bằng deep link, không lộ nội dung riêng tư;
+7. đổi mức hiệu ứng và đưa mọi lớp âm về Yên trong một thao tác.
+
+Gate 5A là review với prototype trước code; phần prototype không thể hiện phải ghi `NOT RUN`.
+Gate 5B là release verification. Không phát hành nếu bất kỳ tác vụ trên thất bại bằng VoiceOver,
+chữ 200%, Reduce Motion hoặc Increase Contrast trên thiết bị mục tiêu. Scene safety còn phải đạt
+Gate 6B; audio session còn phải đạt Gate 7B.

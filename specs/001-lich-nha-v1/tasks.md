@@ -24,7 +24,7 @@ gom theo sáu user story trong specification.
 
 **Purpose**: Trả lời các câu hỏi có thể thay đổi sản phẩm trước khi tạo Xcode project.
 
-- [x] T001 Viết research brief, câu hỏi và ngưỡng Gate 1–7 trong `research/research-brief.md`
+- [x] T001 Viết research brief, câu hỏi và ngưỡng Gate 1–4, 5A–7A trong `research/research-brief.md`
 - [x] T002 [P] Viết screener và ma trận tuyển 20 người, gồm nhóm tuổi, vùng, thiết bị, diaspora và VoiceOver trong `research/participants/recruitment-matrix.md`
 - [x] T003 [P] Viết consent, chính sách ẩn danh và thời hạn xóa recording trong `research/participants/consent-and-retention.md`
 - [ ] T004 [P] Audit 6–10 lịch bloc có quyền quan sát và ghi pattern, không sao chép artwork, trong `research/physical-calendar-audit.md`
@@ -36,14 +36,18 @@ gom theo sáu user story trong specification.
 - [ ] T010 [P] Chuẩn bị ba mẫu nghe im lặng, Hiên sớm, Mưa xa và protocol blind test trong `research/prototypes/audio-study.md`
 - [x] T011 Viết moderator guide và 10 tác vụ không dẫn dắt từ kế hoạch kiểm chứng trong `research/session-guide.md`
 - [ ] T012 Thực hiện 20 buổi khám phá, lưu ghi chú ẩn danh theo mẫu `research/sessions/SESSION-ID.md`
-- [ ] T013 [P] Thực hiện vòng accessibility chuyên biệt với VoiceOver, chữ 200% và nhóm 55+ trong `research/sessions/accessibility-summary.md`
+- [ ] T013 [P] Thực hiện Gate 5A trên phạm vi prototype với người dùng công nghệ hỗ trợ, chữ lớn và nhóm 55+; ghi phần không thể hiện là `NOT RUN` trong `research/sessions/accessibility-summary.md`
 - [ ] T014 [P] Phỏng vấn tối thiểu hai người Việt ở nước ngoài về ngày đổi và giờ nhắc trong `research/sessions/diaspora-timezone-summary.md`
 - [ ] T015 Tổng hợp task success, từ khóa mỹ thuật, hành vi bóc và tỷ lệ tắt âm trong `research/scorecards/discovery-scorecard.md`
-- [ ] T016 Ghi kết quả Gate 1–7, pass/fail và thay đổi bắt buộc trong `research/decisions/001-research-gates.md`
+- [ ] T016 Ghi kết quả Gate 1–4 và Gate 5A–7A, pass/fail cùng thay đổi bắt buộc trong `research/decisions/001-research-gates.md`; Gate 5B–7B chờ build
 - [ ] T017 [P] Hoàn tất review nguồn, giấy phép mã tham khảo và owner cho golden corpus trong `research/decisions/002-calendar-sources.md`
 - [ ] T018 [P] Chọn hoặc loại ruleset tốt/xấu 1.0, ghi chuyên gia và nguồn chịu trách nhiệm trong `research/decisions/003-almanac-ruleset.md`
 - [ ] T019 [P] Chốt iOS support matrix, thiết bị test, người trả phí Apple Developer và kế hoạch bảo trì trong `research/decisions/004-release-ownership.md`
 - [ ] T020 Cập nhật `specs/001-lich-nha-v1/spec.md` theo T016–T019 và ký Definition of Ready trong `research/decisions/005-ready-to-code.md`
+- [x] T163 [P] Lập sổ chứng cứ web, giới hạn suy luận và nguồn phương pháp trong `research/desk-research/evidence-register.md`
+- [x] T164 [P] Viết phương pháp, tám proto-persona và biên bản self-discussion trong `research/synthetic-panel/`
+- [x] T165 Ghi trạng thái `UNTESTED`, scorecard rỗng và Definition of Ready `NOT READY` trong `research/decisions/001-research-gates.md`, `research/scorecards/discovery-scorecard.md`, `research/decisions/005-ready-to-code.md`
+- [x] T166 Đồng bộ kết luận desk research vào `docs/`, Design Master, specification và decision draft; không thay T012–T020 bằng persona
 
 **Checkpoint**: Dừng nếu T020 chưa xác nhận mọi điều kiện trong `docs/05-kha-thi-va-lo-trinh.md`.
 Không task từ T021 trở đi được bắt đầu trước checkpoint này.
@@ -142,8 +146,8 @@ trước khi bắt đầu UI story.
 - [ ] T075 [US2] Dựng mặt sau gồm chi tiết, nguồn và version trong `LichNha/Features/DayDetail/DayBackView.swift`
 - [ ] T076 [US2] Dựng màn nguồn theo evidence tier và source scope trong `LichNha/Features/Sources/SourceDetailView.swift`
 - [ ] T077 [US2] Hiển thị modern/retrospective/history-warning đúng phạm vi trong `LichNha/Features/DayDetail/HistoricalScopeNotice.swift`
-- [ ] T078 [US2] Thêm công tắc ẩn lớp almanac và giữ Can Chi/tiết khí trong `LichNha/Features/Settings/AlmanacVisibilitySetting.swift`
-- [ ] T079 [US2] Đóng gói official, culture, source và almanac seed packs đã duyệt trong `LichNha/Resources/ContentPacks/manifest.json`
+- [ ] T078 [US2] Nếu T018 giữ almanac, thêm công tắc ẩn lớp này và giữ Can Chi/tiết khí trong `LichNha/Features/Settings/AlmanacVisibilitySetting.swift`; nếu loại, ghi N/A trong checkpoint US2
+- [ ] T079 [US2] Đóng gói official, culture và source packs đã duyệt; chỉ thêm almanac seed pack nếu T018 pass, trong `LichNha/Resources/ContentPacks/manifest.json`
 - [ ] T080 [US2] Chạy Scenario B và Gate 3; ghi pass/fail trong `LichNha/Tests/Reports/us2-trust-checkpoint.md`
 
 ---
@@ -205,7 +209,7 @@ trước khi bắt đầu UI story.
 
 **Goal**: Chạy một hero đúng sắc thái, lắng xuống, có poster và hạ chất lượng theo trạng thái máy.
 
-**Independent Test**: Chạy Scenario E và Gate 6–7 với pack đã duyệt.
+**Independent Test**: Chạy Scenario E và Gate 6B–7B với pack đã duyệt; Gate 6A–7A thuộc Phase 1.
 
 ### Tests for User Story 5
 
@@ -228,15 +232,15 @@ trước khi bắt đầu UI story.
 - [ ] T119 [US5] Dùng duy nhất Rodin Image-to-3D với ảnh T118, lưu output gốc và generation record trong `assets/source/rodin/lap-xuan/generation-manifest.md`
 - [ ] T120 [US5] Cleanup silhouette, topology, UV, material, LOD và poster của cành Lập Xuân trong `assets/runtime/lap-xuan/asset-manifest.md`
 - [ ] T121 [US5] Kết hợp cành đã cleanup với 4–8 cánh hoa thành scene Lập Xuân theo vùng trong `LichNha/Effects/Director/BeginningOfSpringScene.swift`
-- [ ] T122 [P] [US5] Chốt storyboard và safety flags cho bốn cảnh lễ còn lại trong `assets/storyboards/release-1-holiday-scenes.md`
-- [ ] T123 [US5] Sản xuất bốn cảnh lễ sau khi T122 qua cultural/license gate trong `LichNha/Resources/EffectPacks/holiday-scenes.json`
-- [ ] T124 [P] [US5] Định nghĩa sáu họ chuyển động và mapping đủ 24 tiết khí trong `LichNha/Resources/EffectPacks/solar-term-families.json`
+- [ ] T122 [P] [US5] Sau Gate 6A, chốt hoặc defer draft storyboard/safety flags cho bốn cảnh lễ còn lại trong `assets/storyboards/release-1-holiday-scenes.md`
+- [ ] T123 [US5] Chỉ sản xuất bốn cảnh lễ nếu T122 qua cultural/license/budget gate; nếu không ghi scope change/poster fallback trong `LichNha/Resources/EffectPacks/holiday-scenes.json`
+- [ ] T124 [P] [US5] Chỉ định nghĩa sáu họ chuyển động và mapping đủ 24 tiết khí nếu Gate 6A cùng T019 cho phép; nếu không dùng poster/cue tĩnh đã duyệt trong `LichNha/Resources/EffectPacks/solar-term-families.json`
 - [ ] T125 [P] [US5] Tạo micro-scene ngày thường deterministic theo seed trong `LichNha/Effects/Director/OrdinaryDayScene.swift`
 - [ ] T126 [US5] Implement asset manifest/license/checksum validator trong `tools/asset-manifest-validator/README.md`
 - [ ] T127 [P] [US5] Implement ambient audio-session coordinator trong `LichNha/Effects/Audio/AmbientAudioCoordinator.swift`
 - [ ] T128 [US5] Implement Hiên sớm, Mưa xa, Quạt trưa và Yên với loop/fade đã duyệt trong `LichNha/Effects/Audio/AmbientSoundPlayer.swift`
 - [ ] T129 [P] [US5] Implement âm giấy và cue sự kiện tắt mặc định trong `LichNha/Effects/Audio/InteractionCuePlayer.swift`
-- [ ] T130 [US5] Profile flagship scene, 15 phút audio và mọi fallback; ghi Gate 6–7 trong `LichNha/Tests/Reports/us5-effects-audio-checkpoint.md`
+- [ ] T130 [US5] Profile flagship scene, 15 phút audio và mọi fallback; ghi Gate 6B–7B trong `LichNha/Tests/Reports/us5-effects-audio-checkpoint.md`
 
 ---
 
@@ -244,11 +248,11 @@ trước khi bắt đầu UI story.
 
 **Goal**: Người dùng điều chỉnh cảnh, âm, vùng và privacy; mọi tác vụ lõi dùng được với accessibility.
 
-**Independent Test**: Chạy Scenario F và Gate 5 trên support matrix.
+**Independent Test**: Chạy Scenario F và Gate 5B trên support matrix; Gate 5A thuộc Phase 1.
 
 ### Tests for User Story 6
 
-- [ ] T131 [P] [US6] Viết UI tests VoiceOver focus/actions cho US1–US4 trong `LichNha/Tests/AccessibilityTests/VoiceOverJourneyTests.swift`
+- [ ] T131 [P] [US6] Viết UI tests VoiceOver focus/actions cho danh sách core tasks US1–US4 và settings US6 trong `LichNha/Tests/AccessibilityTests/VoiceOverJourneyTests.swift`
 - [ ] T132 [P] [US6] Viết Dynamic Type 200%, contrast và transparency snapshot tests trong `LichNha/Tests/AccessibilityTests/LargeTextContrastTests.swift`
 - [ ] T133 [P] [US6] Viết Reduce Motion và Dim Flashing Lights golden-frame tests trong `LichNha/Tests/AccessibilityTests/MotionSafetyTests.swift`
 
@@ -264,8 +268,8 @@ trước khi bắt đầu UI story.
 - [ ] T141 [US6] Hoàn tất semantic summaries và ẩn decoration khỏi accessibility tree trong `LichNha/DesignSystem/Accessibility/CalendarAccessibility.swift`
 - [ ] T142 [US6] Áp dụng system settings ưu tiên hơn app effect preference trong `LichNha/Effects/Director/AccessibilityEffectPolicy.swift`
 - [ ] T143 [US6] Hiển thị engine/content/effect version và báo sai không tự gửi dữ liệu trong `LichNha/Features/Sources/VersionAndCorrectionView.swift`
-- [ ] T144 [US6] Chạy usability với nhóm 55+ và VoiceOver, ghi issue cụ thể trong `research/scorecards/accessibility-release-scorecard.md`
-- [ ] T145 [US6] Chạy Scenario F và Gate 5; ghi pass/fail trong `LichNha/Tests/Reports/us6-accessibility-checkpoint.md`
+- [ ] T144 [US6] Chạy usability danh sách core tasks trong accessibility contract với nhóm 55+ và người dùng VoiceOver, ghi issue cụ thể trong `research/scorecards/accessibility-release-scorecard.md`
+- [ ] T145 [US6] Chạy Scenario F và Gate 5B trên support matrix; ghi pass/fail trong `LichNha/Tests/Reports/us6-accessibility-checkpoint.md`
 
 ---
 
@@ -274,7 +278,7 @@ trước khi bắt đầu UI story.
 **Purpose**: Khóa chất lượng chung sau khi các user story mong muốn đã hoàn tất.
 
 - [ ] T146 [P] Chạy audit tiếng Việt, overflow, dấu và VoiceOver pronunciation trong `LichNha/Tests/Reports/vietnamese-language-audit.md`
-- [ ] T147 [P] Chạy content audit hai người cho official/culture/almanac packs trong `LichNha/Resources/ContentPacks/release-approval.md`
+- [ ] T147 [P] Chạy content audit hai người cho official/culture packs và almanac pack nếu T018 giữ phạm vi, trong `LichNha/Resources/ContentPacks/release-approval.md`
 - [ ] T148 [P] Chạy license/provenance audit cho font, model, texture, poster và audio trong `assets/release/license-audit.md`
 - [ ] T149 Chốt pack versions, checksums và changelog dữ liệu trong `LichNha/Resources/release-manifest.json`
 - [ ] T150 [P] Đo binary, effect pack, memory và cold launch trên support matrix trong `LichNha/Tests/Reports/release-performance.md`
@@ -360,4 +364,4 @@ thể đưa story về nghiên cứu mà không làm hỏng các story đã pass
 - Task `[P]` chỉ song song khi owner không sửa cùng file.
 - Mọi task Rodin bắt buộc có ảnh tham chiếu đã duyệt; Text-to-3D không bao giờ là task thay thế.
 - Không đưa `.env`, ảnh người tham gia, tên ngày giỗ thật hoặc recording vào pack hay test fixture.
-- Repo hiện chưa có Git. Không chuyển task thành issue hoặc tạo branch cho đến khi chủ dự án yêu cầu.
+- Repo dùng Git trên branch `main` và theo dõi `origin`. Không force-push, đổi lịch sử hoặc chuyển task thành issue nếu chủ dự án chưa yêu cầu.

@@ -21,7 +21,7 @@
 - Với feature mới hoặc thay đổi phạm vi đáng kể, đi theo thứ tự `$speckit-constitution` → `$speckit-specify` → `$speckit-clarify` khi cần → `$speckit-plan` → `$speckit-tasks` → `$speckit-analyze` → `$speckit-implement` → `$speckit-converge`.
 - Feature tổng hiện tại là `specs/001-lich-nha-v1/`. Đọc `spec.md`, `plan.md`, `tasks.md` và artifact liên quan trước khi triển khai.
 - Không chạy `$speckit-implement` hoặc task từ T021 trở đi cho đến khi T020 xác nhận Definition of Ready. Trạng thái checkbox phải phản ánh bằng chứng trong file đích, không đánh dấu theo ước lượng.
-- Repository hiện chưa dùng Git. Không tạo branch, commit hoặc chuyển task thành issue nếu người dùng chưa yêu cầu.
+- Repository dùng Git, branch `main` theo dõi `origin` trên GitHub. Không force-push, đổi lịch sử hoặc chuyển task thành issue nếu người dùng chưa yêu cầu.
 
 ## Luật thiết kế
 
@@ -30,7 +30,7 @@
 - Vẫn dùng semantics nền tảng: VoiceOver, Dynamic Type, focus rõ, vùng chạm tối thiểu 44 pt và thao tác thay thế cho mọi gesture kéo/bóc.
 - Mỗi cảnh ngày có tối đa một hiệu ứng chính. Luôn có Reduce Motion, Dim Flashing Lights, Low Power và poster tĩnh.
 - Quốc kỳ và ngôi sao phải dựng, đo và duyệt thủ công; không cho mô hình tạo sinh quyết định hình học, màu, crop hoặc chuyển động làm biến dạng biểu tượng.
-- Tách ba lớp âm: nền tập trung, phản hồi giấy và cue sự kiện. Chỉ nền tập trung được bật mặc định có điều kiện; âm giấy và cue sự kiện tắt mặc định. Luôn tôn trọng Silent, VoiceOver và audio đang phát từ ứng dụng khác.
+- Tách ba lớp âm: nền tập trung, phản hồi giấy và cue sự kiện. Khi chưa có Gate 7 với người thật, bản phát hành mặc định Yên; Hiên sớm là opt-in/ứng viên prototype, âm giấy và cue sự kiện tắt mặc định. Luôn tôn trọng Silent, VoiceOver và audio đang phát từ ứng dụng khác.
 
 ## Luật Rodin
 

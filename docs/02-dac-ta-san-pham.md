@@ -1,7 +1,7 @@
 # 02 — Đặc tả sản phẩm
 
-Phiên bản tài liệu: 0.1  
-Phạm vi: iPhone, bản đầu tiên  
+Phiên bản tài liệu: 0.1
+Phạm vi: iPhone, bản đầu tiên
 Tên làm việc: Lịch Nhà
 
 ## 1. Mục tiêu phiên bản 1.0
@@ -11,11 +11,11 @@ Trong lần mở đầu tiên, không cần tài khoản hay cấu hình, ngư�
 - thứ và ngày dương;
 - ngày/tháng âm;
 - tháng/năm dương;
-- Can Chi năm và ngày;
 - sự kiện hoặc tiết khí đáng chú ý;
-- một dòng thông tin lịch truyền thống ngắn.
+- Can Chi hoặc một dòng thông tin lịch truyền thống ngắn là giả thuyết prototype; Gate 3 có thể
+  chuyển chúng sang mặt sau trước khi giảm cỡ ngày chính.
 
-Sau khi nội dung đã hiện, nền “Hiên sớm” được phép fade in nếu thiết bị không ở Silent, VoiceOver không bật và không có audio khác cần được ưu tiên. Nút tắt âm phải thấy và chạm được ngay, không giấu trong cài đặt.
+Bản phát hành mặc định Yên cho tới khi Gate 7 có dữ liệu người thật. Khi người dùng chủ động chọn “Hiên sớm”, nền chỉ được fade in sau khi nội dung hiện, thiết bị không ở Silent, VoiceOver không bật và không có audio khác cần ưu tiên. Nút âm phải thấy và chạm được ngay, không giấu trong cài đặt.
 
 Trong dưới hai phút, họ phải có thể:
 
@@ -72,13 +72,13 @@ Trả lời “hôm nay là ngày nào?” ngay lập tức và tạo cảm giá
 2. Số ngày dương cực lớn.
 3. Tháng và năm dương.
 4. Ngày âm, gồm dấu “nhuận” khi có.
-5. Can Chi ngày/tháng/năm ở dạng gọn.
+5. Can Chi ngày/tháng/năm ở dạng gọn nếu Gate 3 cho thấy còn đủ chỗ; nếu không, chuyển mặt sau.
 6. Tiết khí hoặc ngày lễ/sự kiện nổi bật.
-7. Giờ hoàng đạo dạng tóm tắt, có nhãn “tham khảo”.
+7. Giờ hoàng đạo chỉ xuất hiện nếu T018 duyệt ruleset; đặt ở mặt sau với nhãn “tham khảo”.
 8. Một mẩu nội dung biên tập ngắn: ca dao, tục ngữ, kiến thức hoặc minh họa nguyên bản.
 9. Không khí ngày nằm quanh/đằng sau tờ, không được chiếm một trường nội dung hay che các mục 1–8.
 
-Nếu không đủ không gian ở cỡ chữ lớn, ưu tiên 1–6. Nội dung 7–8 chuyển sang mặt sau; không giảm chữ xuống dưới ngưỡng đọc được.
+Nếu không đủ không gian ở cỡ chữ lớn, ưu tiên 1–4 và 6. Can Chi cùng nội dung 7–8 chuyển sang mặt sau; không giảm chữ xuống dưới ngưỡng đọc được.
 
 ### Hành động
 
@@ -214,7 +214,7 @@ Mặc định cho ngày giỗ nhập từ tháng thường: chỉ tháng thườ
 
 Cho chọn:
 
-- nhắc ngày cuối tháng (khuyến nghị);
+- nhắc ngày cuối tháng (gợi ý tiện dụng, không phải quy tắc phong tục);
 - bỏ qua năm đó;
 - nhắc mùng một tháng sau.
 
@@ -273,7 +273,7 @@ Widget không thể tái tạo mọi animation, nhưng phải nhận ra là cùn
 
 Âm thanh có ba lớp độc lập:
 
-- nền tập trung “Hiên sớm” bật có điều kiện ở bản cài mới, chạy ở tiền cảnh và fade in sau nội dung;
+- nền tập trung mặc định Yên; “Hiên sớm” chỉ chạy sau khi người dùng chủ động chọn, ở tiền cảnh và fade in sau nội dung;
 - phản hồi giấy tắt mặc định;
 - cue sự kiện tắt mặc định, kể cả khi nền tập trung đang chạy;
 - nếu Silent, VoiceOver hoặc audio ưu tiên khác đang hoạt động, nền không tự phát;
@@ -288,7 +288,7 @@ Nhóm thiết lập:
 - chữ: chuẩn, lớn, rất lớn;
 - không khí ngày: Sống động, Êm, Tĩnh; cài đặt accessibility của hệ thống luôn được ưu tiên;
 - vùng cảm hứng: Bắc, Trung, Nam, Trung tính; chọn tay, không xin vị trí;
-- âm nền tập trung: Hiên sớm, Mưa xa, Quạt trưa hoặc Yên; Hiên sớm bật có điều kiện ở bản cài mới;
+- âm nền tập trung: Yên, Hiên sớm, Mưa xa hoặc Quạt trưa; bản cài mới chọn Yên cho tới khi Gate 7 cho phép đổi;
 - âm giấy: tắt mặc định;
 - cue sự kiện: tắt mặc định, không tự bật theo âm nền;
 - haptic: bật nhẹ mặc định, tắt khi thiết bị/setting không phù hợp;

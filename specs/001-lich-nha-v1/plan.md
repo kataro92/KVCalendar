@@ -1,6 +1,6 @@
 # Implementation Plan: Lịch Nhà 1.0
 
-**Branch**: `001-lich-nha-v1` (logical feature ID; repository chưa dùng Git) | **Date**: 2026-09-07 | **Spec**: [spec.md](spec.md)
+**Branch**: `main` (feature ID `001-lich-nha-v1`) | **Date**: 2026-09-07 | **Spec**: [spec.md](spec.md)
 
 **Input**: Feature specification from `specs/001-lich-nha-v1/spec.md`
 
@@ -35,32 +35,36 @@ notification và performance; snapshot/reference rendering cho tờ lịch và p
 
 **Project Type**: Native mobile app với một widget extension và các local Swift modules
 
-**Performance Goals**: Nội dung ngày xuất hiện trong một giây ở cold launch trên máy thấp nhất;
-gesture tờ giấy giữ 60 fps; scene khởi động sau nội dung; widget không cần mạng
+**Performance Goals (provisional)**: Nội dung ngày xuất hiện trong một giây ở cold launch trên máy
+thấp nhất; gesture tờ giấy giữ 60 fps; scene khởi động sau nội dung; widget không cần mạng. T019
+phải chốt máy mục tiêu và T150 mới được xác nhận hoặc sửa các ngân sách này.
 
 **Constraints**: Core offline; không backend, account, ad/paywall hoặc runtime AI; lịch Việt UTC+7;
-asset pack dự kiến tăng 40–60 MB; live 3D tối đa 1–2 prop và khoảng 20.000–25.000 tam giác cùng lúc;
-mọi cảnh có poster, reduced-motion và low-power fallback
+mọi cảnh có poster, reduced-motion và low-power fallback. Các số effect pack 40–60 MB, 1–2 prop
+và 20.000–25.000 tam giác là **ngân sách prototype**, không phải kết quả hoặc cam kết phát hành
+trước khi T019/T150 hoàn tất.
 
 **Scale/Scope**: Phạm vi ngày 1900–2100; sáu user story; hai scene flagship, bốn cảnh lễ khác,
 sáu họ chuyển động cho 24 tiết khí; một ngôn ngữ phát hành chính là tiếng Việt
 
-## Constitution Check
+## Constitution design check
 
-*GATE: Phải đạt trước Phase 0 và được kiểm lại sau Phase 1.*
+*Bảng này chỉ kiểm kế hoạch có phản ánh hiến pháp hay không. Nó không phải Gate 1–7 và không mở
+khóa T020.*
 
 | Gate | Kết quả trước Phase 0 | Bằng chứng |
 |---|---|---|
-| Lời hứa miễn phí, không quảng cáo, không login | PASS | Không có backend, ad SDK, paywall hoặc account trong scope |
-| Dữ liệu lịch có nguồn và test | PASS có điều kiện | Calendar Core, Source Record và golden corpus là foundation; implementation chờ owner/corpus |
-| Bản sắc riêng cùng accessibility | PASS có điều kiện | Semantic SwiftUI tách khỏi Canvas/effect; Gate 1–7 vẫn phải chạy |
-| Riêng tư và offline | PASS | App Group local, pack cục bộ, widget snapshot đã lọc, không telemetry |
-| Kiểm chứng trước mở rộng | PASS | Phase nghiên cứu nằm trước setup mã và có task/go-no-go riêng |
-| Rodin chỉ Image-to-3D | PASS | Pipeline asset yêu cầu concept sheet đã duyệt; Text-to-3D bị cấm |
-| Quốc kỳ dựng và duyệt thủ công | PASS | Cờ không thuộc pipeline tạo sinh; có review frame-by-frame |
+| Lời hứa miễn phí, không quảng cáo, không login | `DOCUMENTED` | Không có backend, ad SDK, paywall hoặc account trong scope; binary chưa tồn tại |
+| Dữ liệu lịch có nguồn và test | `BLOCKED T017` | Calendar Core, Source Record và golden corpus là foundation; owner/corpus chưa có |
+| Bản sắc riêng cùng accessibility | `UNTESTED` | Semantic SwiftUI tách khỏi Canvas/effect; Gate 1–7 chưa chạy |
+| Riêng tư và offline | `DESIGNED` | App Group local, pack cục bộ, widget snapshot đã lọc; runtime chưa kiểm |
+| Kiểm chứng trước mở rộng | `BLOCKED T012–T020` | Phase nghiên cứu có task/go-no-go nhưng chưa hoàn tất |
+| Rodin chỉ Image-to-3D | `DOCUMENTED` | Pipeline yêu cầu concept sheet đã duyệt; chưa có asset để audit |
+| Quốc kỳ dựng và duyệt thủ công | `DOCUMENTED` | Cờ không thuộc pipeline tạo sinh; asset/golden frame chưa tồn tại |
 
-**Post-design re-check**: PASS có điều kiện. Không có vi phạm kiến trúc. Điều kiện còn lại là hoàn
-tất nghiên cứu người dùng, corpus lịch, ruleset truyền thống, quyền asset và nguồn phí phát hành.
+**Post-design re-check**: `NOT READY`. Không phát hiện ý định kiến trúc trái hiến pháp, nhưng các
+bằng chứng có quyền mở khóa implementation chưa tồn tại: nghiên cứu người dùng, corpus lịch,
+ruleset truyền thống, quyền asset, support matrix và nguồn phí phát hành.
 
 ## Project Structure
 

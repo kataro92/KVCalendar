@@ -1,6 +1,6 @@
 # Lịch Nhà — Design Master
 
-Trạng thái: định hướng được duyệt để làm prototype; chưa phải thông số production.  
+Trạng thái: định hướng được duyệt để làm prototype; chưa phải thông số production.
 Ngày cập nhật: 07/09/2026.
 
 ## 1. Lời hứa thị giác
@@ -96,11 +96,11 @@ Giao diện hệ điều hành sở hữu như bàn phím, quyền truy cập, s
 - Mỗi cảnh ngày: tối đa một intro 2–4 giây, một ambient layer và hai accent tĩnh.
 - Intro chỉ tự chạy một lần mỗi ngày. Khi người dùng đọc/chạm/kéo, cảnh lắng hoặc dừng.
 - Không để particle đi qua số ngày, lịch âm và dòng sự kiện.
-- Nền “Hiên sớm” bật có điều kiện, fade in sau nội dung và không phá Silent/VoiceOver/audio khác. Âm giấy và cue sự kiện tắt mặc định.
+- Bản cài mới chọn Yên. Sau khi người dùng chọn “Hiên sớm”, nền fade in sau nội dung và không phá Silent/VoiceOver/audio khác. Âm giấy và cue sự kiện tắt mặc định.
 
 ## 9. Âm nền tập trung
 
-- Mặc định: Hiên sớm, lõi pink noise rất nhẹ với room tone và lá xa; không nhạc, lời, chuông hoặc chim lặp.
+- Mặc định phát hành: Yên cho tới khi Gate 7 có dữ liệu. Hiên sớm là opt-in/ứng viên prototype, dùng lõi pink noise rất nhẹ với room tone và lá xa; không nhạc, lời, chuông hoặc chim lặp.
 - Nút loa luôn có trên màn hình lịch, vùng chạm 44 pt, có label/state và nhớ lựa chọn.
 - Âm nền chỉ tự chạy ở tiền cảnh. Một chế độ background 25/50 phút, nếu làm, phải do người dùng bấm phát.
 - Ba bus tách biệt: nền tập trung, phản hồi giấy và cue sự kiện.
@@ -134,10 +134,11 @@ Hai lượt tra cứu design system chung cho “cultural calendar tactile edito
 
 Tìm kiếm hẹp hơn giữ lại Soft UI Evolution, micro-interaction, pastel có độ tương phản và Be Vietnam Pro. Claymorphism, neumorphism, tactile jelly và bộ chữ dành cho trẻ em bị loại. Mộc Son Dịu lấy bề mặt mềm và phản hồi chạm nhỏ, không lấy nút dày, bóng kép hoặc bounce kiểu đồ chơi.
 
-Hai kết quả UX được giữ:
+Ba kết quả UX được giữ:
 
 - thao tác kéo phải có lựa chọn một chạm;
-- Reduce Motion cần được thiết kế ngay từ đầu, với rất ít phần tử chuyển động đồng thời.
+- Reduce Motion cần được thiết kế ngay từ đầu, với rất ít phần tử chuyển động đồng thời;
+- text thiết yếu phải wrap, stack, reflow hoặc mở được bản đầy đủ; không clip chỉ để các thẻ cao bằng nhau.
 
 Hướng dẫn SwiftUI được giữ ở mức nguyên tắc: đọc `accessibilityReduceMotion`, dùng accessibility label/action và giữ semantic view thật ngay cả khi phần nhìn được vẽ custom.
 

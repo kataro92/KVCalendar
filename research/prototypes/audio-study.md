@@ -73,11 +73,11 @@ Nút tắt tìm được trong một thao tác: có/không
 Silent / VO / audio khác: làm / chưa làm trên máy này
 ```
 
-## 5. Ngưỡng Gate 7
+## 5. Ngưỡng Gate 7A
 
 Tính trên nhóm chính, không gộp 55–75 vào mẫu mặc định âm.
 
-Giữ Hiên sớm bật có điều kiện nếu: ≤25% tắt trong 10 giây đầu; đa số không mệt/mất tập trung sau 10–15 phút; tác vụ ngắn không kém im lặng một cách hệ thống; nút tắt một thao tác; Silent/VO/audio khác đúng protocol.
+Chỉ cân nhắc đổi Hiên sớm từ opt-in thành bật có điều kiện nếu: ≤25% tắt trong 10 giây đầu; đa số không mệt/mất tập trung sau 10–15 phút; tác vụ ngắn không kém im lặng một cách hệ thống; nút tắt một thao tác; Silent/VO/audio khác đúng protocol. Khi test chưa chạy, bản phát hành chọn Yên.
 
 Nếu không đạt: mặc định Yên, hai bed còn là opt-in.
 

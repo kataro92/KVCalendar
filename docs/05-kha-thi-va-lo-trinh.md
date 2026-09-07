@@ -264,7 +264,7 @@ Khoảng **18–25 tuần** cho bản 1.0 có effect pack đạt chất lượng
 
 Chỉ bắt đầu implementation khi đủ:
 
-- 12–16 buổi nghiên cứu người dùng hoàn tất;
+- 20 buổi nghiên cứu người dùng thật hoàn tất theo ma trận tuyển; persona tổng hợp không được tính vào mẫu;
 - concept Mộc Son Dịu và một phương án dự phòng đã được test;
 - mặt trước/mặt sau chốt bằng content hierarchy;
 - motion prototype được test trên iPhone thật;

@@ -219,7 +219,7 @@ Core Haptics cho phép tạo pattern xúc giác riêng; Apple khuyến nghị ha
 
 ### Âm thanh
 
-- nền tập trung “Hiên sớm” bật có điều kiện ở bản cài mới, fade in sau khi tờ lịch đã đọc được;
+- bản cài mới chọn Yên; nền “Hiên sớm” chỉ fade in sau khi người dùng chủ động chọn và tờ lịch đã đọc được;
 - “Hiên sớm” dùng pink noise rất nhẹ, room tone ấm và lá xa; không nhạc, lời, chuông hoặc transient;
 - không tự phát khi máy ở Silent, VoiceOver đang bật hoặc audio khác cần được ưu tiên;
 - nút tắt/mở nền nằm ngay trên không gian lịch, có vùng chạm 44 pt và nhớ lựa chọn;

@@ -21,6 +21,12 @@ Mục tiêu của giai đoạn này không phải hỏi người dùng “bạn 
 
 ## 2. Mẫu nghiên cứu
 
+### Trạng thái hiện tại: chưa tuyển người
+
+Khi chưa có participant, desk research và persona tổng hợp chỉ được dùng để lập giả thuyết, cognitive walkthrough và chuẩn bị case biên. Không tạo session ID giả, quote giả, task success, tỷ lệ preference hoặc tỷ lệ tắt âm từ panel. Mọi ngưỡng dưới đây là **ngưỡng của kế hoạch nghiên cứu thật**, không phải ước lượng dân số.
+
+Gate 1–7 giữ trạng thái `UNTESTED`; T012–T016 và T020 không được đánh dấu. Trạng thái chi tiết nằm ở `research/decisions/001-research-gates.md` và `research/decisions/005-ready-to-code.md`.
+
 Tối thiểu 20 người ở vòng khám phá:
 
 - 6 người 16–22 tuổi, có quan tâm tới lịch âm, thiết kế hoặc văn hóa Việt;
@@ -215,6 +221,14 @@ Không chọn concept chỉ vì điểm “đẹp” trung bình; xem lý do và
 
 ## 9. Cổng quyết định
 
+Gate 1–4 là cổng nghiên cứu trước code. Gate 5–7 có hai mức để tránh dùng nhầm bằng chứng:
+
+- hậu tố `A` là concept/research gate trước T020, dùng prototype và người thật trong phạm vi prototype;
+- hậu tố `B` là release verification trên implementation, thiết bị và asset thật. Gate `B` không thể
+  pass trước code và không bị T020 yêu cầu pass.
+
+T016 chỉ tổng hợp Gate 1–4 và 5A–7A. T145 ghi Gate 5B; T130 ghi Gate 6B–7B. Cả hai mức hiện đều `UNTESTED`.
+
 ### Gate 1 — concept
 
 Đi tiếp nếu:
@@ -254,11 +268,18 @@ Nếu gesture vui nhưng chậm: giữ nó như nghi thức tùy chọn, vuốt 
 - 100% hiểu event đã lưu dù notification bị từ chối;
 - không người nào nghĩ app đã đọc danh bạ/lịch hệ thống nếu nó chưa xin quyền.
 
-### Gate 5 — accessibility
+### Gate 5A — accessibility research trước code
 
-Không phát hành nếu bất kỳ tác vụ cốt lõi nào không hoàn thành bằng VoiceOver, chữ 200%, Reduce Motion hoặc Increase Contrast.
+Đi tiếp nếu prototype cho phép rà các tác vụ cốt lõi có trong phạm vi mà không phụ thuộc gesture,
+âm hoặc chuyển động; vòng với người 55+/người dùng công nghệ hỗ trợ không phát hiện blocker thiết kế
+không thể sửa trong kiến trúc. Mọi phần prototype chưa thể hiện phải ghi `NOT RUN`, không suy ra pass.
 
-### Gate 6 — hiệu ứng theo ngày
+### Gate 5B — accessibility release
+
+Không phát hành nếu bất kỳ tác vụ cốt lõi nào trong accessibility contract không hoàn thành bằng
+VoiceOver, chữ 200%, Reduce Motion hoặc Increase Contrast trên thiết bị mục tiêu.
+
+### Gate 6A — concept và văn hóa của hiệu ứng
 
 Đi tiếp nếu:
 
@@ -266,21 +287,32 @@ Không phát hành nếu bất kỳ tác vụ cốt lõi nào không hoàn thàn
 - ít nhất 80% nhận đúng sắc thái của cảnh Quốc khánh và Lập Xuân;
 - không participant/reviewer phát hiện lỗi Quốc kỳ hoặc cách dùng biểu tượng thiếu trang trọng;
 - bản Reduce Motion và Dim Flashing Lights vẫn đẹp, không mất ý nghĩa;
-- cảnh không làm gesture tờ giấy tụt dưới target frame trên máy thấp nhất;
 - intro một lần/ngày được ưa thích hơn autoplay lặp và không gây khó chịu hệ thống;
-- mỗi asset thử nghiệm dự kiến ship có provenance/license record hoàn chỉnh.
+- storyboard/asset reference dùng trong test có quyền và provenance đủ cho nghiên cứu.
 
-### Gate 7 — âm nền tập trung
+### Gate 6B — hiệu ứng trên build
 
-Giữ Hiên sớm ở trạng thái bật có điều kiện nếu:
+- cảnh không làm gesture tờ giấy tụt dưới target frame trên máy thấp nhất;
+- mọi asset dự kiến ship có provenance/license record hoàn chỉnh;
+- poster, Reduce Motion, Dim Flashing Lights, Low Power và thermal fallback chạy đúng trên build.
+
+### Gate 7A — preference và mệt âm thanh
+
+Chỉ cân nhắc đưa Hiên sớm từ opt-in thành bật có điều kiện nếu:
 
 - không quá 25% nhóm chính tắt trong 10 giây đầu;
 - đa số không báo mệt tai hoặc mất tập trung sau 10–15 phút;
 - không làm giảm kết quả tác vụ ngắn một cách có hệ thống so với im lặng;
-- Silent, VoiceOver, audio khác, tháo tai nghe và cuộc gọi đều cho hành vi đúng;
 - nút tắt được tìm thấy và dùng trong một thao tác.
 
 Nếu không đạt, âm nền vẫn có thể tồn tại như lựa chọn opt-in. Không dùng lời hứa “tăng tập trung”.
+
+Nếu Gate 7 chưa chạy, mặc định phát hành là **Yên**. Persona tổng hợp không thể trả lời “bao nhiêu người tắt ngay”.
+
+### Gate 7B — hành vi audio trên build
+
+Silent, VoiceOver, audio khác, tháo tai nghe, cuộc gọi, background/foreground và route change phải
+cho hành vi đúng trên iPhone thuộc support matrix. Gate 7A không ký thay Gate 7B.
 
 ## 10. Test ngôn ngữ “tin cậy”
 
@@ -355,3 +387,9 @@ Trước khi code phải có:
 - xóa recording theo thời hạn đã thông báo;
 - chỉ dùng trích dẫn ẩn danh với sự đồng ý;
 - không đưa dữ liệu nghiên cứu vào công cụ AI/cloud nếu chưa có đồng ý phù hợp.
+
+## 15. Chế độ desk research và persona tổng hợp
+
+Khi chưa có người thật, đầu ra hợp lệ chỉ gồm sổ chứng cứ, proto-persona có nguồn, contradiction matrix, walkthrough dự đoán và backlog câu hỏi. Mỗi nhận định phải là `OBS`, `INF`, `HYP`, `DEC` hoặc `OPEN`.
+
+Chế độ này không đo được cảm giác cơ thể, độ mệt âm thanh, thao tác ngón tay, nhận diện thẩm mỹ, VoiceOver trên thiết bị hay tính trang trọng văn hóa. Vì vậy nó không thay bất kỳ cổng nào ở mục 9. Phương pháp hiện hành: `research/synthetic-panel/method.md`.

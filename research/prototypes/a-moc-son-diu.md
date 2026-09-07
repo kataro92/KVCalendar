@@ -57,7 +57,7 @@ Số `8` chiếm khoảng 33–38% chiều cao tờ, Be Vietnam Pro, tabular. M�
 | Ngày sau | ngăn giấy hoặc cạnh phải | Button | bắt buộc, Gate 2 |
 | Ngày trước | đối xứng | Button | bắt buộc |
 | Hôm nay | hiện khi không ở hôm nay | Button | ẩn trên fixture này |
-| Loa nền | trên không gian lịch | Button, state Bật/Tắt | Hiên sớm có điều kiện; im lặng nếu Silent/VoiceOver |
+| Loa nền | trên không gian lịch | Button, state Bật/Tắt | bản cài mới Yên; Hiên sớm chỉ phát sau lựa chọn và im lặng nếu Silent/VoiceOver |
 | Kẹp sự kiện | mép phải tờ | Button “Sự kiện ngày này” | số lượng 0 |
 
 Kéo góc không được là cách duy nhất sang ngày kế (WCAG 2.2 kéo phải có thay thế một con trỏ).

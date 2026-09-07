@@ -1,10 +1,10 @@
 # Feature Specification: Lịch Nhà 1.0
 
-**Feature Branch**: Không áp dụng; repository chưa dùng Git
+**Feature Branch**: `main`; feature ID logic `001-lich-nha-v1`
 
 **Created**: 2026-09-07
 
-**Status**: Sẵn sàng cho kế hoạch, còn chặn triển khai bởi các cổng nghiên cứu
+**Status**: Desk research và đặc tả hoàn tất; chưa sẵn sàng triển khai vì Gate 1–7 cùng T012–T020 còn mở
 
 **Input**: Ứng dụng lịch bloc Việt Nam trên iPhone, miễn phí, không quảng cáo, không paywall,
 không đăng nhập, hoạt động offline, có mỹ thuật Mộc Son Dịu, hiệu ứng theo mùa/ngày và âm nền
@@ -47,8 +47,8 @@ khảo.
 **Why this priority**: Lịch chỉ hữu ích lâu dài khi hỗ trợ lập kế hoạch và cho phép người dùng kiểm
 tra vì sao một trường dữ liệu được hiển thị.
 
-**Independent Test**: Từ tờ hôm nay, tìm ngày 15 của tháng kế, xác định ngày âm, mở chi tiết giờ
-hoàng đạo và tìm nguồn trong tối đa hai thao tác.
+**Independent Test**: Từ tờ hôm nay, tìm ngày 15 của tháng kế, xác định ngày âm và tìm nguồn trong
+tối đa hai thao tác. Nếu T018 cho phép lớp almanac, kiểm thêm chi tiết giờ hoàng đạo theo ruleset.
 
 **Acceptance Scenarios**:
 
@@ -57,8 +57,9 @@ hoàng đạo và tìm nguồn trong tối đa hai thao tác.
 2. **Given** một ngày có tháng nhuận, ngày nghỉ hoặc tiết khí,
    **When** người dùng xem mặt trước và mặt sau,
    **Then** từng loại thông tin có nhãn đúng và không bị gộp thành một khái niệm “ngày lễ”.
-3. **Given** một nhận định tốt/xấu, **When** người dùng mở nguồn,
-   **Then** họ thấy nhãn tham khảo, tên phương pháp, phiên bản và nguồn áp dụng.
+3. **Given** T018 đã cho phép lớp almanac và một nhận định tốt/xấu đang hiển thị,
+   **When** người dùng mở nguồn, **Then** họ thấy nhãn tham khảo, tên phương pháp, phiên bản và
+   nguồn áp dụng. Nếu T018 chọn loại khỏi 1.0, lớp này không xuất hiện.
 4. **Given** ngày nằm trong giai đoạn 1900–1975,
    **When** người dùng xem chi tiết,
    **Then** ứng dụng hiện phạm vi lịch thiên văn hồi chiếu và cảnh báo chênh lịch sử khi cần.
@@ -100,8 +101,8 @@ tháng nhuận, từ chối notification và xác nhận sự kiện vẫn tồn
 Người dùng xem ngày dương, ngày âm và sự kiện công khai từ widget mà không cần mở ứng dụng. Tên
 sự kiện riêng tư không xuất hiện trên màn hình khóa theo mặc định.
 
-**Why this priority**: Widget phục vụ tình huống xem nhanh buổi sáng và giúp ứng dụng hữu ích ngay
-cả khi nghi thức bóc lịch không được dùng mỗi ngày.
+**Why this priority**: Widget phục vụ xem nhanh mà không mở app và giúp ứng dụng hữu ích ngay cả
+khi nghi thức bóc lịch không được dùng mỗi ngày. Thời điểm dùng trong ngày vẫn là câu hỏi nghiên cứu.
 
 **Independent Test**: Thêm widget, qua mốc đổi ngày, kiểm tra light/dark/tinted và mở đúng tờ ngày
 từ deep link trong khi thiết bị không có mạng.
@@ -198,7 +199,8 @@ VoiceOver, chữ 200%, Increase Contrast và Reduce Motion trên iPhone nhỏ nh
 - **FR-001**: Ứng dụng PHẢI mở thẳng vào tờ của ngày hiện tại mà không yêu cầu tài khoản,
   onboarding bắt buộc hoặc mạng.
 - **FR-002**: Mặt trước PHẢI hiển thị thứ, ngày dương, tháng/năm dương, ngày/tháng âm, cờ tháng
-  nhuận, Can Chi ngắn và sự kiện hay tiết khí nổi bật khi có.
+  nhuận và sự kiện hay tiết khí nổi bật khi có. Can Chi ngắn là giả thuyết prototype; Gate 3 có thể
+  giữ ở mặt trước hoặc chuyển sang mặt sau trước khi giảm cỡ thông tin ngày chính.
 - **FR-003**: Mặt sau PHẢI chứa chi tiết lịch, thông tin truyền thống, nguồn, phương pháp và phiên
   bản phù hợp với ngày đang xem.
 - **FR-004**: Người dùng PHẢI đổi ngày bằng bóc/vuốt và bằng action một chạm tương đương.
@@ -212,8 +214,9 @@ VoiceOver, chữ 200%, Increase Contrast và Reduce Motion trên iPhone nhỏ nh
   nhân PHẢI có taxonomy riêng.
 - **FR-010**: Mọi dữ liệu không do người dùng nhập và không suy ra trực tiếp từ ngày PHẢI có
   source ID, phiên bản, phạm vi áp dụng và trạng thái quyền phù hợp.
-- **FR-011**: Ngày/giờ tốt xấu PHẢI được ghi là tham khảo, nêu ruleset và có thể tắt toàn bộ lớp
-  lịch truyền thống.
+- **FR-011**: Lớp ngày/giờ tốt xấu là phạm vi có điều kiện của T018. Nếu được giữ, mọi nhận định
+  PHẢI ghi là tham khảo, nêu ruleset/owner/source/version và có thể tắt toàn bộ. Nếu không có đủ
+  trách nhiệm cùng quyền, lớp này PHẢI bị loại khỏi 1.0 và các scenario liên quan được bỏ.
 - **FR-012**: Ứng dụng PHẢI cho phép tạo, sửa và xóa sự kiện âm hoặc dương được lưu trên máy.
 - **FR-013**: Sự kiện âm lặp PHẢI lưu quy tắc tháng nhuận, tháng thiếu, múi giờ tính lịch và múi
   giờ giao thông báo.
@@ -222,7 +225,8 @@ VoiceOver, chữ 200%, Increase Contrast và Reduce Motion trên iPhone nhỏ nh
 - **FR-015**: Việc từ chối notification KHÔNG ĐƯỢC làm mất sự kiện; trạng thái lưu và trạng thái
   nhắc PHẢI tách biệt.
 - **FR-016**: Reminder PHẢI được tính thành các occurrence cụ thể trong một cửa sổ tương lai và
-  làm mới khi ngày, múi giờ, quyền, cài đặt hoặc phiên bản app thay đổi.
+  làm mới khi ngày, múi giờ, quyền, cài đặt hoặc phiên bản app thay đổi. DST gap/overlap PHẢI dùng
+  policy deterministic có thể giải thích, không lấy default ngầm của thư viện.
 - **FR-017**: Widget PHẢI dùng dữ liệu cục bộ, có deep link ổn định và ẩn nội dung sự kiện cá
   nhân trên màn hình khóa theo mặc định.
 - **FR-018**: Mọi chức năng cốt lõi, dữ liệu lịch và cảnh phát hành PHẢI hoạt động ở chế độ máy bay.
@@ -231,7 +235,9 @@ VoiceOver, chữ 200%, Increase Contrast và Reduce Motion trên iPhone nhỏ nh
 - **FR-020**: Hero intro chỉ ĐƯỢC tự chạy một lần cho mỗi ngày hiện tại; trạng thái nghỉ và action
   phát lại PHẢI tồn tại.
 - **FR-021**: Quốc khánh và Lập Xuân PHẢI có scene flagship, poster tĩnh và bản giảm hiệu ứng đã
-  duyệt. Bản 1.0 PHẢI có thêm bốn cảnh lễ lớn và sáu họ chuyển động cho 24 tiết khí.
+  duyệt. Bốn cảnh lễ cùng sáu họ chuyển động cho 24 tiết khí chỉ vào 1.0 nếu Gate 6A,
+  cultural/license review và ngân sách T019 đạt. Nếu không, spec PHẢI ghi rõ dùng poster đã duyệt
+  hoặc dời scene mở rộng; không sản xuất T122–T124 chỉ để giữ số lượng.
 - **FR-022**: Mỗi cảnh PHẢI giữ vùng an toàn cho nội dung và không làm đổi độ sáng, rung hoặc
   scale số ngày.
 - **FR-023**: Cờ Việt Nam và ngôi sao PHẢI được dựng, đo và duyệt thủ công; không được dùng làm
@@ -244,7 +250,8 @@ VoiceOver, chữ 200%, Increase Contrast và Reduce Motion trên iPhone nhỏ nh
   của các dịch vụ sản xuất asset.
 - **FR-027**: Ba lớp âm nền, âm giấy và cue sự kiện PHẢI có công tắc cùng trạng thái riêng; âm
   giấy và cue sự kiện mặc định tắt.
-- **FR-028**: Hiên sớm chỉ ĐƯỢC fade in sau khi nội dung hiện và khi Silent, VoiceOver cùng audio
+- **FR-028**: Bản cài mới PHẢI chọn Yên cho tới khi Gate 7 có dữ liệu. Sau khi người dùng chủ động
+  chọn Hiên sớm, âm chỉ ĐƯỢC fade in sau khi nội dung hiện và khi Silent, VoiceOver cùng audio
   khác cho phép; người dùng PHẢI tắt được trong một thao tác.
 - **FR-029**: Ứng dụng KHÔNG ĐƯỢC tuyên bố âm nền giúp điều trị hoặc tăng tập trung.
 - **FR-030**: Mọi điều khiển PHẢI có nhãn, trạng thái, focus, vùng chạm tối thiểu 44 pt và thứ tự
@@ -304,9 +311,10 @@ VoiceOver, chữ 200%, Increase Contrast và Reduce Motion trên iPhone nhỏ nh
   hiện lỗi Quốc kỳ hoặc biểu tượng nhạy cảm.
 - **SC-009**: Cảnh giữ tốc độ mục tiêu trên thiết bị thấp nhất, có fallback đẹp và không làm thời
   gian tới nội dung ngày tăng lên.
-- **SC-010**: Hiên sớm chỉ còn mặc định có điều kiện nếu không quá 25% nhóm chính tắt trong 10
-  giây đầu, đa số không báo mệt hay mất tập trung sau 10–15 phút và kết quả tác vụ không giảm có hệ
-  thống so với im lặng.
+- **SC-010**: Hiên sớm chỉ được đưa ra decision review để cân nhắc mặc định có điều kiện nếu không
+  quá 25% nhóm chính tắt trong 10 giây đầu, đa số không báo mệt hay mất tập trung sau 10–15 phút
+  và kết quả tác vụ không giảm có hệ thống so với im lặng. Đạt ngưỡng không tự động đổi default
+  Yên; cần decision record riêng.
 - **SC-011**: Mọi chức năng cốt lõi, widget snapshot và scene đã phát hành hoàn thành bài kiểm tra
   chế độ máy bay mà không mất dữ liệu hoặc hiển thị ngày sai.
 - **SC-012**: Bản TestFlight cuối không còn lỗi P0/P1, không còn lỗi golden data và toàn bộ câu trả
@@ -319,14 +327,15 @@ VoiceOver, chữ 200%, Increase Contrast và Reduce Motion trên iPhone nhỏ nh
   iPhone đạt cổng chất lượng.
 - Phạm vi lịch công bố là 1900–2100 với chính sách lịch sử đã nêu; không dùng từ “vạn niên” để
   ngụ ý vô hạn.
-- Người dùng sống ngoài Việt Nam mặc định xem “hôm nay” theo ngày địa phương, tính ngày âm bằng
-  lịch Việt UTC+7 và nhận thông báo theo giờ địa phương; họ có thể chọn nhịp đổi ngày theo Việt Nam.
+- Policy prototype tạm cho người sống ngoài Việt Nam là xem “hôm nay” theo ngày địa phương, tính
+  ngày âm bằng lịch Việt UTC+7 và nhận thông báo theo giờ địa phương; họ có thể chọn nhịp đổi ngày
+  theo Việt Nam. Đây chưa phải preference đã được T014 xác nhận.
 - App không có backend, tài khoản hoặc sync cloud trong 1.0. Export/import chủ động chỉ vào 1.0
   nếu cổng phạm vi và riêng tư được duyệt trước implementation.
 - EventKit chỉ dùng cho hành động chủ động thêm một sự kiện qua giao diện hệ thống; ứng dụng không
   đọc toàn bộ lịch iPhone.
-- Hiên sớm là mặc định có điều kiện của prototype, chưa phải mặc định phát hành. Gate âm thanh
-  quyết định giữ mặc định hay chuyển sang opt-in.
+- Hiên sớm là ứng viên prototype. Mặc định phát hành là Yên cho tới khi Gate 7 chứng minh đủ cơ sở
+  để cân nhắc bật có điều kiện; persona tổng hợp không được dùng cho quyết định này.
 - Bốn cảnh lễ ngoài Quốc khánh và sáu họ tiết khí chỉ được sản xuất sau khi hai flagship cùng cảnh
   ngày thường vượt qua gate storyboard và usability.
 - Chi phí Apple Developer và duy trì phát hành do chủ dự án hoặc nguồn tài trợ công khai chi trả;

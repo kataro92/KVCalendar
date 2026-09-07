@@ -71,7 +71,7 @@ Dùng nút/action: xong / fail
 
 Khó chịu chuyển động 1–5:
 
-## Cảnh (Gate 6)
+## Cảnh (Gate 6A)
 
 | Cảnh | Đọc đúng khi cảnh chạy | Sắc thái họ nói | RM/DFL | Lỗi cờ/biểu tượng |
 |---|---|---|---|---|
@@ -79,7 +79,7 @@ Khó chịu chuyển động 1–5:
 | Lập Xuân | | | | |
 | Ngày thường | | | | |
 
-## Âm (Gate 7, nếu chạy)
+## Âm (Gate 7A, nếu chạy)
 
 Thứ tự A0/A1/A2:
 

@@ -72,11 +72,11 @@ Task 5–6 và 10 có thể skip nếu buổi chỉ vòng 1 tĩnh; ghi “không
 
 - Page curl: theo `page-curl-study.md`. Một lần không hướng dẫn, một lần “dùng cách khác, không kéo”.
 - Cảnh: chiếu storyboard Quốc khánh và Lập Xuân; hỏi sắc thái; đo còn đọc được số ngày không.
-- Âm: chỉ nhóm 16–34, theo `audio-study.md`. Không nhồi đủ 15 phút nếu buổi đã 60 phút; ghi “cắt dở, không tính Gate 7 cho người này”.
+- Âm: chỉ nhóm 16–34, theo `audio-study.md`. Không nhồi đủ 15 phút nếu buổi đã 60 phút; ghi “cắt dở, không tính Gate 7A cho người này”.
 
 ## 6. Accessibility (suất đã đánh dấu)
 
-Chạy lại task 1, 2, 3, 4, 7 với VoiceOver hoặc chữ 200% hoặc Reduce Motion đúng suất. Gate 5 fail nếu một tác vụ cốt lõi không xong.
+Chạy lại task 1, 2, 3, 4, 7 với VoiceOver hoặc chữ 200% hoặc Reduce Motion đúng suất. Gate 5A fail nếu một tác vụ trong phạm vi prototype không xong; phần chưa thể hiện giữ `NOT RUN` cho Gate 5B.
 
 Người 55–75: đo thao tác và chữ, không hỏi “có trẻ không” để chọn palette.
 

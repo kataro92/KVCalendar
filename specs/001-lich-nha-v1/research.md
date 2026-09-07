@@ -99,15 +99,29 @@ phòng đều bị loại vì độ tin cậy, pin, accessibility hoặc provena
 
 ## Âm thanh
 
-**Decision**: Tách nền tập trung, phản hồi giấy và cue sự kiện. Hiên sớm chỉ là mặc định có điều
-kiện của prototype; âm giấy và cue sự kiện tắt. Audio session phải mix, tôn trọng Silent,
-VoiceOver, cuộc gọi và audio khác.
+**Decision**: Tách nền tập trung, phản hồi giấy và cue sự kiện. Bản cài mới chọn Yên; Hiên sớm là
+ứng viên prototype và chỉ phát sau khi người dùng chủ động chọn. Âm giấy và cue sự kiện tắt. Audio
+session phải mix, tôn trọng Silent, VoiceOver, cuộc gọi và audio khác.
 
 **Rationale**: Bằng chứng về white/pink noise không cho phép hứa tăng tập trung cho mọi người.
-Gate nghiên cứu quyết định Hiên sớm còn bật có điều kiện hay chuyển thành opt-in.
+Gate nghiên cứu quyết định sau này có đủ cơ sở đổi Hiên sớm từ opt-in thành bật có điều kiện hay không.
 
 **Alternatives considered**: Nhạc, lời nói, loop ngắn hoặc tự tăng âm lượng bị loại vì dễ gây mất
 tập trung và xung đột với hành vi hệ thống.
+
+## Desk research và persona tổng hợp
+
+**Decision**: Dùng desk research cùng proto-persona để tìm mâu thuẫn, case biên và phương án
+prototype có thể đảo ngược. Không dùng chúng làm participant, quote, tỷ lệ, usability result hoặc
+Gate 1–7.
+
+**Rationale**: Không có người dùng thật ở vòng hiện tại. Nguồn phương pháp cho thấy synthetic users
+phù hợp hơn với hypothesis generation và cần công bố population, grounding cùng ecological validity.
+Sổ chứng cứ, phương pháp và self-discussion nằm trong `research/desk-research/` và
+`research/synthetic-panel/`.
+
+**Alternatives considered**: Điền session/scorecard giả hoặc xem phản hồi LLM như consensus bị loại
+vì tạo certainty không có bằng chứng và có thể che stereotype.
 
 ## Kiểm thử và phát hành dữ liệu
 

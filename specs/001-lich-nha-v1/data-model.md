@@ -3,6 +3,15 @@
 Mô hình tách dữ kiện tính toán, nội dung có nguồn, dữ liệu cá nhân và cách trình bày. UI không tự
 suy luận ngày âm, sự kiện hoặc effect từ chuỗi hiển thị.
 
+## CivilDate và TimeContext
+
+`CivilDate` là bộ ba năm–tháng–ngày dương lịch, không kèm giờ, offset, instant hoặc timezone. Nó là
+kiểu của `selectedDate`, `CalendarDay.civilDate` và `ReminderOccurrence.targetCivilDate`.
+
+`TimeContext` giữ ba khái niệm không được trộn: `calendarRuleZone` tính lịch Việt, `displayZone`
+suy ra Hôm nay từ instant hiện tại và `deliveryZone` ghép giờ local cho reminder. Đổi display zone
+không mutate CivilDate đã chọn hay event gốc.
+
 ## CalendarDay
 
 Đại diện cho một ngày được chuẩn hóa để app, widget và reminder cùng dùng.
@@ -92,6 +101,7 @@ Validation:
 | `reminderPolicy` | Bật/tắt, trước bao lâu, giờ giao | Không đồng nghĩa permission đã cấp |
 | `calculationZone` | Quy tắc lịch | Mặc định lịch Việt UTC+7 |
 | `deliveryZone` | Giờ giao thông báo | Local device hoặc zone người dùng chọn |
+| `dstResolutionPolicy` | Gap: giờ hợp lệ kế tiếp; overlap: instant sớm hơn, hoặc override đã chọn | Provisional; luôn deterministic và có thể giải thích |
 | `widgetPrivacy` | Public title, generic marker hoặc hidden | Mặc định hidden trên lock screen |
 | `createdAt` / `updatedAt` | Audit cục bộ | Không rời thiết bị |
 
@@ -108,6 +118,7 @@ Một lần giao cụ thể được sinh từ PersonalEvent, không thay thế 
 | `eventID` | PersonalEvent nguồn | Phải tồn tại |
 | `targetCivilDate` | Ngày dương đã convert | Round-trip theo policy |
 | `deliveryDateTime` | Timestamp giao | Theo delivery zone |
+| `timeAdjustment` | Không đổi, DST gap→giờ kế tiếp, overlap→instant sớm/muộn | Bắt buộc nếu giờ local không ánh xạ một-một |
 | `sourceRuleVersion` | Version engine/policy | Bắt buộc |
 | `status` | Planned, scheduled, delivered, cancelled, failed hoặc stale | Transition hợp lệ |
 | `systemIdentifier` | ID notification nếu đã schedule | Chỉ có ở trạng thái Scheduled trở đi |

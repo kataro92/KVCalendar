@@ -40,7 +40,7 @@ Hong Kong Observatory giải thích rằng lịch âm có thể lệch một ng�
 
 ### 3.1. Lịch hiện đại
 
-Việt Nam hiện dùng UTC+7 quanh năm và không đổi giờ mùa hè: [Timeanddate — Vietnam time zone](https://www.timeanddate.com/time/zone/vietnam). Đối với ngày hiện đại, engine công bố là “Lịch Việt UTC+7”.
+Việt Nam lấy múi giờ thứ 7 làm giờ chính thức theo [Quyết định 134/2002/QĐ-TTg](https://vbpl.vn/TW/Pages/vbpq-toanvan.aspx?ItemID=21982). Đối với ngày hiện đại, engine công bố là “Lịch Việt UTC+7”. Time zone của thiết bị chỉ quyết định ngày dân sự đang hiển thị và giờ giao notification, không thay ruleset lịch.
 
 ### 3.2. Ngày lịch sử không đơn giản
 
@@ -55,7 +55,7 @@ Nguồn: [Hồ Ngọc Đức — Vietnamese lunar calendar](https://www.xemamlic
 
 ### Quyết định đề xuất cho 1.0
 
-- Công bố phạm vi tra cứu **1900–2100**.
+- Công bố phạm vi tính toán đã kiểm thử **1900–2100**, không gọi toàn bộ là “lịch chính thức”.
 - Với ngày từ 1976 trở đi: dùng lịch Việt hiện đại UTC+7.
 - Với 1900–1975: hiển thị nhãn “lịch thiên văn hồi chiếu”; khi tạo ngày kỷ niệm lịch sử, hỏi vùng/nguồn ngày gốc nếu ngày nằm trong tập có khả năng chênh.
 - Chuẩn bị một bảng ngoại lệ hoặc chế độ “lịch pháp định/lịch sử” trước khi hứa hỗ trợ chính xác ngày sinh/giỗ trước 1976 trên toàn quốc.
@@ -180,15 +180,15 @@ Ngày âm không phải ảnh chính xác tuyệt đối của pha trăng tại 
 - khi hai phương pháp mâu thuẫn, không giấu: hiển thị khác biệt hoặc bỏ khỏi giao diện chính;
 - cho người dùng tắt toàn bộ lớp này.
 
-### Phạm vi 1.0 khuyến nghị
+### Phạm vi 1.0 có điều kiện
 
 - Can Chi;
 - tiết khí;
-- ngày hoàng đạo/hắc đạo theo một ruleset có nguồn;
-- giờ hoàng đạo;
-- một mục “nên/tránh theo lịch truyền thống” cực ngắn nếu có nguồn biên tập chắc chắn.
+- ngày hoàng đạo/hắc đạo, giờ hoàng đạo và “nên/tránh” chỉ được thêm nếu T018 có ruleset, nguồn,
+  chuyên gia cùng owner chịu trách nhiệm.
 
-Hoãn trực, Nhị thập bát tú, sao tốt/xấu, hướng xuất hành và hệ thống chọn việc cho đến khi có chuyên gia nội dung chịu trách nhiệm.
+Nếu T018 không đạt, 1.0 chỉ giữ Can Chi và tiết khí; loại toàn bộ lớp tốt/xấu. Trực, Nhị thập bát
+tú, sao tốt/xấu, hướng xuất hành và hệ thống chọn việc tiếp tục hoãn.
 
 ## 8. Nội dung “mỗi ngày một mẩu”
 
@@ -224,10 +224,11 @@ Hoãn trực, Nhị thập bát tú, sao tốt/xấu, hướng xuất hành và 
 
 ## 9. Mô hình nhắc lịch âm
 
-### Hai khái niệm thời gian khác nhau
+### Ba khái niệm thời gian khác nhau
 
-- **Múi giờ tính lịch:** mặc định Lịch Việt UTC+7.
-- **Múi giờ giao thông báo:** mặc định giờ địa phương của thiết bị.
+- **Múi giờ tính lịch:** Lịch Việt UTC+7.
+- **Múi giờ hiển thị:** suy ra “hôm nay” theo nơi ở hoặc Nhịp Việt Nam; policy này còn chờ T014.
+- **Múi giờ giao thông báo:** mặc định giờ địa phương của thiết bị; lưu IANA ID, không lưu offset cố định.
 
 Ví dụ người Việt ở California có thể muốn ngày giỗ được xác định theo lịch Việt nhưng chuông reo lúc 8:00 sáng California. UI phải nói được điều này bằng câu tự nhiên.
 
@@ -242,6 +243,13 @@ Mỗi sự kiện âm lặp năm phải lưu:
 - xử lý ngày 30 ở tháng chỉ có 29 ngày.
 
 Không chỉ lưu ngày dương đã quy đổi của năm hiện tại; nếu làm vậy, sự kiện sẽ sai năm sau.
+
+### DST và giờ địa phương không ánh xạ một-một
+
+Policy prototype: giờ rơi vào DST gap được dời tới instant hợp lệ kế tiếp trong cùng ngày; giờ lặp
+do DST overlap dùng instant sớm hơn, mỗi lần chỉ schedule một occurrence. Mọi điều chỉnh được lưu
+và giải thích trong chi tiết reminder. T014/Gate 4 có thể sửa policy này trước implementation; app
+không được dựa vào hành vi mặc định ngầm của framework.
 
 ### Lập lịch cục bộ
 

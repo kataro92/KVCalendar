@@ -19,7 +19,7 @@ Chưa thực hiện phỏng vấn, quan sát tại nhà hoặc usability test. V
 
 #### Lịch Việt của Lich Viet JSC
 
-Trang App Store và lịch sử phiên bản cho thấy sản phẩm lâu năm, phủ rất rộng: lịch ngày/tháng, ngày tốt cá nhân hóa, tử vi, thần số học, dịch vụ tư vấn, video, widget và Apple Watch. Lịch sử phiên bản tháng 5–8/2026 nhiều lần nói tới “tối ưu trải nghiệm quảng cáo” và các gói dịch vụ. App Privacy tự khai có dữ liệu dùng để theo dõi người dùng và dữ liệu liên kết danh tính. Nguồn: [App Store — Lịch Việt](https://apps.apple.com/vn/app/l%E1%BB%8Bch-v%E1%BA%A1n-ni%C3%AAn-2026-l%E1%BB%8Bch-vi%E1%BB%87t/id585253443).
+Trang App Store và lịch sử phiên bản cho thấy sản phẩm lâu năm, phủ rất rộng: lịch ngày/tháng, ngày tốt cá nhân hóa, tử vi, thần số học, dịch vụ tư vấn, video, widget và Apple Watch. Tại mốc khảo sát, listing có khoảng 656 nghìn ratings và 4,6 sao. Lịch sử phiên bản tháng 5–8/2026 nhiều lần nói tới “tối ưu trải nghiệm quảng cáo” và các gói dịch vụ. App Privacy tự khai có dữ liệu dùng để theo dõi người dùng và dữ liệu liên kết danh tính. Nguồn: [App Store — Lịch Việt](https://apps.apple.com/vn/app/id585253443).
 
 Điểm mạnh:
 
@@ -42,6 +42,12 @@ Tín hiệu quan trọng:
 - thiết kế truyền thống có thể phá cách mà vẫn được chấp nhận;
 - lỗi nội dung phong thủy gây mất niềm tin mạnh hơn lỗi trang trí;
 - “tắt quảng cáo” là một lợi ích trả phí rõ ràng, xác nhận nỗi đau ban đầu của dự án.
+
+#### Lịch Vạn Niên — Phan Hanh
+
+Tại mốc khảo sát, [listing App Store](https://apps.apple.com/vn/app/id1071624317) có khoảng 665 nghìn ratings, 4,6 sao, gói VIP và mua trọn đời để bỏ quảng cáo. Trang [review công khai](https://apps.apple.com/vn/app/id1071624317?platform=iphone&see-all=reviews) có nhiều phản ánh trực tiếp về mật độ quảng cáo. Version history còn cho thấy sản phẩm đã thử ghép Pomodoro và nhạc nền vào khu vực cá nhân.
+
+Điều này xác nhận category lớn và nỗi đau quảng cáo ở mức tín hiệu định tính. Nó không cho biết người dùng hoạt động, độ tuổi, retention hoặc nhu cầu âm nền.
 
 #### Lịch Vạn Niên Việt — Lịch 2026
 
@@ -94,6 +100,12 @@ Kết luận: lời hứa phải được kiểm chứng bằng kiến trúc và
 Trang App Store nhấn mạnh thiết kế đẹp, pha trăng, ánh sáng, chế độ tối, offline, lịch truyền thống, nhắc và widget; sản phẩm có IAP. Nguồn: [App Store — Lunar Xinh](https://apps.apple.com/vn/app/lunar-xinh-lunar-calendar/id6759712122?platform=ipad).
 
 Tín hiệu: chuyển động và bầu không khí có chỗ đứng, nhưng dự án nên chọn vật liệu đời thường Việt Nam thay vì mỹ học mặt trăng chung cho nhiều nền văn hóa.
+
+#### vLunar và Lịch Âm Việt Nam Lunar
+
+[vLunar](https://apps.apple.com/vn/app/id1531851878) dùng giao diện gọn, có widget nhiều cỡ, Apple Watch và event; [Lịch Âm Việt Nam Lunar](https://apps.apple.com/vn/app/id6477778908) có widget, Lock Screen/Watch và nhắc ngày âm. Review/version history của hai app cho tín hiệu về nhu cầu “đẹp, vừa đủ”, widget, sự kiện và case tháng nhuận/ngày 30. Đây vẫn là metadata cùng mẫu review tự chọn, không cho biết tuổi hay hành vi mở app.
+
+Hệ quả: widget, reminder, privacy và giao diện hiện đại đã là mức kỳ vọng cơ bản. Lịch Nhà không nên cạnh tranh bằng checklist.
 
 ### 2.4. Quyết định nhắm người dùng trẻ
 
@@ -163,9 +175,9 @@ Nguồn tham khảo trực tiếp: [Thế Giới In Ấn — nội dung lịch b
 
 ## 6. Khoảng trống định vị thực sự
 
-Khoảng trống không phải “app lịch miễn phí đầu tiên”. Khoảng trống là:
+Khoảng trống không phải “app lịch miễn phí đầu tiên”. Tuyên bố sau cũng chỉ là **giả thuyết định vị cần kiểm chứng**, không phải claim thị trường:
 
-> **Ứng dụng đầu tiên coi tờ lịch bloc là sản phẩm chính, không phải skin của một ứng dụng lịch.**
+> **Coi tờ lịch bloc là sản phẩm chính, không phải skin của một ứng dụng lịch.**
 
 Điểm khác biệt phải hiện ra trong 10 giây đầu:
 
@@ -207,3 +219,9 @@ Người dùng sẽ xin thêm tử vi, thời tiết, xổ số, văn khấn. M�
 9. Mức độ họa tiết nào tạo cảm giác Việt mà không bị “sến”?
 10. Người dùng có tin hơn khi thấy nguồn và phương pháp hay chỉ thấy rối?
 11. Người lớn tuổi có đọc và dùng được giao diện trẻ này mà không cần đổi toàn bộ phong cách không?
+
+## 9. Trạng thái trả lời khi chưa có người dùng thật
+
+Desk research và hội đồng persona chỉ tạo câu trả lời tạm, được ghi chi tiết trong [11 — Nghiên cứu tổng hợp và persona mô phỏng](11-nghien-cuu-tong-hop-va-persona-mo-phong.md). Không câu nào trong 11 câu trên được xem là đã xác nhận hành vi.
+
+Các guardrail có thể áp dụng ngay là: bóc không phải đường duy nhất; mặt trước ít trường; tốt/xấu chỉ tham khảo hoặc loại khỏi 1.0; không gán một phong tục giỗ làm default quốc gia; UTC+7 tách khỏi ngày/giờ địa phương; nguồn mở dần; UI trẻ vẫn phải reflow và dùng semantics thật. Mức thích bóc, ngữ cảnh, ngưỡng pastel/họa tiết, default diaspora, tỷ lệ tắt âm và task success vẫn là `UNTESTED`.

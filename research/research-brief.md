@@ -1,7 +1,7 @@
 # Research brief: Lịch Nhà, vòng khám phá trước code
 
 **Ngày**: 2026-09-07  
-**Phạm vi**: Gate 1–7 trong `docs/06-ke-hoach-kiem-chung.md`  
+**Phạm vi**: Gate 1–4 và Gate 5A–7A trong `docs/06-ke-hoach-kiem-chung.md`
 **Không làm trong vòng này**: project Xcode, mã ứng dụng, asset production, gọi Rodin/ElevenLabs runtime.
 
 Vòng này trả lời xem người dùng có nhận ra, đọc được, thao tác được và tin được một lịch bloc số hay không. Điểm “đẹp” trung bình không đủ để mở Phase 2.
@@ -60,7 +60,7 @@ Buổi 45–60 phút tại nhà hoặc video. Prototype A/B/C đưa sau khi đã
 
 Ghi chú buổi dùng mẫu `research/sessions/SESSION-ID.md`. Recording nằm ngoài Git, xem T003.
 
-## 4. Ngưỡng Gate 1–7
+## 4. Ngưỡng Gate 1–4 và 5A–7A
 
 Lấy đúng ngưỡng đã chốt trong `docs/06-ke-hoach-kiem-chung.md` và `specs/001-lich-nha-v1/spec.md` (SC-001 đến SC-010). Không hạ ngưỡng trong lúc chạy buổi.
 
@@ -115,11 +115,13 @@ Khuyến nghị hiện tại: câu 2 rút gọn trên mặt trước, câu 3 ở
 - 100% hiểu event đã lưu dù notification bị từ chối;
 - không ai nghĩ app đã đọc danh bạ hoặc lịch hệ thống nếu chưa xin quyền.
 
-### Gate 5, accessibility
+### Gate 5A, accessibility research
 
-Không phát hành (và không gọi lõi là sẵn sàng code) nếu một tác vụ cốt lõi thất bại với VoiceOver, chữ 200%, Reduce Motion hoặc Increase Contrast. Tác vụ cốt lõi cho cổng này: đọc hôm nay, sang ngày kế, về hôm nay, mở tháng, lật mặt sau, tìm nguồn.
+Không gọi thiết kế là sẵn sàng code nếu prototype không có action thay gesture, reflow chữ lớn và
+đường semantic hợp lý cho các tác vụ nó thể hiện. Tác vụ chưa thể hiện được ghi `NOT RUN`; Gate 5B
+trên build vẫn bắt buộc trước phát hành.
 
-### Gate 6, hiệu ứng theo ngày
+### Gate 6A, concept hiệu ứng
 
 Đi tiếp nếu:
 
@@ -127,28 +129,30 @@ Không phát hành (và không gọi lõi là sẵn sàng code) nếu một tác
 - ít nhất 80% nhận đúng sắc thái Quốc khánh và Lập Xuân;
 - không participant hay reviewer phát hiện lỗi Quốc kỳ hoặc dùng biểu tượng thiếu trang trọng;
 - bản Reduce Motion và Dim Flashing Lights vẫn đọc được ý nghĩa, không trông như bản hỏng;
-- cảnh không làm gesture giấy tụt dưới target frame trên máy thấp nhất của ma trận thiết bị;
 - intro một lần/ngày được ưa hơn autoplay lặp và không gây khó chịu hệ thống;
 - mỗi asset thử nghiệm (nếu có) có provenance. Vòng này dùng storyboard tĩnh; không ship model.
 
-### Gate 7, âm nền tập trung
+Hiệu năng máy thấp nhất, poster và fallback runtime thuộc Gate 6B sau implementation.
 
-Giữ Hiên sớm ở trạng thái bật có điều kiện nếu:
+### Gate 7A, preference và mệt âm thanh
+
+Chỉ cân nhắc đổi Hiên sớm từ opt-in thành bật có điều kiện nếu:
 
 - không quá 25% nhóm chính (16–34) tắt trong 10 giây đầu;
 - đa số không báo mệt tai hoặc mất tập trung sau 10–15 phút;
 - kết quả tác vụ ngắn không giảm có hệ thống so với im lặng;
-- Silent, VoiceOver, audio khác, tháo tai nghe và cuộc gọi cho hành vi đúng trên protocol;
 - nút tắt được tìm và dùng trong một thao tác.
 
 Nếu không đạt: âm nền còn là opt-in. Không dùng câu “tăng tập trung” hay “điều trị” trong prototype, câu hỏi, hay ghi chú.
 
+Silent, VoiceOver, interruption, tháo tai nghe và route change thuộc Gate 7B trên build.
+
 ## 5. Cách ghi pass/fail
 
-- Đơn vị Gate 1, 2, 3, 4, 6, 7 là người tham gia đã hoàn thành phần tương ứng, không phải “cảm giác của moderator”.
-- Gate 5 là fail ngay khi một tác vụ cốt lõi không xong trên một cấu hình bắt buộc.
+- Đơn vị Gate 1, 2, 3, 4, 6A, 7A là người tham gia đã hoàn thành phần tương ứng, không phải “cảm giác của moderator”.
+- Gate 5A là fail khi một tác vụ trong phạm vi prototype không xong trên cấu hình đã cam kết; phần chưa có prototype giữ `NOT RUN`.
 - Thiếu người (dưới 20 buổi, hoặc thiếu hạn ngạch VoiceOver/diaspora) thì Gate chưa được ghi pass.
-- Kết quả ghi vào `research/scorecards/discovery-scorecard.md` rồi mới sang `research/decisions/001-research-gates.md`.
+- Kết quả A ghi vào `research/scorecards/discovery-scorecard.md` rồi mới sang `research/decisions/001-research-gates.md`. Gate 5B–7B có report riêng sau implementation.
 
 ## 6. Việc cố ý chưa quyết ở vòng này
 

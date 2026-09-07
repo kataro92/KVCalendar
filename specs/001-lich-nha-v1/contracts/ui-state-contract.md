@@ -8,8 +8,10 @@
 - `eventEditor`: tạo hoặc sửa PersonalEvent.
 - `paperDrawer`: settings, source/version, privacy và sound/effect choices.
 
-Mọi state giữ `selectedDate`; đóng overlay trở về state trước. Action Hôm nay luôn đưa selectedDate
-về current display date và state `todayFront`.
+Mọi state giữ `selectedDate: CivilDate`, chỉ gồm năm–tháng–ngày và không mang giờ, instant hay múi
+giờ. Đóng overlay trở về state trước. Action Hôm nay lấy instant hiện tại qua `displayTimeZone` để
+tạo current display `CivilDate`, rồi đặt state `todayFront`. Đổi múi giờ không được mutate một
+selectedDate lịch sử; chỉ action Hôm nay mới tính lại ngày hiện tại.
 
 ## Required actions
 
@@ -30,5 +32,5 @@ người dùng đăng nhập, kết nối mạng hoặc cấp quyền mới xem 
 
 ## Large text
 
-Ở chữ 200%, thứ tự giữ lại trên mặt trước là thứ, ngày dương, tháng/năm, ngày/tháng âm, Can Chi
-ngắn và sự kiện/tiết khí. Almanac cùng editorial chuyển sang mặt sau trước khi giảm cỡ số ngày.
+Ở chữ 200%, thứ tự giữ lại trên mặt trước là thứ, ngày dương, tháng/năm, ngày/tháng âm và sự
+kiện/tiết khí. Can Chi, almanac cùng editorial chuyển sang mặt sau trước khi giảm cỡ số ngày.

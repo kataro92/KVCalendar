@@ -1,6 +1,6 @@
 # 09 — Quy trình AI và asset
 
-Trạng thái: quy ước cho giai đoạn thiết kế và sản xuất asset; chưa tạo asset production.  
+Trạng thái: quy ước cho giai đoạn thiết kế và sản xuất asset; chưa tạo asset production.
 Ngày cập nhật: 07/09/2026.
 
 ## 1. Mục tiêu

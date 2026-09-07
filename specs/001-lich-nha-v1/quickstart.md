@@ -38,7 +38,7 @@ takes one action. No login, paywall, ad or network error appears.
 ## Scenario B: Trust and historical date
 
 1. Open a date with a sourced official occurrence.
-2. Open a traditional almanac detail and its source.
+2. Open a sourced traditional detail. If T018 enables almanac, also verify its ruleset and source.
 3. Open a fixture in 1968–1975 that differs by historical source.
 
 Expected: taxonomy and day-off status are distinct; traditional content says “tham khảo”; source is

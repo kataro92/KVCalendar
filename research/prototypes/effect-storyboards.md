@@ -93,4 +93,4 @@ D0 + poster bóng cửa sổ. Không parallax theo gyroscope.
 | | Lập Xuân | | | | | |
 | | Ngày thường | | | | | |
 
-Gate 6 cần 90% đọc đúng khi cảnh chạy và 80% đúng sắc thái Quốc khánh + Lập Xuân. Một lỗi Quốc kỳ là fail cổng, không lấy trung bình.
+Gate 6A cần 90% đọc đúng khi cảnh chạy và 80% đúng sắc thái Quốc khánh + Lập Xuân. Một lỗi Quốc kỳ là fail cổng, không lấy trung bình. Hiệu năng/fallback runtime thuộc Gate 6B.

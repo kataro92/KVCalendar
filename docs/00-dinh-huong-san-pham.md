@@ -172,4 +172,4 @@ Do định hướng không thu thập analytics, số đo sản phẩm nên đ�
 5. **Nội dung:** mặt trước ít, mặt sau sâu; tránh biến tờ lịch thành bảng điều khiển.
 6. **Riêng tư:** local-first, không tài khoản và không SDK quảng cáo/analytics.
 7. **Mỹ thuật:** “Mộc Son Dịu” — lịch bloc giấy/gỗ với pastel ít bão hòa, nét cong và minh họa nhỏ; hơi dễ thương nhưng không trẻ con.
-8. **Chuyển động và âm:** một hero effect tối đa, tự chạy một lần/ngày rồi lắng; nền “Hiên sớm” bật có điều kiện ở tiền cảnh, âm giấy/cue sự kiện tắt; mọi cảnh có Reduce Motion/static fallback.
+8. **Chuyển động và âm:** một hero effect tối đa, tự chạy một lần/ngày rồi lắng; bản cài mới chọn Yên, “Hiên sớm” là opt-in/ứng viên prototype; âm giấy/cue sự kiện tắt; mọi cảnh có Reduce Motion/static fallback.
