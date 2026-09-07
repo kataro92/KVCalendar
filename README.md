@@ -33,6 +33,7 @@ Lưu ý tài chính: app có thể miễn phí hoàn toàn với người tải,
 8. [Nguồn tham khảo](docs/07-nguon-tham-khao.md) — nguồn đã dùng, thời điểm truy cập và mức độ tin cậy.
 9. [Hệ đạo diễn theo mùa và sự kiện](docs/08-he-dao-dien-theo-ngay.md) — cảnh Quốc khánh/Lập Xuân, luật phối nhiều sự kiện, pipeline Rodin/ElevenLabs, hiệu năng, accessibility và kiểm chứng.
 10. [Quy trình AI và asset](docs/09-quy-trinh-ai-va-asset.md) — cách dùng kỹ năng AI, quy trình Rodin Image-to-3D, provenance và cổng duyệt asset.
+11. [AI-needed handoff](ai-needed/README.md) — brief, reference, generation record và review; không lưu secret hay binary chưa duyệt.
 11. [Mộc Son Dịu và âm nền tập trung](docs/10-moc-son-diu-va-am-nen.md) — định vị người trẻ, pastel trưởng thành, ba lớp âm và cách kiểm chứng white/pink noise.
 12. [Nghiên cứu tổng hợp và persona mô phỏng](docs/11-nghien-cuu-tong-hop-va-persona-mo-phong.md) — trả lời tạm 11 câu hỏi, giới hạn của nghiên cứu không người thật và trạng thái sẵn sàng.
 

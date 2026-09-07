@@ -40,3 +40,4 @@
 - Rodin chỉ tạo phôi. Mọi output phải qua sửa silhouette, topology, UV, material, scale, LOD, poster tĩnh, kiểm tra văn hóa, quyền và hiệu năng.
 - Không gọi Rodin lúc app chạy và không đưa API key vào ứng dụng.
 - Lưu manifest cho từng asset: nguồn ảnh, chủ sở hữu/quyền, công cụ và phiên bản, ngày tạo, output gốc, các bước biên tập, reviewer và phạm vi sử dụng.
+- Artifact bàn giao cho AI đặt trong `ai-needed/`; giữ input/output có version và hash, Rodin Image-to-3D từ ảnh tham chiếu là bắt buộc, và không gọi model lúc runtime.
