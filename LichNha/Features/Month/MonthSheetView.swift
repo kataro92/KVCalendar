@@ -8,34 +8,37 @@ struct MonthSheetView: View {
 
     var body: some View {
         CalendarMountView {
-            VStack(alignment: .leading, spacing: DesignTokens.spaceSM) {
-                HStack {
-                    Button("Tháng trước") { session.shiftMonth(by: -1) }
-                        .lichNhaHitTarget()
-                        .accessibilityIdentifier("previous-month")
-                    Spacer()
-                    Text(MonthGridModel.title(year: session.monthYear, month: session.monthMonth))
-                        .font(.headline)
-                        .accessibilityAddTraits(.isHeader)
-                        .accessibilityIdentifier("month-sheet")
-                    Spacer()
-                    Button("Tháng sau") { session.shiftMonth(by: 1) }
-                        .lichNhaHitTarget()
-                        .accessibilityIdentifier("next-month")
-                }
-                .buttonStyle(.bordered)
-                .tint(DesignTokens.wood)
+            ScrollView {
+                VStack(alignment: .leading, spacing: DesignTokens.spaceSM) {
+                    HStack {
+                        Button("Tháng trước") { session.shiftMonth(by: -1) }
+                            .lichNhaHitTarget()
+                            .accessibilityIdentifier("previous-month")
+                        Spacer()
+                        Text(MonthGridModel.title(year: session.monthYear, month: session.monthMonth))
+                            .font(.headline)
+                            .accessibilityAddTraits(.isHeader)
+                            .accessibilityIdentifier("month-sheet")
+                        Spacer()
+                        Button("Tháng sau") { session.shiftMonth(by: 1) }
+                            .lichNhaHitTarget()
+                            .accessibilityIdentifier("next-month")
+                    }
+                    .buttonStyle(PaperControlStyle())
 
-                if typeSize >= .accessibility2 {
-                    monthList
-                } else {
-                    monthGrid
-                }
+                    if typeSize >= .accessibility2 {
+                        monthList
+                    } else {
+                        monthGrid
+                    }
 
-                Button("Quay lại tờ ngày") { session.closeMonthWithoutChangingDate() }
-                    .lichNhaHitTarget()
-                    .accessibilityIdentifier("back-to-day")
+                    Button("Quay lại tờ ngày") { session.closeMonthWithoutChangingDate() }
+                        .lichNhaHitTarget()
+                        .buttonStyle(PaperControlStyle())
+                        .accessibilityIdentifier("back-to-day")
+                }
             }
+            .scrollBounceBehavior(.basedOnSize)
         }
     }
 
@@ -94,10 +97,10 @@ struct MonthSheetView: View {
             session.selectDate(cell.civil)
         } label: {
             VStack(spacing: 2) {
-                Text(inMonth ? "\(cell.civil.day)" : "")
+                Text("\(cell.civil.day)")
                     .font(.headline)
                     .monospacedDigit()
-                Text(inMonth ? MonthGridModel.shortLunar(cell) : "")
+                Text(MonthGridModel.shortLunar(cell))
                     .font(.caption2)
                     .foregroundStyle(DesignTokens.inkSecondary)
                 HStack(spacing: 3) {
@@ -111,7 +114,8 @@ struct MonthSheetView: View {
                 .frame(height: 6)
             }
             .frame(maxWidth: .infinity, minHeight: DesignTokens.minHitTarget)
-            .foregroundStyle(inMonth ? DesignTokens.ink : DesignTokens.inkSecondary.opacity(0.4))
+            .foregroundStyle(inMonth ? DesignTokens.ink : DesignTokens.inkSecondary.opacity(0.45))
+            .opacity(inMonth ? 1 : 0.7)
         }
         .disabled(!cell.isSelectable || !inMonth)
         .accessibilityLabel(cellLabel(cell))

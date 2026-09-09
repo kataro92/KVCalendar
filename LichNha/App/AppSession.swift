@@ -8,6 +8,9 @@ import ReminderCore
 import EffectCore
 import Observation
 import WidgetKit
+#if canImport(UIKit)
+import UIKit
+#endif
 
 enum CalendarSurface: String, Sendable {
     case todayFront
@@ -204,9 +207,24 @@ final class AppSession {
 
     func updatePreferences(_ body: (inout UserPreferences) -> Void) {
         body(&preferences)
+        if preferences.ambient != .yen {
+            preferences.lastAmbient = preferences.ambient
+        }
         preferenceStore.save(preferences)
         almanacVisible = preferences.almanacVisible
         AlmanacVisibilitySetting.isEnabled = preferences.almanacVisible
+        applyIdleTimer()
+    }
+
+    func setAmbientEnabled(_ on: Bool) {
+        updatePreferences { $0.setAmbientEnabled(on) }
+    }
+
+    func applyIdleTimer(sceneActive: Bool? = nil) {
+        #if canImport(UIKit)
+        let active = sceneActive ?? (UIApplication.shared.applicationState == .active)
+        UIApplication.shared.isIdleTimerDisabled = preferences.keepScreenAwake && active
+        #endif
     }
 
     func setAlmanacVisible(_ enabled: Bool) {

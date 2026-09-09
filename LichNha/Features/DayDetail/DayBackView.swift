@@ -43,10 +43,12 @@ struct DayBackView: View {
 
                     Button("Quay lại tờ ngày") { session.closeDayBack() }
                         .lichNhaHitTarget()
+                        .buttonStyle(PaperControlStyle())
                         .accessibilityIdentifier("back-to-day")
                     if session.canReturnToMonth {
                         Button("Quay lại tháng") { session.returnToMonth() }
                             .lichNhaHitTarget()
+                            .buttonStyle(PaperControlStyle())
                             .accessibilityIdentifier("back-to-month")
                     }
                 }

@@ -15,10 +15,6 @@ struct NationalDayScene: View {
                     dimFlashingLights: false
                 )
             }
-            VietnamFlagMesh(hoist: 26)
-                .padding(.trailing, 28)
-                .padding(.top, 8)
-                .opacity(0.96)
         }
         .onAppear {
             if director.phase == .intro {

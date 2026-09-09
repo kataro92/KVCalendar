@@ -7,13 +7,7 @@ struct PosterSceneView: View {
     var body: some View {
         switch posterID {
         case "poster-quoc-khanh":
-            HStack {
-                Spacer()
-                VietnamFlagMesh(hoist: 22)
-                    .padding(.trailing, 28)
-                    .padding(.top, 10)
-            }
-            .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .topTrailing)
+            Color.clear
         case "poster-lap-xuan":
             SpringBranchSilhouette()
                 .stroke(DesignTokens.wood.opacity(0.55), lineWidth: 2)
@@ -22,12 +16,8 @@ struct PosterSceneView: View {
                 .padding(.leading, 18)
                 .padding(.top, 8)
         case "poster-ordinary":
-            WindowWash()
-                .fill(Color.white.opacity(0.08))
-                .frame(width: 54, height: 36)
+            LeafShadowLayer(seed: 17, reduceMotion: true)
                 .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .topTrailing)
-                .padding(.trailing, 36)
-                .padding(.top, 12)
         default:
             Color.clear
         }

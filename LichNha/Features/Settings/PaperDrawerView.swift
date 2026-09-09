@@ -25,6 +25,7 @@ struct PaperDrawerView: View {
                     VersionAndCorrectionView(session: session)
                     Button("Đóng cài đặt") { session.closeSettings() }
                         .lichNhaHitTarget()
+                        .buttonStyle(PaperControlStyle())
                         .accessibilityIdentifier("close-settings")
                 }
                 .padding(.bottom, 24)

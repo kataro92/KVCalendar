@@ -39,10 +39,10 @@ struct EffectHostView: View {
 
     private func contentSafeRect(in size: CGSize) -> CGRect {
         CGRect(
-            x: size.width * 0.18,
-            y: size.height * 0.28,
-            width: size.width * 0.64,
-            height: size.height * 0.52
+            x: size.width * 0.12,
+            y: size.height * 0.22,
+            width: size.width * 0.76,
+            height: size.height * 0.48
         )
     }
 

@@ -8,8 +8,7 @@ struct TodayButton: View {
         if !isHidden {
             Button("Hôm nay", action: action)
                 .lichNhaHitTarget()
-                .buttonStyle(.borderedProminent)
-                .tint(DesignTokens.son)
+                .buttonStyle(PaperControlStyle())
                 .accessibilityIdentifier("today-button")
         }
     }

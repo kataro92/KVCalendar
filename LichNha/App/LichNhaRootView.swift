@@ -3,6 +3,7 @@ import ContentCore
 
 struct LichNhaRootView: View {
     @State private var session: AppSession
+    @Environment(\.scenePhase) private var scenePhase
 
     init(session: AppSession = AppSession()) {
         _session = State(initialValue: session)
@@ -54,7 +55,11 @@ struct LichNhaRootView: View {
             }
             session.applyLaunchSurface()
             session.publishWidgetSnapshots()
+            session.applyIdleTimer(sceneActive: true)
             Task { try? await session.reminderCoordinator.refresh(reason: .appActive) }
+        }
+        .onChange(of: scenePhase) { _, phase in
+            session.applyIdleTimer(sceneActive: phase == .active)
         }
         .onReceive(NotificationCenter.default.publisher(for: .NSSystemTimeZoneDidChange)) { _ in
             Task { try? await session.reminderCoordinator.refresh(reason: .timeZoneChange) }

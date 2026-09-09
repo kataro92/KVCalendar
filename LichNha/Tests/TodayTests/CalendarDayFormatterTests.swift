@@ -11,6 +11,10 @@ final class CalendarDayFormatterTests: XCTestCase {
         XCTAssertEqual(CalendarDayFormatter.solarDay(day), "10")
         XCTAssertEqual(CalendarDayFormatter.weekday(day), "Thứ Bảy")
         XCTAssertEqual(CalendarDayFormatter.lunar(day), "Âm lịch 1 tháng 1")
+        XCTAssertEqual(CalendarDayFormatter.lunarFront(day), "Âm lịch · 1 tháng 1")
+        XCTAssertEqual(CalendarDayFormatter.weekdayAndYear(day), "Thứ Bảy  ·  2024")
+        XCTAssertEqual(CalendarDayFormatter.solarMonthHeadline(day), "THÁNG HAI")
+        XCTAssertEqual(CalendarDayFormatter.headerMonthYear(day), "Tháng 2 · 2024")
         XCTAssertTrue(CalendarDayFormatter.canChiDay(day).contains(" "))
     }
 

@@ -306,6 +306,7 @@ struct EventListView: View {
                     .accessibilityIdentifier("add-event-button")
                 Button("Quay lại tờ ngày") { session.closeEvents() }
                     .lichNhaHitTarget()
+                    .buttonStyle(PaperControlStyle())
                     .accessibilityIdentifier("close-events")
             }
         }
