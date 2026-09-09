@@ -1,0 +1,40 @@
+Lịch Nhà (repository KVCalendar)
+Copyright 2026 Phạm Huy Đức
+
+Licensed under the Apache License, Version 2.0.
+See the LICENSE file in the project root.
+
+This NOTICE is for attribution. It does not modify the License.
+
+------------------------------------------------------------------------------
+Third-party agent tooling (not Apache-2.0; not shipped in the iOS binary)
+
+avoid-ai-writing
+  Copyright the avoid-ai-writing contributors
+  MIT License
+  https://github.com/conorbronsdon/avoid-ai-writing
+  Vendored at .agents/skills/avoid-ai-writing (commit pinned in .agents/SOURCES.md)
+
+ui-ux-pro-max
+  Copyright the ui-ux-pro-max-skill contributors
+  MIT License
+  https://github.com/nextlevelbuilder/ui-ux-pro-max-skill
+  Vendored at .agents/skills/ui-ux-pro-max (commit pinned in .agents/SOURCES.md)
+
+GitHub Spec Kit v1.0.4
+  Copyright GitHub, Inc. and Spec Kit contributors
+  MIT License
+  https://github.com/github/spec-kit
+  Vendored at .specify/ and .agents/skills/speckit-*
+
+------------------------------------------------------------------------------
+Content that this project does not relicense
+
+Vietnamese statutes, resolutions, and government notices cited in
+LichNha/Resources/ContentPacks/ remain public records of the issuing
+authorities. Apache 2.0 covers the project's JSON encoding, identifiers,
+and original editorial notes, not the legal texts themselves.
+
+The national flag and star geometry in VietnamFlagMesh.swift is original
+source code. The flag as a state symbol is not a work of authorship of
+this repository.

@@ -3,6 +3,8 @@
 Ngày: 09/09/2026
 Trạng thái: `HOLD` cho phát hành. Binary Debug Simulator đã rà; chưa có archive App Store.
 
+Mã nguồn gốc của repo (không gồm bản cài MIT trong `.agents/skills/` và `.specify/`) theo Apache License 2.0. Xem `LICENSE` và `NOTICE`. Ledger dưới đây là provenance asset trong binary, không thay giấy phép repo.
+
 Một hàng chỉ `APPROVED` khi có file, checksum, giấy phép và reviewer. Lượt này ghi đúng những gì đang nằm trong app.
 
 ## Ledger

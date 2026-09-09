@@ -5,6 +5,7 @@
 - T020 đã ký `READY WITH WAIVERS` (08/09/2026). Được tạo mã ứng dụng và project Xcode theo `specs/001-lich-nha-v1/tasks.md` từ T021. Không đánh dấu T012–T016 hay Gate 1–7 là pass. Không tạo asset production Rodin/ElevenLabs khi chưa có ảnh tham chiếu đã duyệt.
 - Sản phẩm có tên làm việc **Lịch Nhà**: lịch bloc Việt Nam trên iOS, miễn phí, không quảng cáo, không paywall, không đăng nhập và dùng được offline. Nhóm chính là người 16–34 tuổi quan tâm lịch âm và văn hóa Việt; người lớn tuổi vẫn được hỗ trợ như một yêu cầu accessibility, không phải định vị trung tâm.
 - Trước khi sửa tài liệu, đọc `README.md` và các tài liệu liên quan trong `docs/`. Với quyết định giao diện, đọc thêm `design-system/lich-nha/MASTER.md`.
+- Mã gốc và tài liệu dự án: Apache License 2.0 (`LICENSE`, `NOTICE`). Không đổi giấy phép skill trong `.agents/skills/` hay Spec Kit trong `.specify/`.
 - Không đọc hoặc dùng `.env` nếu công việc không đòi hỏi và người dùng chưa cho phép.
 
 ## Kỹ năng cục bộ bắt buộc
