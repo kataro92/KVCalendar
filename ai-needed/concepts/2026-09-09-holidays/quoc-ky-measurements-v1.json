@@ -1,0 +1,26 @@
+{
+  "canvas": [
+    862,
+    1824
+  ],
+  "material_flag_width": 431.0,
+  "material_flag_height": 287.3333333333333,
+  "ratio": 1.5,
+  "star_center": [
+    455.136,
+    444.62666666666667
+  ],
+  "star_outer_radius": 86.2,
+  "star_inner_radius": 32.92547016975906,
+  "upright_tip": [
+    455.136,
+    358.4266666666667
+  ],
+  "outer_tip_count": 5,
+  "star_distortion": false,
+  "cloth_edge_amplitude": 14.223,
+  "base_red": "#DA251D",
+  "star_yellow": "#FFFF00",
+  "color_note": "Working digital swatches selected manually; not a claim of legally mandated hex values.",
+  "review": "Geometry checked programmatically and visually by Codex; human reviewer pending."
+}

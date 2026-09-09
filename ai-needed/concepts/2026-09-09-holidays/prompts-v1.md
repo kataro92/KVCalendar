@@ -1,0 +1,17 @@
+# Prompt concept ngày lễ
+
+Ngày: 2026-09-09. Tool: image_gen tích hợp. Model/version không công bố. Reference: ../2026-09-09-ngoi-cung-lich/01-nang-ben-ban-v3.png, concept nguyên bản của dự án.
+
+## 04-tet-hoa-dao-v1
+
+```text
+Edit this original Lịch Nhà app concept into a new holiday screen. Keep the portrait aspect, centered tactile Vietnamese tear-off calendar, two brass fasteners, stacked cream paper and subtly curled corner, modern bold sans-serif date, title Lịch Nhà above and settings icon, bottom only 'Âm nền · Bật' and 'Giữ sáng' controls. No music player, tracks, timers, transport, room props or device frame. Young-adult soft refined Mộc Son Dịu visual style, matte materials, holiday atmosphere and generous clear space. All text must be crisp Vietnamese. TẾT NGUYÊN ĐÁN concept. Beautiful luminous blush pink #F8D8CF plaster background with coral pink accents, milk wood and muted red lacquer. A graceful branch of Vietnamese peach blossoms with pink five-petaled flowers, deeper rosy centers, tiny buds and a few fresh green shoots arches around the UPPER LEFT and TOP of calendar, never over text; a much smaller blossom sprig lower right. Clearly spring peach blossoms, not a whole cherry tree landscape. Two small plain red lucky envelopes tucked behind the lower corner of calendar, no gold symbols or calligraphy on them. Restrained festive Vietnamese Tết atmosphere, inviting warm daylight, youthful and slightly cute through rounded proportions. One tiny peach blossom illustration at bottom of the paper. Calendar text: 'THÁNG HAI', large '17', 'Mùng 1 tháng Giêng', 'TẾT NGUYÊN ĐÁN'. No other date claims. No flags, stars, dragons, lantern canopy, confetti, fireworks or dense stickers. Still frame suggests just the flower branch gently swaying; everything else static. Keep entire calendar readable and centered.
+```
+
+## 05-quoc-khanh-base-v1
+
+```text
+Edit this original Lịch Nhà app concept into a new holiday screen. Keep the portrait aspect, centered tactile Vietnamese tear-off calendar, two brass fasteners, stacked cream paper and subtly curled corner, modern bold sans-serif date, title Lịch Nhà above and settings icon, bottom only 'Âm nền · Bật' and 'Giữ sáng' controls. No music player, tracks, timers, transport, room props or device frame. Young-adult soft refined Mộc Son Dịu visual style, matte materials, holiday atmosphere and generous clear space. All text must be crisp Vietnamese. VIETNAM NATIONAL DAY concept, but this is ONLY THE BACKGROUND PLATE FOR MANUAL FLAG COMPOSITING. Absolutely DO NOT draw a flag, star, banner, national symbol or pole anywhere. Reserve completely empty light background in the upper-middle area from 15% to 39% image height, and 30% to 88% image width for a manually drawn flag and pole later. Place title and settings within top 11% height. Move the calendar down: its wooden header begins around 40% image height and paper ends around 80% height, width about 70% of image. Matte muted red lacquer header and warm cream paper against pale airy blue #C9E1EC with a faint warm sunlight wash, no falling petals. On calendar show 'THÁNG CHÍN', giant '02', small 'QUỐC KHÁNH', and one simple original linear rice-stalk ornament below, no stars. No lunar date for this mockup. Sole future animated feature will be the manually composited flag above the calendar. Therefore keep rest of scene still, no fireworks or confetti. Bottom controls at 92% height. Important leave upper-middle empty, render NO flag or star yourself.
+```
+
+
