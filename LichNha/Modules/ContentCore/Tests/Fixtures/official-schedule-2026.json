@@ -1,0 +1,121 @@
+{
+  "schemaVersion": "1",
+  "packVersion": "1.0.0",
+  "publishedAt": "2026-09-09",
+  "effectiveRange": {
+    "from": 2026,
+    "to": 2026
+  },
+  "minimumAppVersion": "0.1.0",
+  "approvals": [
+    "owner",
+    "pending-second-reviewer"
+  ],
+  "sources": [
+    {
+      "id": "tb-9441-bnv-2026",
+      "title": "Thông báo 9441/TB-BNV, Bộ Nội vụ, lịch nghỉ Tết Âm lịch và Quốc khánh 2026",
+      "evidenceTier": "official",
+      "publisher": "Bộ Nội vụ",
+      "accessedAt": "2026-09-09",
+      "scope": "Năm 2026; công chức, viên chức. Doanh nghiệp chọn phương án theo Điều 112 khoản 3.",
+      "licenseStatus": "publicRecord",
+      "contentHash": "b619cd05133df97a3c79bb6b3cbabfd0604b465081372a856ca8a02cb71f190b",
+      "url": "https://xaydungchinhsach.chinhphu.vn/thong-bao-lich-nghi-le-quoc-khanh-2026-119260729092042494.htm"
+    }
+  ],
+  "occurrences": [
+    {
+      "id": "tet-am-lich-2026-02-16",
+      "title": "Tết Nguyên đán",
+      "taxonomy": "yearlySchedule",
+      "calendarBasis": "solar",
+      "sourceID": "tb-9441-bnv-2026",
+      "packVersion": "1.0.0",
+      "isDayOff": true,
+      "region": "toan-quoc",
+      "legalCitation": "TB 9441/TB-BNV: 05 ngày luật từ 29 tháng Chạp Ất Tỵ đến mùng 4 tháng Giêng Bính Ngọ (16–20/2/2026). Bản ghi này là 16/2 (29 Chạp).",
+      "solarYear": 2026,
+      "solarMonth": 2,
+      "solarDay": 16,
+      "audience": "Công chức, viên chức; doanh nghiệp chọn một trong ba phương án 5 ngày Tết"
+    },
+    {
+      "id": "tet-am-lich-2026-02-18",
+      "title": "Tết Nguyên đán",
+      "taxonomy": "yearlySchedule",
+      "calendarBasis": "solar",
+      "sourceID": "tb-9441-bnv-2026",
+      "packVersion": "1.0.0",
+      "isDayOff": true,
+      "region": "toan-quoc",
+      "legalCitation": "TB 9441/TB-BNV: 18/2/2026, mùng 2 tháng Giêng. Mùng 1 nằm ở pack luật (tet-nguyen-dan).",
+      "solarYear": 2026,
+      "solarMonth": 2,
+      "solarDay": 18,
+      "audience": "Công chức, viên chức; doanh nghiệp chọn một trong ba phương án 5 ngày Tết"
+    },
+    {
+      "id": "tet-am-lich-2026-02-19",
+      "title": "Tết Nguyên đán",
+      "taxonomy": "yearlySchedule",
+      "calendarBasis": "solar",
+      "sourceID": "tb-9441-bnv-2026",
+      "packVersion": "1.0.0",
+      "isDayOff": true,
+      "region": "toan-quoc",
+      "legalCitation": "TB 9441/TB-BNV: 19/2/2026, mùng 3 tháng Giêng.",
+      "solarYear": 2026,
+      "solarMonth": 2,
+      "solarDay": 19,
+      "audience": "Công chức, viên chức; doanh nghiệp chọn một trong ba phương án 5 ngày Tết"
+    },
+    {
+      "id": "tet-am-lich-2026-02-20",
+      "title": "Tết Nguyên đán",
+      "taxonomy": "yearlySchedule",
+      "calendarBasis": "solar",
+      "sourceID": "tb-9441-bnv-2026",
+      "packVersion": "1.0.0",
+      "isDayOff": true,
+      "region": "toan-quoc",
+      "legalCitation": "TB 9441/TB-BNV: 20/2/2026, mùng 4 tháng Giêng.",
+      "solarYear": 2026,
+      "solarMonth": 2,
+      "solarDay": 20,
+      "audience": "Công chức, viên chức; doanh nghiệp chọn một trong ba phương án 5 ngày Tết"
+    },
+    {
+      "id": "quoc-khanh-2026-lien-ke",
+      "title": "Quốc khánh (ngày liền kề)",
+      "taxonomy": "yearlySchedule",
+      "calendarBasis": "solar",
+      "sourceID": "tb-9441-bnv-2026",
+      "packVersion": "1.0.0",
+      "isDayOff": true,
+      "region": "toan-quoc",
+      "legalCitation": "TB 9441/TB-BNV: 1/9/2026 là ngày liền kề trước 2/9 cho công chức, viên chức. Doanh nghiệp chọn 1/9 hoặc 3/9.",
+      "solarYear": 2026,
+      "solarMonth": 9,
+      "solarDay": 1,
+      "audience": "Công chức, viên chức. Doanh nghiệp: 1/9 hoặc 3/9"
+    },
+    {
+      "id": "quoc-khanh-2026-lam-bu",
+      "title": "Làm bù (hoán đổi Quốc khánh 2026)",
+      "taxonomy": "yearlySchedule",
+      "calendarBasis": "solar",
+      "sourceID": "tb-9441-bnv-2026",
+      "packVersion": "1.0.0",
+      "isDayOff": false,
+      "region": "toan-quoc",
+      "legalCitation": "TB 9441/TB-BNV: hoán đổi thứ Hai 31/8 sang thứ Bảy 22/8/2026. Không phải ngày nghỉ lễ Điều 112.",
+      "solarYear": 2026,
+      "solarMonth": 8,
+      "solarDay": 22,
+      "audience": "Công chức, viên chức"
+    }
+  ],
+  "almanac": null,
+  "recordsChecksum": "304e6f55c1ead7648c1366d7ed9cac3949feaf1d8a1eb693fc5e06397187da69"
+}

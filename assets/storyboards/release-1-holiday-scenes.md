@@ -167,3 +167,10 @@ Mỗi scene phải có đủ các mục sau trước khi được gọi là “c
 Hiện chưa có concept sheet, asset, audio, license manifest, reviewer hoặc kết quả test máy/người thật cho bốn scene. Tài liệu này **không hoàn tất T122** và không mở T123.
 
 Ngày truy cập các nguồn ngoài dự án: 07/09/2026. URL nguồn chỉ hỗ trợ dữ kiện nêu cạnh chúng; không cấp quyền sử dụng hình ảnh, âm thanh hoặc hoa văn trên các trang đó.
+
+## Quyết định T122 (09/09/2026)
+
+Gate 6A vẫn `UNTESTED` (chưa có buổi người, chưa có máy trong inventory T019). T122 chọn **defer**: bốn cảnh lễ giữ storyboard `DRAFT · HOLD`, không sản xuất motion 1.0.
+
+T123 ghi poster fallback trong `LichNha/Resources/EffectPacks/holiday-scenes.json`. Cue `posterOnly`, không intro sống. Không đánh dấu Gate 6A PASS.
+

@@ -1,7 +1,10 @@
 # Trạng thái Gate 1–4 và Gate 5A–7B
 
-Ngày cập nhật: **07/09/2026**
+Ngày cập nhật: **08/09/2026**
 Kết luận: **NOT RUN — không có participant hoặc prototype chạy được**
+
+T020 được ký `READY WITH WAIVERS` cùng ngày. Bảng dưới không đổi sang `PASS`. Waiver chỉ mở T021,
+không thay mẫu người thật.
 
 Desk research và persona tổng hợp không được tính vào mẫu. Bảng này ghi trạng thái trung thực, không phải kết quả pass/fail của T016.
 
@@ -22,13 +25,13 @@ Desk research và persona tổng hợp không được tính vào mẫu. Bảng 
 
 - Mọi gesture có action thay thế.
 - Quốc kỳ dựng tay; scene có fallback tĩnh và cài đặt an toàn.
-- Tốt/xấu là tham khảo hoặc bị loại nếu không có ruleset owner.
+- Tốt/xấu: T018 giữ ba phương pháp tách, nhãn tham khảo, có thể tắt; chưa có Gate 3.
 - Release giữ **Yên** nếu Gate 7A–7B chưa chạy; Hiên sớm chỉ là ứng viên prototype.
 - UTC+7 là Calendar Core; UI day và reminder timezone được tách riêng.
 
 ## Không được làm
 
-- không đổi `UNTESTED` thành `PASS` dựa trên persona;
+- không đổi `UNTESTED` thành `PASS` dựa trên persona hoặc waiver T020;
 - không điền tỷ lệ, thời gian hay quote giả;
-- không đánh dấu T012–T016 hoặc T020;
-- không dùng bảng này làm giấy phép bắt đầu code.
+- không đánh dấu T012–T016 hoàn tất;
+- không dùng bảng này làm giấy phép phát hành.

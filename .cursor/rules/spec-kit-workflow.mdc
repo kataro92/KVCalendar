@@ -6,7 +6,8 @@ alwaysApply: true
 - Feature tổng hiện tại nằm trong `specs/001-lich-nha-v1/`.
 - Đọc constitution, spec, plan và tasks trước khi đổi phạm vi hoặc triển khai.
 - Giữ thứ tự constitution → specify/clarify → plan → tasks/analyze → implement → converge.
-- Không chạy implementation hoặc task T021+ trước khi T020 xác nhận Definition of Ready.
+- T020 đã ký `READY WITH WAIVERS`. T021+ được chạy. Không đánh dấu T012–T016 hoặc Gate 1–7 là pass.
 - Chỉ đánh dấu task hoàn tất khi file đích và bằng chứng kiểm tra đã tồn tại.
+- Sau mỗi lát UI, chụp Simulator vào `LichNha/Tests/Screenshots/current/` bằng `tools/capture-current-ui.sh`. Ghi đè ảnh cũ. Không lưu lịch sử phát triển. Không viết báo cáo riêng cho bước này.
 - Feature mới dùng một thư mục `specs/NNN-ten-ngan`; không nhét thay đổi không liên quan vào 001.
-- Repo chưa dùng Git; không tạo branch, commit hoặc issue nếu người dùng chưa yêu cầu.
+- Repository dùng Git, branch `main`. Không tạo commit, force-push hoặc issue nếu người dùng chưa yêu cầu.

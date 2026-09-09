@@ -510,16 +510,45 @@ Ngày truy cập chung: **07/09/2026**. Với nguồn động như App Store, Ap
 - một thư viện GitHub không rõ test/license/maintenance;
 - văn bản pháp luật cũ đã hết hiệu lực.
 
-## 14. Việc cần bổ sung trước implementation
+## 14. Việc cần bổ sung trước phát hành (không còn chặn T021)
 
-- nguồn lịch pháp định Việt Nam cho các mốc lịch sử 1900–1975;
-- chuyên gia/biên tập viên chịu trách nhiệm cho ruleset hoàng đạo;
+- nguồn lịch pháp định Việt Nam cho các mốc 1900–1975;
+- chuyên gia độc lập cho ruleset hoàng đạo (T018 đã có owner, chưa có chuyên gia);
 - văn bản gốc mới nhất cho từng data pack ngày nghỉ;
 - danh mục ca dao/tục ngữ cùng xác nhận tình trạng quyền;
-- test oracle độc lập thứ hai cho lịch 1976–2100;
+- test oracle độc lập thứ hai và golden corpus (T044–T047);
 - thống kê thiết bị/iOS của nhóm người dùng mục tiêu;
 - kiểm tra khả dụng tên “Lịch Nhà” và tra cứu nhãn hiệu;
-- license review trước khi nhúng bất kỳ mã nguồn thuật toán, font hoặc artwork nào.
-- cultural review checklist cho Quốc kỳ, ngày trang nghiêm và hình ảnh tín ngưỡng;
-- xác nhận plan/quyền thương mại cụ thể của mọi output Rodin/ElevenLabs dự kiến ship.
-- blind test Hiên sớm/Mưa xa/im lặng với nhóm 16–34 tuổi và đo hành vi tắt âm thực tế.
+- license review trước khi nhúng mã thuật toán, font hoặc artwork;
+- cultural review Quốc kỳ, ngày trang nghiêm, hình ảnh tín ngưỡng;
+- xác nhận quyền thương mại Rodin/ElevenLabs trước khi ship;
+- blind test Hiên sớm/Mưa xa/im lặng (T010/Gate 7A vẫn mở).
+
+## 15. Nguồn lịch truyền thống (T018, 08/09/2026)
+
+### Hiệp Kỷ Biện Phương Thư
+
+- URL: http://chinaknowledge.de/Literature/Daoists/xiejibianfangshu.html
+- Loại: P/S (mục lục Tứ Khố, không phải nguyên văn đủ 36 quyển)
+- Dùng cho: khung năm hoàn thành 1739, giám tu, vai trò chuẩn hóa lịch chú.
+- Lưu ý: bản dịch Nxb. Mũi Cà Mau 2002 còn bản quyền; không copy lời dịch.
+
+### Nguyễn Công Việt — Nhị thập bát tú trong lịch pháp Hán Nôm
+
+- URL: https://nghiencuulichsu.com/2016/08/10/so-luoc-ve-nhi-thap-bat-tu-trong-tai-lieu-lich-phap-han-nom/
+- Loại: P (Tạp chí Hán Nôm số 1 (80), 2007)
+- Dùng cho: phân biệt lịch pháp định triều Nguyễn và thông thư dân gian; Khâm thiên giám.
+- Lưu ý: không biến Lịch Nhà thành lịch Khâm thiên giám.
+
+### Tiểu Lục Nhâm / lục diệu
+
+- URL: https://www.master-insight.com/article/32868
+- Loại: S
+- Dùng cho: gắn Gia Cát Lượng/Lý Thuần Phong là truyền thuyết; tên học thuật gần nhất là 小六壬.
+- Lưu ý: không dùng làm oracle bảng giờ; chỉ để viết nhãn UI.
+
+### Nguồn không dùng cho almanac
+
+- bài SEO “xem ngày tốt” không nêu ấn bản;
+- bảng Sát Chủ/Thọ Tử trên blog phong thủy khi các bảng lệch nhau;
+- tuyên bố của app lịch thương mại.

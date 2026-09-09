@@ -1,0 +1,24 @@
+{
+  "packs": [
+    {
+      "id": "official-vn",
+      "file": "official-vn.json",
+      "kind": "official"
+    },
+    {
+      "id": "official-schedule-2026",
+      "file": "official-schedule-2026.json",
+      "kind": "yearly-schedule"
+    },
+    {
+      "id": "culture-vn",
+      "file": "culture-vn.json",
+      "kind": "culture"
+    },
+    {
+      "id": "almanac-seed",
+      "file": "almanac-seed.json",
+      "kind": "almanac"
+    }
+  ]
+}

@@ -1,7 +1,7 @@
 # Chính sách quyền riêng tư — bản nháp
 
-**Trạng thái:** `DRAFT · NOT RUN`
-**Ngày soạn:** 07/09/2026
+**Trạng thái:** `SOURCE REVIEWED · chưa công bố`
+**Ngày soạn:** 07/09/2026; rà source 09/09/2026
 **Tên sản phẩm:** Lịch Nhà là tên làm việc, chưa phải tên phát hành.
 
 Đây là nội dung dự kiến cho phiên bản 1.0, chưa phải chính sách đã công bố. Chỉ phát hành văn bản sau khi đối chiếu với source code, dependency, privacy manifest, binary và cấu hình App Store Connect của đúng build gửi duyệt.
@@ -61,12 +61,12 @@ Báo lỗi lịch cần kèm ngày dương, kết quả đang thấy, phiên b�
 
 | Mục | Trạng thái |
 |---|---|
-| Source/dependency không có ads, paywall, account, analytics hoặc runtime AI | `NOT RUN` |
-| Network và data-flow audit khớp nội dung trên | `NOT RUN` |
-| Privacy manifest khớp API/dependency thật | `NOT RUN` |
+| Source/dependency không có ads, paywall, account, analytics hoặc runtime AI | `CODE REVIEWED` 09/09/2026 |
+| Network và data-flow audit khớp nội dung trên | `CODE REVIEWED` (không URLSession); traffic máy thật `NOT RUN` |
+| Privacy manifest khớp API/dependency thật | `PARTIAL` UserDefaults CA92.1; archive Privacy Report `NOT RUN` |
 | Xóa dữ liệu và gỡ app đã thử trên thiết bị | `NOT RUN` |
-| Widget lock-screen không lộ title/note mặc định | `NOT RUN` |
-| Luồng notification và Calendar permission đúng thời điểm | `NOT RUN` |
+| Widget lock-screen không lộ title/note mặc định | `UNIT TEST`; Home/Lock thật `NOT RUN` |
+| Luồng notification và Calendar permission đúng thời điểm | `UI TEST` Simulator; máy thật `NOT RUN` |
 | Support/retention owner đã điền và ký | `BLOCKED` |
 | Privacy Policy URL mở được trong app và App Store Connect | `NOT RUN` |
 

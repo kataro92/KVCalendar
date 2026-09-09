@@ -1,0 +1,86 @@
+{
+  "schemaVersion": 1,
+  "appMarketingVersion": "0.1.0",
+  "appBuild": 1,
+  "recordedAt": "2026-09-09",
+  "engine": "lich-nha-cal-1",
+  "changelog": [
+    "Official 1.1.0: Điều 112 (kể cả Tết Nguyên đán mùng 1) và Ngày Văn hóa Việt Nam 24/11. Lịch năm 2026 tách pack.",
+    "Culture 1.1.0: Đoan Ngọ, Trung thu, Vu Lan; không suy ra ngày nghỉ.",
+    "Almanac 1.0.0-draft: ba phương pháp tách. Approvals JSON vẫn placeholder.",
+    "Effect seed: Quốc khánh mesh tay, Lập Xuân nhánh 2D, ngày thường; bốn cảnh lễ khác poster-only deferred.",
+    "Không có file âm nền trong bundle. Không có mesh Rodin runtime."
+  ],
+  "contentPacks": [
+    {
+      "id": "official-vn",
+      "path": "LichNha/Resources/ContentPacks/official-vn.json",
+      "packVersion": "1.1.0",
+      "bytes": 4632,
+      "sha256": "c9cdfbf7828aeb06a8b75681064e8bcd5ba2c836b5317fb15ec23064f7b79121",
+      "recordsChecksum": "2ba05b0a40559e04fa255328e9fa87ce1baa48978345afeb241deb6a16316e6a",
+      "releaseReady": false,
+      "notes": "Tết Nguyên đán mùng 1 đã có. Approvals là placeholder. NQ 28 dẫn cổng Chính phủ, chưa VBPL gốc."
+    },
+    {
+      "id": "official-schedule-2026",
+      "path": "LichNha/Resources/ContentPacks/official-schedule-2026.json",
+      "packVersion": "1.0.0",
+      "bytes": 4479,
+      "sha256": "0bc0f822c07be08b935c1d6a468e1d5ddc325b1ecd53e1b56788303208fd0e5b",
+      "recordsChecksum": "304e6f55c1ead7648c1366d7ed9cac3949feaf1d8a1eb693fc5e06397187da69",
+      "releaseReady": false,
+      "notes": "TB 9441/TB-BNV: Tết CCVC 16 và 18–20/2; Quốc khánh liền kề 1/9; làm bù 22/8 không phải ngày lễ."
+    },
+    {
+      "id": "culture-vn",
+      "path": "LichNha/Resources/ContentPacks/culture-vn.json",
+      "packVersion": "1.1.0",
+      "bytes": 2845,
+      "sha256": "3dbfc99ff411764bc7c7e063e7be930edeffa7cbb0ba34fc4cf22c2cb17af604",
+      "recordsChecksum": "03766530d0f7e246e8a7f66e023488aae5d5f858b8669ca1d8ffd160170b67e5",
+      "releaseReady": false,
+      "notes": "Ba lễ dân gian; Trung thu và Vu Lan chưa có URL nguồn."
+    },
+    {
+      "id": "almanac-seed",
+      "path": "LichNha/Resources/ContentPacks/almanac-seed.json",
+      "packVersion": "1.0.0-draft",
+      "bytes": 1925,
+      "sha256": "13c96649fdd56785b76aafde9f4c9cb66ab42403bfc0a9cc44796fbcf220edae",
+      "recordsChecksum": "db11445f2a05d243f0fce03b89638480e7d1545df3c6bacce316821f03c7e991",
+      "releaseReady": false,
+      "notes": "Draft; Gate 3 UNTESTED."
+    }
+  ],
+  "effectPacks": [
+    {
+      "id": "effect-seed",
+      "path": "LichNha/Resources/EffectPacks/effect-seed.json",
+      "packVersion": "lich-nha-fx-1",
+      "bytes": 1994,
+      "sha256": "719a25c49e8d8a06d0e54677f25bd2dd897674524171b7512fbceb8da452a342",
+      "recordsChecksum": "8308047b5c7165e2516f06d326d4cab56261f0c82808b1279525306b4ba729f3",
+      "releaseReady": false
+    },
+    {
+      "id": "holiday-scenes",
+      "path": "LichNha/Resources/EffectPacks/holiday-scenes.json",
+      "packVersion": "lich-nha-fx-holidays-deferred",
+      "bytes": 2646,
+      "sha256": "32ccbb405ee5ae315ed2ce3105dd2e4eeeb0b2e12b9195677a166ce86a3a273e",
+      "recordsChecksum": "f5a7c831c539b2bbbb026ed3b66f1b6323b84280409f356c5324f8ec11fe3133",
+      "releaseReady": false,
+      "notes": "posterOnly; T122 defer."
+    },
+    {
+      "id": "solar-term-families",
+      "path": "LichNha/Resources/EffectPacks/solar-term-families.json",
+      "packVersion": "lich-nha-fx-terms-static",
+      "bytes": 14794,
+      "sha256": "346bc3c6f790d862645ab00621218fc75fe3d4043e4e174ff05e1e470d33a2f5",
+      "recordsChecksum": "67960d8472c3402b886033921158e0684d50bb21e3b1e275126d0d4c3788f88e",
+      "releaseReady": false
+    }
+  ]
+}

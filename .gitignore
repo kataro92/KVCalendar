@@ -15,7 +15,10 @@ xcuserdata/
 
 # Swift local build products
 .build/
+.swiftpm/
 .swiftpm/xcode/package.xcworkspace/xcuserdata/
+Packages/
+*.xcodeproj/project.xcworkspace/xcshareddata/swiftpm/
 
 # Raw user-research material must not enter Git
 research/raw/

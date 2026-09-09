@@ -1,15 +1,15 @@
 # Kế hoạch TestFlight 1.0 — bản nháp
 
-**Trạng thái:** `DRAFT · NOT RUN`
-**Ngày soạn:** 07/09/2026
-**Build:** chưa có
+**Trạng thái:** `DRAFT · chưa upload`
+**Ngày soạn:** 07/09/2026; cập nhật 09/09/2026
+**Build ứng viên nội bộ:** `0.1.0` (1), Debug Simulator — không dùng làm TestFlight
 **Liên kết backlog:** T156 là tài liệu này; T157 vẫn cần 20–30 người thật.
 
 TestFlight dùng để tìm lỗi build và kiểm tra các luồng đã định nghĩa. Nó không thay nghiên cứu khám phá T012–T016, không biến persona mô phỏng thành người dùng và không mở khóa T020.
 
 ## 1. Điều kiện trước khi mời tester
 
-- T020 đã ký bằng bằng chứng thật.
+- T020 đã ký `READY WITH WAIVERS` (08/09/2026). Gate 1–7 vẫn UNTESTED.
 - Calendar golden/property tests và reconciliation report đã pass.
 - Các checkpoint của user story có trong build đã pass trên simulator và thiết bị thật tương ứng.
 - Privacy policy, App Store Privacy worksheet và dependency audit đã được cập nhật theo build.
@@ -17,7 +17,7 @@ TestFlight dùng để tìm lỗi build và kiểm tra các luồng đã định
 - First launch ở trạng thái âm **Yên**; Hiên sớm, âm giấy và cue sự kiện là opt-in.
 - P0/P1 nội bộ đã về 0 trước external beta.
 
-Mọi dòng trên hiện là `NOT RUN`.
+Simulator US1–US6 và quét source 09/09 đã chạy. Pack luật 1.1.0 đã có Tết mùng 1. Máy thật, signing App Group, T147 reviewer 2, T144 và archive vẫn chặn vòng 0.
 
 ## 2. Owner và kênh
 

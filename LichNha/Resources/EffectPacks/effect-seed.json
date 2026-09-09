@@ -1,0 +1,71 @@
+{
+  "schemaVersion": "1",
+  "packVersion": "lich-nha-fx-1",
+  "cues": [
+    {
+      "id": "cue-quoc-khanh",
+      "tone": "festive-solemn",
+      "priority": 100,
+      "allowsAutoPlay": true,
+      "nationalFlag": true,
+      "solemn": false,
+      "noConfetti": true,
+      "noAudio": false,
+      "posterOnly": false,
+      "fallbackPosterID": "poster-quoc-khanh",
+      "triggerOccurrenceID": "quoc-khanh"
+    },
+    {
+      "id": "cue-lap-xuan",
+      "tone": "quiet-spring",
+      "priority": 80,
+      "allowsAutoPlay": true,
+      "nationalFlag": false,
+      "solemn": false,
+      "noConfetti": false,
+      "noAudio": false,
+      "posterOnly": false,
+      "fallbackPosterID": "poster-lap-xuan",
+      "triggerSolarTermIndex": 21
+    },
+    {
+      "id": "cue-ordinary",
+      "tone": "quiet-house",
+      "priority": 1,
+      "allowsAutoPlay": true,
+      "nationalFlag": false,
+      "solemn": false,
+      "noConfetti": false,
+      "noAudio": false,
+      "posterOnly": false,
+      "fallbackPosterID": "poster-ordinary"
+    }
+  ],
+  "assets": [
+    {
+      "id": "poster-quoc-khanh",
+      "kind": "poster",
+      "sourceReference": "hand-built-flag-geometry",
+      "generationMethod": "manual",
+      "checksum": "f2fad2818e6f8152a19567c1a07a8584beddde8e9ac50ed38b5e1d869b155531",
+      "licenseStatus": "original"
+    },
+    {
+      "id": "poster-lap-xuan",
+      "kind": "poster",
+      "sourceReference": "procedural-branch-pending-rodin",
+      "generationMethod": "manual",
+      "checksum": "dbc69756286671745b4d6e2f8dddec4769e97eaf8b277bef87a2a794f0efe08e",
+      "licenseStatus": "original"
+    },
+    {
+      "id": "poster-ordinary",
+      "kind": "poster",
+      "sourceReference": "procedural-window-wash",
+      "generationMethod": "manual",
+      "checksum": "f08f9879b827a563c6ed70ddbfb08905e614457b5992ac110a1713893e432e47",
+      "licenseStatus": "original"
+    }
+  ],
+  "recordsChecksum": "8308047b5c7165e2516f06d326d4cab56261f0c82808b1279525306b4ba729f3"
+}

@@ -1,0 +1,58 @@
+{
+  "schemaVersion": "1",
+  "packVersion": "1.0.0-draft",
+  "publishedAt": "2026-09-09",
+  "effectiveRange": {
+    "from": 1900,
+    "to": 2100
+  },
+  "minimumAppVersion": "0.1.0",
+  "approvals": [
+    "owner",
+    "pending-second-reviewer"
+  ],
+  "sources": [
+    {
+      "id": "xieji-bianfang-shu",
+      "title": "Hiệp Kỷ Biện Phương Thư (協紀辨方書), 1739",
+      "evidenceTier": "traditional",
+      "publisher": "Ulrich Theobald / chinaknowledge.de mô tả văn bản Tứ Khố",
+      "accessedAt": "2026-09-09",
+      "scope": "Khung thần sát và giờ Hoàng/Hắc; không phải lịch pháp định Việt Nam",
+      "licenseStatus": "publicDomain",
+      "contentHash": "2e0ec907307d11d92bb94cc6c9e95ef6dc8fed6c0a2ae099a4590515b417fba0",
+      "url": "https://chinaknowledge.de/Literature/Daoists/xiejibianfangshu.html"
+    },
+    {
+      "id": "xiao-liuren-folk",
+      "title": "Tiểu Lục Nhâm / Lục Diệu dân gian",
+      "evidenceTier": "traditional",
+      "publisher": "khảo về truyền thuyết Gia Cát; UI không ghi Khổng Minh là tác giả",
+      "accessedAt": "2026-09-09",
+      "scope": "Nhãn dân gian, không phải lịch pháp định",
+      "licenseStatus": "original",
+      "contentHash": "1b48c749bd6d7b897a67d7cde76387429e8e726d357e785658a60cc39e0543db",
+      "url": "https://www.master-insight.com/article/32868"
+    }
+  ],
+  "occurrences": [],
+  "almanac": {
+    "rulesetId": "lich-nha-truyen-thong-1",
+    "version": "1.0.0-draft",
+    "methods": [
+      {
+        "id": "hoang-hac-dao",
+        "displayName": "Giờ Hoàng Đạo / Hắc Đạo"
+      },
+      {
+        "id": "luc-dieu",
+        "displayName": "Lục Diệu (dân gian)"
+      },
+      {
+        "id": "sat-chu-tho-tu",
+        "displayName": "Sát Chủ / Thọ Tử"
+      }
+    ]
+  },
+  "recordsChecksum": "db11445f2a05d243f0fce03b89638480e7d1545df3c6bacce316821f03c7e991"
+}

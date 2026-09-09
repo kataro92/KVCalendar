@@ -54,17 +54,15 @@ khóa T020.*
 
 | Gate | Kết quả trước Phase 0 | Bằng chứng |
 |---|---|---|
-| Lời hứa miễn phí, không quảng cáo, không login | `DOCUMENTED` | Không có backend, ad SDK, paywall hoặc account trong scope; binary chưa tồn tại |
-| Dữ liệu lịch có nguồn và test | `BLOCKED T017` | Calendar Core, Source Record và golden corpus là foundation; owner/corpus chưa có |
-| Bản sắc riêng cùng accessibility | `UNTESTED` | Semantic SwiftUI tách khỏi Canvas/effect; Gate 1–7 chưa chạy |
-| Riêng tư và offline | `DESIGNED` | App Group local, pack cục bộ, widget snapshot đã lọc; runtime chưa kiểm |
-| Kiểm chứng trước mở rộng | `BLOCKED T012–T020` | Phase nghiên cứu có task/go-no-go nhưng chưa hoàn tất |
-| Rodin chỉ Image-to-3D | `DOCUMENTED` | Pipeline yêu cầu concept sheet đã duyệt; chưa có asset để audit |
-| Quốc kỳ dựng và duyệt thủ công | `DOCUMENTED` | Cờ không thuộc pipeline tạo sinh; asset/golden frame chưa tồn tại |
+| Lời hứa miễn phí, không quảng cáo, không login | `CODE REVIEWED` | Source/SPM không có StoreKit, ads hay account; archive TestFlight chưa ký |
+| Dữ liệu lịch có nguồn và test | `PARTIAL` | Golden corpus và property tests chạy được; T017 hai oracle độc lập vẫn thiếu |
+| Bản sắc riêng cùng accessibility | `UNTESTED` | Semantic SwiftUI tách khỏi Canvas/effect; Gate 1–7 chưa chạy với người |
+| Riêng tư và offline | `CODE REVIEWED` | App Group local, pack cục bộ, widget snapshot đã lọc; airplane trên máy thật chưa chạy |
+| Kiểm chứng trước mở rộng | `WAIVED FOR CODE` | T020 `READY WITH WAIVERS`; Gate 1–7 vẫn `UNTESTED` |
+| Rodin chỉ Image-to-3D | `DOCUMENTED` | T119 `NOT RUN`; runtime không gọi Rodin |
+| Quốc kỳ dựng và duyệt thủ công | `CODE REVIEWED` | `VietnamFlagMesh` vẽ tay; Gate 6A/6B `UNTESTED` |
 
-**Post-design re-check**: `NOT READY`. Không phát hiện ý định kiến trúc trái hiến pháp, nhưng các
-bằng chứng có quyền mở khóa implementation chưa tồn tại: nghiên cứu người dùng, corpus lịch,
-ruleset truyền thống, quyền asset, support matrix và nguồn phí phát hành.
+**Post-design re-check**: `READY WITH WAIVERS` (T020, 08/09/2026). Kiến trúc không trái hiến pháp. Nghiên cứu người dùng, corpus lịch và máy thật vẫn thiếu; chúng không được ghi PASS.
 
 ## Project Structure
 

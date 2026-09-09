@@ -1,0 +1,19 @@
+allow:
+  - CalendarCore
+  - AlmanacCore
+  - ContentCore
+  - PersonalCore
+  - ReminderCore
+  - EffectCore
+  - ProvenanceCore
+  - SwiftUI
+  - WidgetKit
+  - UserNotifications
+  - SwiftData
+  - AVFoundation
+  - CoreHaptics
+deny:
+  - analytics
+  - ads
+  - crash-reporters-with-pii
+  - runtime-ai-sdks

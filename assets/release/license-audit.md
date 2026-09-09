@@ -1,57 +1,26 @@
-# License và provenance audit
+# License và provenance audit (T148)
 
-Trạng thái: **TEMPLATE — chưa có production asset hoặc binary**
-Liên kết task: T148 không được đánh dấu trước khi asset thật tồn tại.
+Ngày: 09/09/2026
+Trạng thái: `HOLD` cho phát hành. Binary Debug Simulator đã rà; chưa có archive App Store.
 
-## Quy tắc duyệt
+Một hàng chỉ `APPROVED` khi có file, checksum, giấy phép và reviewer. Lượt này ghi đúng những gì đang nằm trong app.
 
-Một asset chỉ được chuyển thành `APPROVED` khi có file thật, checksum, nguồn, giấy phép/điều khoản tại ngày nhận, quyền sửa/phân phối trong app, người duyệt và phạm vi dùng. Link trang chủ hoặc câu “AI-generated” không phải bằng chứng quyền.
+## Ledger
 
-## Candidate ledger
-
-| Asset/nhóm | Nguồn dự kiến | Quyền hiện biết | File/checksum | Review | Trạng thái |
+| Asset/nhóm | File | SHA-256 file | Quyền | Review | Trạng thái |
 |---|---|---|---|---|---|
-| Be Vietnam Pro | upstream repository trong `docs/07` | OFL-1.1 theo upstream | Chưa có | cần lưu license text và subset audit | `CANDIDATE` |
-| EB Garamond | Google Fonts/upstream | OFL theo metadata | Chưa có | cần kiểm tiếng Việt ở weight dùng thật | `CANDIDATE` |
-| Bitter | Google Fonts/upstream | OFL theo metadata | Chưa có | phương án thay thế nếu EB Garamond không đạt | `CANDIDATE` |
-| Khánh/cành 3D | ảnh concept dự án → Rodin Image-to-3D | phụ thuộc quyền ảnh và plan/Terms lúc tạo | Chưa có | generation + cleanup + LOD + poster | `NOT CREATED` |
-| Quốc kỳ/ngôi sao | dựng tay theo nguồn pháp lý | không qua Rodin; artwork mới của dự án | Chưa có | geometry, màu master, crop/motion | `NOT CREATED` |
-| Particle pháo/hoa/mưa | atlas/shape dự án tự tạo | chưa có asset | Chưa có | không sao chép pack thương mại | `NOT CREATED` |
-| Hiên sớm/Mưa xa | nguồn tham số + Foley/ElevenLabs nếu dùng | phụ thuộc plan, Beta status và Terms lúc tạo | Chưa có | loop, transient, loudness, commercial rights | `NOT CREATED` |
-| Texture giấy/gỗ/sơn | tự chụp/tự vẽ hoặc thư viện có license | chưa chọn | Chưa có | không dùng scan lịch thương mại | `NOT CREATED` |
-| Ca dao/tục ngữ | corpus cần public-domain/editorial review | chưa chọn | Chưa có | tác giả, bản ghi, dị bản, quyền | `HOLD` |
+| Font UI | San Francisco / New York hệ thống (`.system`, `.serif`) | n/a | Apple system | không nhúng Be Vietnam Pro / EB Garamond / Bitter | `IN BINARY` |
+| Content packs | `LichNha/Resources/ContentPacks/*.json` | xem `LichNha/Resources/release-manifest.json` | văn bản công / original theo từng source | validator pass; T147 blocker | `HOLD` |
+| Effect packs | `LichNha/Resources/EffectPacks/*.json` | xem release-manifest | original / manual | validator pass; Rodin chưa chạy | `HOLD` |
+| Quốc kỳ / sao | `VietnamFlagMesh.swift` | n/a (code) | dựng tay theo hình học 2:3 | test hình học pass; Gate 6 UNTESTED | `CODE` |
+| Poster Quốc khánh / Lập Xuân / ngày thường | Canvas/code, checksum trong pack | checksum pack | original | không phải ảnh bitmap | `CODE` |
+| Cành Lập Xuân 3D | chưa có mesh | n/a | Rodin Image-to-3D chờ ảnh tham chiếu | T119 `NOT RUN` | `NOT CREATED` |
+| Âm Hiên sớm / Mưa xa / Quạt trưa | không có file trong bundle | n/a | — | player trả silent | `NOT CREATED` |
+| Texture giấy | `PaperSurface` Canvas grain | n/a | procedural | Reduce Transparency tắt grain | `CODE` |
+| Be Vietnam Pro / EB Garamond / Bitter | không có trong binary | n/a | OFL nếu sau này nhúng | chưa subset | `NOT IN BINARY` |
 
-## Manifest tối thiểu cho từng asset
-
-```text
-asset_id:
-file:
-sha256:
-source_url_or_path:
-source_owner:
-license_or_terms:
-terms_snapshot_date:
-commercial_use:
-modification_allowed:
-attribution_required:
-reference_image_rights:
-tool_and_version:
-generation_mode: image-to-3d | manual | procedural | recorded | other
-editing_steps:
-reviewers:
-approved_scope:
-expiry_or_recheck_date:
-```
-
-`generation_mode: text-to-3d` là không hợp lệ. Với Rodin, manifest phải trỏ tới ảnh tham chiếu có quyền và output gốc. Với ElevenLabs, lưu plan, trạng thái Beta, prompt/output và Terms snapshot; file không được bán/phân phối như thư viện âm độc lập.
+`generationMethod: textTo3D` không decode. Manifest Rodin `assets/source/rodin/lap-xuan/generation-manifest.md` ghi `NOT RUN`.
 
 ## Cổng trước release
 
-- không hàng nào ở release pack mang `UNKNOWN`, `CANDIDATE`, `HOLD` hoặc `NOT CREATED`;
-- license text và attribution đi kèm khi bắt buộc;
-- quyền của reference image được kiểm riêng với quyền của output;
-- mọi biến thể/LOD/poster trỏ về cùng provenance root;
-- privacy label khớp công cụ thật được dùng trong app; công cụ chỉ dùng offline production không bị mô tả như SDK runtime;
-- hai reviewer kiểm độc lập các asset văn hóa nhạy cảm.
-
-Cho tới khi ledger có file và checksum thật, tài liệu này chỉ là khung audit.
+Hàng `HOLD`, `NOT CREATED` hoặc T147 thiếu reviewer 2 chặn App Review. T148 là audit, không phải giấy phép đã đủ.

@@ -1,7 +1,7 @@
 # App Store metadata — bản nháp
 
-**Trạng thái:** `DRAFT · NOT RUN`
-**Ngày soạn:** 07/09/2026
+**Trạng thái:** `DRAFT · chưa dán Connect`
+**Ngày soạn:** 07/09/2026; đối chiếu binary 09/09/2026
 **Ngôn ngữ gốc:** Tiếng Việt
 **Tên phát hành:** chưa chốt.
 
@@ -82,6 +82,6 @@ Không cần demo account.
 - Tên, subtitle, category, support URL và marketing URL có owner.
 - Mọi tính năng trong description tồn tại trong binary gửi review.
 - Privacy copy khớp `app-store-privacy.md` và policy đã công bố.
-- Airplane, reminder, widget, accessibility và performance report đã chạy.
+- Airplane, reminder, widget, accessibility và performance report đã chạy trên máy thật (Simulator 09/09 chưa đủ).
 - Screenshot lấy từ build thật, đúng device class và không chứa dữ liệu riêng.
 - Metadata được rà theo [App Review Guidelines](https://developer.apple.com/app-store/review/guidelines/) hiện hành.

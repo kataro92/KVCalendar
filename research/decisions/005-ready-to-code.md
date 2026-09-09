@@ -1,38 +1,37 @@
-# Definition of Ready — trạng thái hiện tại
+# Definition of Ready
 
-Ngày đánh giá: **07/09/2026**
-Quyết định: **NOT READY**
+Ngày đánh giá: **08/09/2026**
+Quyết định: **READY WITH WAIVERS**
 
-Tài liệu sản phẩm có thể tiếp tục hoàn thiện, nhưng T021 trở đi chưa được bắt đầu.
+Chủ dự án yêu cầu bắt đầu T021 trong khi một số cổng nghiên cứu người thật chưa chạy. Implementation được mở. Gate 1–7 vẫn `UNTESTED`. Không cổng nào được ghi PASS từ persona hay từ waiver này.
 
 ## Checklist
 
-| Điều kiện | Trạng thái | Bằng chứng/thiếu hụt |
+| Điều kiện | Trạng thái | Bằng chứng |
 |---|---|---|
-| Spec, plan, contracts và backlog tồn tại | Đạt ở mức tài liệu | `specs/001-lich-nha-v1/` |
-| Desk research và sổ chứng cứ | Đạt | `research/desk-research/evidence-register.md` |
-| Persona mô phỏng có ranh giới | Đạt | `research/synthetic-panel/` |
-| 20 buổi nghiên cứu người thật | Chưa đạt | T012 chưa chạy |
-| Vòng 55+/VoiceOver | Chưa đạt | T013 chưa chạy |
-| Diaspora validation | Chưa đạt | T014 chưa chạy |
-| Gate 1–4 và 5A–7A | Chưa đạt | mọi research gate `UNTESTED` |
-| Audit 6–10 lịch bloc vật lý | Chưa đạt | T004 còn mở |
-| Audio stimuli/protocol hoàn chỉnh | Chưa đạt | T010 còn mở |
-| Golden corpus, oracle, license và owner | Chưa đạt | T017 còn mở |
-| Ruleset tốt/xấu hoặc quyết định loại khỏi 1.0 | Chưa đạt | T018 còn mở |
-| Support matrix, phí và maintenance owner | Chưa đạt | T019 còn mở |
+| Spec, plan, contracts, backlog | Đạt | `specs/001-lich-nha-v1/` |
+| Desk research | Đạt | `research/desk-research/evidence-register.md` |
+| Persona mô phỏng có ranh giới | Đạt; không thay người thật | `research/synthetic-panel/` |
+| 20 buổi người thật (T012) | **WAIVED** | Chủ dự án, 08/09/2026 |
+| Gate 5A 55+/VoiceOver (T013) | **WAIVED cho T020**; Gate 5B vẫn chặn release | T013 còn mở |
+| Diaspora (T014) | **WAIVED cho T020** | Policy tạm trong spec Assumptions |
+| Gate 1–4, 5A–7A (T016) | **WAIVED cho T020**; bảng gate vẫn `UNTESTED` | `research/decisions/001-research-gates.md` |
+| Audit 6–10 lịch bloc (T004) | **WAIVED cho T020** | Biểu mẫu còn trống |
+| File âm Hiên sớm / Mưa xa (T010) | **WAIVED cho T020**; mặc định phát hành Yên | Protocol đã có, WAV chưa có |
+| Nguồn lịch + owner (T017) | Đạt ở mức owner | `research/decisions/002-calendar-sources.md` |
+| Ruleset tốt/xấu (T018) | Đạt: giữ 1.0, ba phương pháp tách | `research/decisions/003-almanac-ruleset.md` |
+| Support matrix + phí (T019) | Đạt ở mức owner/phí; máy thật chưa kê | `research/decisions/004-release-ownership.md` |
 
-## Rủi ro đã giảm nhưng chưa đóng
+## Việc waiver không cho phép
 
-- bỏ claim “đầu tiên/duy nhất”;
-- phân tách UTC+7, ngày hiển thị và giờ notification;
-- mặc định phát hành an toàn cho audio là Yên khi chưa có Gate 7;
-- không áp một thông lệ giỗ thành rule toàn quốc;
-- ghi chính xác giới hạn của Lập Xuân, pháo hoa và lịch lịch sử.
+- Đánh dấu T004, T010, T012–T016 là hoàn tất.
+- Đổi `UNTESTED` thành `PASS`.
+- Bỏ Gate 5B–7B, golden corpus, cultural review Quốc kỳ, hay TestFlight.
+- Ship almanac pack khi chưa khóa ấn bản thần sát và test vector.
 
-## Điều kiện ký
+## Ký
 
-Chỉ đổi trạng thái sau khi T016–T019 có owner và bằng chứng, spec được cập nhật theo quyết định thật, các blocker trên được đóng và chủ dự án ký T020. Không ký có điều kiện bằng dữ liệu persona tổng hợp.
-
-Gate 5B–7B không phải điều kiện trước T020 vì cần implementation, thiết bị và asset thật; chúng vẫn
-là cổng bắt buộc trước release và không được xem là pass từ vòng `A`.
+Người ký: chủ dự án
+Ngày: 08/09/2026
+Phạm vi mở: T021 trở đi trên branch hiện tại
+Phạm vi không mở: tuyên bố đã kiểm chứng người dùng

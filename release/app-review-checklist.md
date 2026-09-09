@@ -1,8 +1,8 @@
 # App Review checklist — bản nháp
 
-**Trạng thái:** `DRAFT · NOT RUN`
-**Ngày đối chiếu nguồn:** 07/09/2026
-**Build/version:** chưa có
+**Trạng thái:** `DRAFT · chưa submit`
+**Ngày đối chiếu nguồn:** 07/09/2026; rà Simulator 09/09/2026
+**Build/version:** `0.1.0` (1) Debug — không phải archive gửi duyệt
 **Reviewer:** chưa chỉ định.
 
 Checklist này dựa trên [App Review Guidelines](https://developer.apple.com/app-store/review/guidelines/) của Apple, bản trang ghi cập nhật 08/06/2026, cùng tài liệu App Store Connect hiện hành. Quy định có thể đổi; reviewer phải đọc lại nguồn vào ngày submit. Một ô chỉ được đánh dấu sau khi có bằng chứng từ đúng archive gửi duyệt.
@@ -92,15 +92,18 @@ Lịch Nhà hoạt động không cần tài khoản; không có quảng cáo ho
 Core calendar và content packs nằm trong app, không cần mạng.
 
 Test local reminder:
-1. [TO FILL]
+1. Tờ hôm nay → Ngày gia đình → Thêm ngày gia đình.
+2. Đặt tên fixture, chọn Âm lịch, bật nhắc, Lưu.
+3. Từ chối quyền nếu hệ thống hỏi; sự kiện vẫn còn trong danh sách.
 
 Test widget/deep link:
-1. [TO FILL]
+1. Thêm widget Lịch Nhà từ bộ widget.
+2. Mở lichnha://day/2026-10-15 (ghi trong App Review notes khi submit archive).
 
 Test effect và audio:
-1. Mở [TO FILL].
-2. Audio ở trạng thái Yên khi cài mới.
-3. Bật Hiên sớm tại [TO FILL].
+1. Mở ngày 2/9/2026 (Quốc khánh) từ tháng hoặc --date nếu debug.
+2. Âm ở Yên khi cài mới (Cài đặt).
+3. Bật Hiên sớm tại Cài đặt → Âm; Tắt hết âm một thao tác.
 
 Không cần demo account, backend hoặc phần cứng ngoài iPhone hỗ trợ.
 ```

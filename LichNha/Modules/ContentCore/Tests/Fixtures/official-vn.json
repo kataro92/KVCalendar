@@ -1,0 +1,135 @@
+{
+  "schemaVersion": "1",
+  "packVersion": "1.1.0",
+  "publishedAt": "2026-09-09",
+  "effectiveRange": {
+    "from": 2026,
+    "to": 2100
+  },
+  "minimumAppVersion": "0.1.0",
+  "approvals": [
+    "owner",
+    "pending-second-reviewer"
+  ],
+  "sources": [
+    {
+      "id": "bllld-2019-d112",
+      "title": "Bộ luật Lao động 45/2019/QH14, Điều 112",
+      "evidenceTier": "official",
+      "publisher": "Quốc hội",
+      "accessedAt": "2026-09-09",
+      "scope": "Toàn quốc, ngày nghỉ lễ Tết theo luật đang hiệu lực",
+      "licenseStatus": "publicRecord",
+      "contentHash": "e9c8f44ee4de9900dcf3f4117bb8b511170bea4a2cc0f207197bc72d96324df9",
+      "url": "https://vbpl.moj.gov.vn/TW/Pages/vbpq-thuoctinh.aspx?ItemID=139264"
+    },
+    {
+      "id": "nq-28-2026-qh16",
+      "title": "Nghị quyết 28/2026/QH16, Điều 2 (Ngày Văn hóa Việt Nam)",
+      "evidenceTier": "official",
+      "publisher": "Quốc hội",
+      "accessedAt": "2026-09-09",
+      "scope": "24/11 dương lịch, hiệu lực từ 01/7/2026",
+      "licenseStatus": "publicRecord",
+      "contentHash": "4db106731038587d13e72d9800c6a8d1c9ede2daa6e4737292afce9fe660d0cc",
+      "url": "https://xaydungchinhsach.chinhphu.vn/lich-nghi-le-quoc-khanh-2-9-va-ngay-van-hoa-viet-nam-24-11-2026-119260504103718299.htm"
+    }
+  ],
+  "occurrences": [
+    {
+      "id": "tet-duong-lich",
+      "title": "Tết Dương lịch",
+      "taxonomy": "statutoryHoliday",
+      "calendarBasis": "solar",
+      "sourceID": "bllld-2019-d112",
+      "packVersion": "1.1.0",
+      "isDayOff": true,
+      "region": "toan-quoc",
+      "legalCitation": "Bộ luật Lao động 45/2019/QH14 Điều 112 điểm a",
+      "solarMonth": 1,
+      "solarDay": 1
+    },
+    {
+      "id": "tet-nguyen-dan",
+      "title": "Tết Nguyên đán",
+      "taxonomy": "statutoryHoliday",
+      "calendarBasis": "lunar",
+      "sourceID": "bllld-2019-d112",
+      "packVersion": "1.1.0",
+      "isDayOff": true,
+      "region": "toan-quoc",
+      "legalCitation": "Bộ luật Lao động 45/2019/QH14 Điều 112 điểm b: Tết Âm lịch 05 ngày; mùng 1 là ngày danh xưng. Ngày cụ thể còn lại do Thủ tướng quyết định hằng năm.",
+      "lunarMonth": 1,
+      "lunarDay": 1,
+      "lunarIsLeap": false
+    },
+    {
+      "id": "giai-phong-30-4",
+      "title": "Ngày Chiến thắng",
+      "taxonomy": "statutoryHoliday",
+      "calendarBasis": "solar",
+      "sourceID": "bllld-2019-d112",
+      "packVersion": "1.1.0",
+      "isDayOff": true,
+      "region": "toan-quoc",
+      "legalCitation": "Bộ luật Lao động 45/2019/QH14 Điều 112 điểm c (30/4 dương lịch)",
+      "solarMonth": 4,
+      "solarDay": 30
+    },
+    {
+      "id": "quoc-te-lao-dong",
+      "title": "Ngày Quốc tế Lao động",
+      "taxonomy": "statutoryHoliday",
+      "calendarBasis": "solar",
+      "sourceID": "bllld-2019-d112",
+      "packVersion": "1.1.0",
+      "isDayOff": true,
+      "region": "toan-quoc",
+      "legalCitation": "Bộ luật Lao động 45/2019/QH14 Điều 112 điểm d",
+      "solarMonth": 5,
+      "solarDay": 1
+    },
+    {
+      "id": "quoc-khanh",
+      "title": "Quốc khánh",
+      "taxonomy": "statutoryHoliday",
+      "calendarBasis": "solar",
+      "sourceID": "bllld-2019-d112",
+      "packVersion": "1.1.0",
+      "isDayOff": true,
+      "region": "toan-quoc",
+      "legalCitation": "Bộ luật Lao động 45/2019/QH14 Điều 112 điểm đ; Hiến pháp 2013 Điều 13. Ngày 2/9; ngày liền kề 1/9 hoặc 3/9 do thông báo từng năm.",
+      "solarMonth": 9,
+      "solarDay": 2
+    },
+    {
+      "id": "gio-to-hung-vuong",
+      "title": "Giỗ Tổ Hùng Vương",
+      "taxonomy": "statutoryHoliday",
+      "calendarBasis": "lunar",
+      "sourceID": "bllld-2019-d112",
+      "packVersion": "1.1.0",
+      "isDayOff": true,
+      "region": "toan-quoc",
+      "legalCitation": "Bộ luật Lao động 45/2019/QH14 Điều 112 điểm e (10/3 âm lịch)",
+      "lunarMonth": 3,
+      "lunarDay": 10,
+      "lunarIsLeap": false
+    },
+    {
+      "id": "ngay-van-hoa-viet-nam",
+      "title": "Ngày Văn hóa Việt Nam",
+      "taxonomy": "statutoryHoliday",
+      "calendarBasis": "solar",
+      "sourceID": "nq-28-2026-qh16",
+      "packVersion": "1.1.0",
+      "isDayOff": true,
+      "region": "toan-quoc",
+      "legalCitation": "Nghị quyết 28/2026/QH16 Điều 2; hiệu lực 01/7/2026",
+      "solarMonth": 11,
+      "solarDay": 24
+    }
+  ],
+  "almanac": null,
+  "recordsChecksum": "2ba05b0a40559e04fa255328e9fa87ce1baa48978345afeb241deb6a16316e6a"
+}

@@ -1,0 +1,90 @@
+{
+  "schemaVersion": "1",
+  "packVersion": "1.1.0",
+  "publishedAt": "2026-09-09",
+  "effectiveRange": {
+    "from": 1900,
+    "to": 2100
+  },
+  "minimumAppVersion": "0.1.0",
+  "approvals": [
+    "owner",
+    "pending-second-reviewer"
+  ],
+  "sources": [
+    {
+      "id": "folk-tet-doan-ngo",
+      "title": "Tết Đoan Ngọ trong lịch dân gian Việt Nam",
+      "evidenceTier": "cultural",
+      "publisher": "tham khảo văn hóa, không phải lịch pháp định",
+      "accessedAt": "2026-09-09",
+      "scope": "Lễ âm dân gian, không suy ra ngày nghỉ",
+      "licenseStatus": "original",
+      "contentHash": "54508f9faacdcd3fc493234398cc3040cb040d77c3957a2435028c5faf8e23d3",
+      "url": "https://www.xemamlich.uhm.vn/calrules.html"
+    },
+    {
+      "id": "folk-trung-thu",
+      "title": "Rằm tháng Tám / Tết Trung thu, lễ dân gian",
+      "evidenceTier": "cultural",
+      "publisher": "biên tập Lịch Nhà theo lịch dân gian Việt Nam, không phải văn bản ngày nghỉ",
+      "accessedAt": "2026-09-09",
+      "scope": "Lễ âm 15/8, không suy ra ngày nghỉ",
+      "licenseStatus": "original",
+      "contentHash": "46b04b98e7bd7e8ee7520a2a3f40005f354cf38f0cffa392309c502e9ce6a27e"
+    },
+    {
+      "id": "folk-vu-lan",
+      "title": "Rằm tháng Bảy / Vu Lan, lễ dân gian",
+      "evidenceTier": "cultural",
+      "publisher": "biên tập Lịch Nhà theo lịch dân gian Việt Nam, không phải văn bản ngày nghỉ",
+      "accessedAt": "2026-09-09",
+      "scope": "Lễ âm 15/7, không suy ra ngày nghỉ",
+      "licenseStatus": "original",
+      "contentHash": "12bf0f1bfd267b76f15cbcca233f186dd6596212f65bcf00d45cabbc33962be3"
+    }
+  ],
+  "occurrences": [
+    {
+      "id": "doan-ngo",
+      "title": "Tết Đoan Ngọ",
+      "taxonomy": "traditionalLunar",
+      "calendarBasis": "lunar",
+      "sourceID": "folk-tet-doan-ngo",
+      "packVersion": "1.1.0",
+      "isDayOff": false,
+      "region": "toan-quoc",
+      "lunarMonth": 5,
+      "lunarDay": 5,
+      "lunarIsLeap": false
+    },
+    {
+      "id": "trung-thu",
+      "title": "Tết Trung thu",
+      "taxonomy": "traditionalLunar",
+      "calendarBasis": "lunar",
+      "sourceID": "folk-trung-thu",
+      "packVersion": "1.1.0",
+      "isDayOff": false,
+      "region": "toan-quoc",
+      "lunarMonth": 8,
+      "lunarDay": 15,
+      "lunarIsLeap": false
+    },
+    {
+      "id": "vu-lan",
+      "title": "Vu Lan",
+      "taxonomy": "traditionalLunar",
+      "calendarBasis": "lunar",
+      "sourceID": "folk-vu-lan",
+      "packVersion": "1.1.0",
+      "isDayOff": false,
+      "region": "toan-quoc",
+      "lunarMonth": 7,
+      "lunarDay": 15,
+      "lunarIsLeap": false
+    }
+  ],
+  "almanac": null,
+  "recordsChecksum": "03766530d0f7e246e8a7f66e023488aae5d5f858b8669ca1d8ffd160170b67e5"
+}

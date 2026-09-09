@@ -2,7 +2,7 @@
 
 ## Phạm vi hiện tại
 
-- Dự án đang ở giai đoạn nghiên cứu và đặc tả. Không tạo mã ứng dụng, project Xcode, prototype chạy được hoặc asset production nếu người dùng chưa yêu cầu rõ.
+- T020 đã ký `READY WITH WAIVERS` (08/09/2026). Được tạo mã ứng dụng và project Xcode theo `specs/001-lich-nha-v1/tasks.md` từ T021. Không đánh dấu T012–T016 hay Gate 1–7 là pass. Không tạo asset production Rodin/ElevenLabs khi chưa có ảnh tham chiếu đã duyệt.
 - Sản phẩm có tên làm việc **Lịch Nhà**: lịch bloc Việt Nam trên iOS, miễn phí, không quảng cáo, không paywall, không đăng nhập và dùng được offline. Nhóm chính là người 16–34 tuổi quan tâm lịch âm và văn hóa Việt; người lớn tuổi vẫn được hỗ trợ như một yêu cầu accessibility, không phải định vị trung tâm.
 - Trước khi sửa tài liệu, đọc `README.md` và các tài liệu liên quan trong `docs/`. Với quyết định giao diện, đọc thêm `design-system/lich-nha/MASTER.md`.
 - Không đọc hoặc dùng `.env` nếu công việc không đòi hỏi và người dùng chưa cho phép.
@@ -20,7 +20,8 @@
 - Spec Kit được ghim ở phiên bản 1.0.4, tích hợp Codex dưới `.agents/skills/speckit-*` và hạ tầng nằm trong `.specify/`.
 - Với feature mới hoặc thay đổi phạm vi đáng kể, đi theo thứ tự `$speckit-constitution` → `$speckit-specify` → `$speckit-clarify` khi cần → `$speckit-plan` → `$speckit-tasks` → `$speckit-analyze` → `$speckit-implement` → `$speckit-converge`.
 - Feature tổng hiện tại là `specs/001-lich-nha-v1/`. Đọc `spec.md`, `plan.md`, `tasks.md` và artifact liên quan trước khi triển khai.
-- Không chạy `$speckit-implement` hoặc task từ T021 trở đi cho đến khi T020 xác nhận Definition of Ready. Trạng thái checkbox phải phản ánh bằng chứng trong file đích, không đánh dấu theo ước lượng.
+- T020 đã xác nhận Definition of Ready có waiver. Checkbox task phải phản ánh bằng chứng trong file đích, không đánh dấu theo ước lượng. T012–T016 chỉ đánh dấu khi buổi/file thật tồn tại.
+- Sau mỗi lát UI nhìn thấy được: chụp Simulator vào `LichNha/Tests/Screenshots/current/` (ghi đè, không giữ lịch sử, không viết báo cáo kèm ảnh). Dùng `tools/capture-current-ui.sh`.
 - Repository dùng Git, branch `main` theo dõi `origin` trên GitHub. Không force-push, đổi lịch sử hoặc chuyển task thành issue nếu người dùng chưa yêu cầu.
 
 ## Luật thiết kế

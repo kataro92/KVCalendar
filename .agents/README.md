@@ -16,6 +16,7 @@ Kỹ năng mới cài được nhận từ lượt làm việc kế tiếp. Ngu�
 - [Rodin: ảnh tham chiếu sang 3D](workflows/rodin-image-to-3d.md)
 - [Rà UI/UX](workflows/ui-ux-review.md)
 - [Rà văn phong](workflows/writing-review.md)
+- [Ảnh hiện trạng UI](workflows/capture-current-ui.md)
 
 ## Feature Spec Kit hiện hành
 

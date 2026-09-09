@@ -16,9 +16,27 @@ Tài liệu này là runbook kiểm tra end-to-end sau khi các task triển kha
 Từ repository root, sau khi Xcode project được tạo:
 
 ```bash
-xcodebuild test -project LichNha/LichNha.xcodeproj -scheme LichNhaCoreTests -destination 'platform=iOS Simulator,name=iPhone 15'
-xcodebuild test -project LichNha/LichNha.xcodeproj -scheme LichNha -destination 'platform=iOS Simulator,name=iPhone 15'
-xcodebuild test -project LichNha/LichNha.xcodeproj -scheme LichNhaUITests -destination 'platform=iOS Simulator,name=iPhone 15'
+swift test --package-path LichNha/Modules
+python3 tools/pack-validator/test_samples.py
+python3 tools/pack-validator/validate.py LichNha/Resources/ContentPacks/official-vn.json
+python3 tools/pack-validator/validate.py LichNha/Resources/ContentPacks/official-schedule-2026.json
+python3 tools/pack-validator/validate.py LichNha/Resources/ContentPacks/culture-vn.json
+python3 tools/pack-validator/validate.py LichNha/Resources/ContentPacks/almanac-seed.json
+python3 tools/asset-manifest-validator/validate.py \
+  LichNha/Resources/EffectPacks/effect-seed.json \
+  LichNha/Resources/EffectPacks/holiday-scenes.json \
+  LichNha/Resources/EffectPacks/solar-term-families.json \
+  assets/source/rodin/lap-xuan/generation-manifest.md
+xcodebuild test -project LichNha/LichNha.xcodeproj -scheme CalendarCore \
+  -destination 'platform=iOS Simulator,id=3CB6389C-9B36-46CE-92DE-44BE9142F622' \
+  CODE_SIGN_IDENTITY=- CODE_SIGNING_REQUIRED=NO CODE_SIGNING_ALLOWED=NO
+xcodebuild test -project LichNha/LichNha.xcodeproj -scheme LichNha \
+  -destination 'platform=iOS Simulator,id=3CB6389C-9B36-46CE-92DE-44BE9142F622' \
+  -only-testing:LichNhaUITests \
+  CODE_SIGN_IDENTITY=- CODE_SIGNING_REQUIRED=NO CODE_SIGNING_ALLOWED=NO
+xcodebuild test -project LichNha/LichNha.xcodeproj -scheme LichNhaPerformance \
+  -destination 'platform=iOS Simulator,id=3CB6389C-9B36-46CE-92DE-44BE9142F622' \
+  CODE_SIGN_IDENTITY=- CODE_SIGNING_REQUIRED=NO CODE_SIGNING_ALLOWED=NO
 ```
 
 Expected: calendar golden/property/regression tests pass; pack validator rejects invalid source,

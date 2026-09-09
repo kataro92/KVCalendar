@@ -1,37 +1,27 @@
-# Constitution compliance — pre-implementation
+# Constitution compliance (T160)
 
-Ngày rà: **07/09/2026**
-Trạng thái: **DESIGN REVIEW ONLY — T160 chưa chạy**
+Ngày rà: **09/09/2026**
+Build: Debug Simulator `0.1.0` (1), scheme LichNha
+Trạng thái: **SOURCE REVIEWED** — chưa ký archive App Store
 
-Bảng này kiểm traceability của tài liệu. Nó không chứng minh source code, dependency, binary hay hành vi runtime tuân thủ hiến pháp.
+Bảng này đối chiếu source, PrivacyInfo và binary Debug. Nó không thay Gate 1–7 hay `$speckit-converge`.
 
-| Nguyên tắc | Bằng chứng thiết kế hiện có | Kiểm tra sau implementation | Trạng thái hiện tại |
-|---|---|---|---|
-| I. Miễn phí, không ads/paywall/account/sale data | README, spec FR-001/002, privacy draft | dependency/binary/network/App Store audit | `DESIGNED` |
-| II. Đúng lịch, có phạm vi/nguồn/version | docs04, calendar contract, decision 002 | golden corpus, oracle report, pack validator | `BLOCKED T017` |
-| III. Mộc Son Dịu + accessibility | Design Master, accessibility contract, Gate 5 plan | VoiceOver, chữ 200%, Reduce Motion, target 44 pt trên device | `UNTESTED` |
-| IV. Offline và local-only | plan, data model, privacy draft | airplane mode, storage, network and privacy-label audit | `UNTESTED` |
-| V. Kiểm chứng trước mở rộng | Gate 1–7, backlog checkpoint | session, prototype, device và TestFlight evidence | `BLOCKED T012–T020` |
-| Rodin image-reference only | AGENTS, docs09, tasks T118–T120 | manifest và output audit | `DESIGNED` |
-| Quốc kỳ dựng tay | docs08 và nguồn pháp lý | asset geometry/frame review | `NOT CREATED` |
-| Asset provenance | manifest contract và license template | checksum/license audit trên asset thật | `NOT RUN` |
+| Nguyên tắc | Bằng chứng 09/09/2026 | Kết luận |
+|---|---|---|
+| I. Miễn phí, không ads/paywall/account/sale data | Không `StoreKit`, Firebase, ads SDK. `Package.swift` chỉ module local. `NSPrivacyTracking` false, collected types rỗng | `CODE REVIEWED` |
+| II. Đúng lịch, có phạm vi/nguồn/version | Golden tests pass; official 1.1.0 có Tết mùng 1; T147 reviewer 2 và T017 oracle người chưa có | `PARTIAL` |
+| III. Mộc Son Dịu + accessibility | UI tests nút 44 pt; T144/Gate 5B UNTESTED | `UNTESTED` người |
+| IV. Offline và local-only | Không `URLSession`/`WKWebView` trong app code. Pack trong bundle. T151 airplane máy thật `NOT RUN` | `CODE REVIEWED` |
+| V. Kiểm chứng trước mở rộng | T020 waivers; Gate 1–7 UNTESTED | `WAIVED FOR CODE` |
+| Rodin image-reference only | Không API key, không runtime call; T119 `NOT RUN` | `CODE REVIEWED` |
+| Quốc kỳ dựng tay | `VietnamFlagMesh`; test 2:3 và sao năm cánh | `CODE REVIEWED` |
+| Asset provenance | T148 HOLD; không file âm / mesh 3D | `HOLD` |
 
-## Audit tài liệu hiện tại
+## Quét 09/09/2026
 
-- Spec/plan/tasks giữ T020 làm checkpoint trước T021.
-- Persona tổng hợp không pass gate, không tạo tỷ lệ/quote.
-- Bản cài mới chọn Yên cho tới khi Gate 7 có dữ liệu.
-- Good/bad ở `HOLD`; không có ruleset mồ côi được phép ship.
-- UTC+7 được tách khỏi ngày dân sự và notification timezone.
-- Claim “đầu tiên/duy nhất” đã bị loại.
+- `URLSession`, `WKWebView`, `StoreKit`, Firebase, Sentry, OpenAI: không có trong `LichNha/` trừ DTD `http://www.apple.com` của plist.
+- Quyền: UserNotifications khi bật nhắc; EventKit chỉ từ “Thêm vào Lịch iPhone”. Không Contacts/Location/Photos/Camera/Mic.
+- `PrivacyInfo.xcprivacy`: UserDefaults `CA92.1`. SwiftData có thể cần reason API bổ sung trên archive; chưa đối chiếu Privacy Report của Xcode Organizer.
+- App Group `group.vn.lichnha.app`. Performance test unsigned log `client is not entitled`.
 
-## Việc phải chạy lại ở T160
-
-1. quét dependency, SDK, endpoint và network behavior của binary;
-2. đối chiếu privacy manifest/App Store answers với dữ liệu thật;
-3. chạy offline, calendar, reminder, widget và accessibility suite;
-4. kiểm release pack không có runtime AI/key, Text-to-3D hoặc asset thiếu manifest;
-5. đối chiếu mọi ngoại lệ với Complexity Tracking và owner/ngày xem lại;
-6. chỉ ghi `PASS` sau khi link được output của từng bước.
-
-Pre-implementation review này không thay `specs/001-lich-nha-v1/convergence.md` hoặc kết quả `$speckit-converge` cuối.
+Không ghi `PASS` phát hành. Owner chưa ký.

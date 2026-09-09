@@ -1,0 +1,189 @@
+name: LichNha
+options:
+  bundleIdPrefix: vn.lichnha
+  deploymentTarget:
+    iOS: "17.0"
+  createIntermediateGroups: true
+  groupSortPosition: top
+configs:
+  Debug: debug
+  Release: release
+packages:
+  LichNhaModules:
+    path: Modules
+settings:
+  base:
+    SWIFT_VERSION: "6.0"
+    IPHONEOS_DEPLOYMENT_TARGET: 17.0
+    TARGETED_DEVICE_FAMILY: 1
+fileGroups:
+  - Config
+schemes:
+  LichNha:
+    build:
+      targets:
+        LichNha: all
+        LichNhaWidget: all
+    test:
+      targets:
+        - CalendarCoreTests
+        - LichNhaUITests
+  CalendarCore:
+    build:
+      targets:
+        CalendarCoreTests: all
+    test:
+      targets:
+        - CalendarCoreTests
+  LichNhaPerformance:
+    build:
+      targets:
+        LichNha: all
+    test:
+      targets:
+        - LichNhaPerformanceTests
+targets:
+  LichNha:
+    type: application
+    platform: iOS
+    configFiles:
+      Debug: Config/BuildSettings.xcconfig
+      Release: Config/BuildSettings.xcconfig
+    sources:
+      - App
+      - DesignSystem
+      - Features
+      - path: Effects
+        optional: true
+      - path: Resources/Assets.xcassets
+      - path: Resources/ContentPacks
+        type: folder
+      - path: Resources/EffectPacks
+        type: folder
+    dependencies:
+      - package: LichNhaModules
+        product: CalendarCore
+      - package: LichNhaModules
+        product: AlmanacCore
+      - package: LichNhaModules
+        product: ContentCore
+      - package: LichNhaModules
+        product: PersonalCore
+      - package: LichNhaModules
+        product: ReminderCore
+      - package: LichNhaModules
+        product: EffectCore
+      - package: LichNhaModules
+        product: ProvenanceCore
+      - target: LichNhaWidget
+        embed: true
+        codeSign: true
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: vn.lichnha.app
+        PRODUCT_NAME: LichNha
+        MARKETING_VERSION: 0.1.0
+        CURRENT_PROJECT_VERSION: 1
+        GENERATE_INFOPLIST_FILE: YES
+        INFOPLIST_FILE: App/Info.plist
+        INFOPLIST_KEY_CFBundleDisplayName: "Lịch Nhà"
+        INFOPLIST_KEY_UILaunchScreen_Generation: YES
+        INFOPLIST_KEY_LSApplicationCategoryType: "public.app-category.reference"
+        INFOPLIST_FILE: App/Info.plist
+        INFOPLIST_KEY_NSCalendarsWriteOnlyAccessUsageDescription: "Lịch Nhà chỉ thêm một sự kiện khi bạn chọn Thêm vào Lịch iPhone."
+        INFOPLIST_KEY_NSCalendarsUsageDescription: "Lịch Nhà chỉ thêm một sự kiện khi bạn chọn Thêm vào Lịch iPhone."
+        CODE_SIGN_ENTITLEMENTS: App/LichNha.entitlements
+        ASSETCATALOG_COMPILER_APPICON_NAME: AppIcon
+        CODE_SIGN_STYLE: Automatic
+        DEVELOPMENT_TEAM: ""
+  LichNhaWidget:
+    type: app-extension
+    platform: iOS
+    sources:
+      - path: Widget
+      - path: DesignSystem
+    dependencies:
+      - package: LichNhaModules
+        product: CalendarCore
+      - package: LichNhaModules
+        product: ContentCore
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: vn.lichnha.app.widget
+        PRODUCT_NAME: LichNhaWidget
+        MARKETING_VERSION: 0.1.0
+        CURRENT_PROJECT_VERSION: 1
+        GENERATE_INFOPLIST_FILE: NO
+        INFOPLIST_FILE: Widget/Info.plist
+        CODE_SIGN_ENTITLEMENTS: Widget/LichNhaWidget.entitlements
+        LD_RUNPATH_SEARCH_PATHS: "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks"
+        SKIP_INSTALL: YES
+        CODE_SIGN_STYLE: Automatic
+        DEVELOPMENT_TEAM: ""
+  CalendarCoreTests:
+    type: bundle.unit-test
+    platform: iOS
+    sources:
+      - Tests/CalendarCoreTests
+      - Tests/AlmanacCoreTests
+      - Tests/ContentCoreTests
+      - Tests/PersonalCoreTests
+      - Tests/ReminderCoreTests
+      - Tests/EffectCoreTests
+      - path: Tests/SnapshotTests
+        optional: true
+      - path: Tests/TodayTests
+        optional: true
+      - path: Tests/AccessibilityTests
+        optional: true
+        excludes:
+          - VoiceOverJourneyTests.swift
+    dependencies:
+      - target: LichNha
+      - package: LichNhaModules
+        product: CalendarCore
+      - package: LichNhaModules
+        product: AlmanacCore
+      - package: LichNhaModules
+        product: ContentCore
+      - package: LichNhaModules
+        product: PersonalCore
+      - package: LichNhaModules
+        product: ReminderCore
+      - package: LichNhaModules
+        product: EffectCore
+      - package: LichNhaModules
+        product: ProvenanceCore
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: vn.lichnha.app.tests.calendar
+        GENERATE_INFOPLIST_FILE: YES
+        MARKETING_VERSION: 0.1.0
+        CURRENT_PROJECT_VERSION: 1
+  LichNhaUITests:
+    type: bundle.ui-testing
+    platform: iOS
+    sources:
+      - path: Tests/UITests
+        optional: true
+      - path: Tests/AccessibilityTests/VoiceOverJourneyTests.swift
+        optional: true
+    dependencies:
+      - target: LichNha
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: vn.lichnha.app.uitests
+        GENERATE_INFOPLIST_FILE: YES
+        TEST_TARGET_NAME: LichNha
+  LichNhaPerformanceTests:
+    type: bundle.unit-test
+    platform: iOS
+    sources:
+      - path: Tests/PerformanceTests
+        optional: true
+    dependencies:
+      - target: LichNha
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: vn.lichnha.app.perftests
+        GENERATE_INFOPLIST_FILE: YES

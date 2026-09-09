@@ -1,53 +1,43 @@
 # 002 — Nguồn lịch và Calendar Oracle
 
-**Trạng thái:** `DRAFT · HOLD`
-**Ngày rà soát:** 07/09/2026
-**Phạm vi:** lịch âm Việt Nam hiện đại, 24 tiết khí, múi giờ và bộ ngày chuẩn.
+**Trạng thái:** `ACCEPTED · OWNER ĐÃ CHỈ ĐỊNH; CORPUS VẪN PHẢI XÂY Ở T044–T047`
+**Ngày rà soát:** 08/09/2026
+**Liên kết task:** T017
+**Calendar Data Owner / Golden Corpus Owner:** chủ dự án (ký T019/T020)
 
-## Quyết định tạm thời
+## Quyết định
 
-Chưa chọn được một nguồn đủ thẩm quyền, phạm vi và điều kiện sử dụng để làm Calendar Oracle duy nhất. Lịch Nhà chỉ được triển khai Calendar Core sau khi có ít nhất hai đường kiểm chứng độc lập, người chịu trách nhiệm dữ liệu và golden corpus có provenance.
+Calendar Core tự triển khai lịch Việt hiện đại UTC+7. Không copy mã Hồ Ngọc Đức cho tới khi giấy phép được xác nhận bằng văn bản. Không dùng `Calendar.Identifier.chinese` làm nguồn sự thật. “Hôm nay” trên thiết bị và giờ nhắc là lớp sản phẩm riêng; chúng không đổi quy tắc lịch.
 
-UTC+7 là múi giờ tính lịch Việt Nam hiện đại. “Hôm nay” trên thiết bị và giờ gửi nhắc là lớp sản phẩm riêng; chúng không được âm thầm thay đổi quy tắc lịch.
+Hai đường đối chiếu bắt buộc trước khi công bố độ chính xác:
 
-## Bậc thang nguồn đang có
+1. Golden corpus do owner ký, mỗi bản ghi có provenance.
+2. Một đường tính Sóc và tiết khí độc lập với công thức đã cài (thiên văn / nguồn thứ hai). Mọi sai khác ghi nguyên nhân và quyết định xử lý.
 
-| Nguồn | Vai trò được phép | Giới hạn | Quyền sử dụng |
+Chuyên gia lịch pháp độc lập vẫn thiếu. Owner nhận trách nhiệm phát hành với nhãn phạm vi 1900–2100 và cảnh báo hồi chiếu 1900–1975. T047 không được đánh dấu xong nếu chưa có báo cáo sai khác.
+
+## Bậc thang nguồn
+
+| Nguồn | Vai trò | Giới hạn | Quyền |
 |---|---|---|---|
-| [Quyết định 134/2002/QĐ-TTg](https://vbpl.vn/TW/Pages/vbpq-toanvan.aspx?ItemID=21982), ban hành 14/10/2002 | Căn cứ pháp lý rằng giờ chính thức của Việt Nam là múi giờ thứ 7 | Không mô tả thuật toán âm lịch | Chưa rà soát điều khoản tái phân phối dữ liệu trích xuất |
-| [Bản tin VAST 02/2019](https://isdi.vast.vn/bantin/BantinKHCN022019.pdf) | Tài liệu chuyên môn về Sóc, Khí, tháng 29/30 ngày, tháng nhuận và các ca nhạy gần nửa đêm | Không phải bộ dữ liệu chuẩn có checksum; bài viết cho biết dữ liệu được phê duyệt khi đó chỉ đến năm 2030 | Chưa thấy giấy phép cho việc đóng gói hoặc tái phân phối |
-| [Hồ Ngọc Đức — quy tắc tính lịch](https://www.xemamlich.uhm.vn/calrules_en.html) và [VNCal](https://www.xemamlich.uhm.vn/vncal.html) | Mô tả kỹ thuật độc lập; tham chiếu lịch sử khác biệt 1968–1975 | Không phải nguồn nhà nước; không được dùng làm bằng chứng duy nhất | Chưa xác minh giấy phép mã và dữ liệu; không sao chép code |
-| [Hong Kong Observatory — 24 Solar Terms](https://www.hko.gov.hk/en/gts/time/24solarterms.htm) và [Solar Term](https://www.hko.gov.hk/en/gts/astronomy/Solar_Term.htm) | Đối chiếu định nghĩa thiên văn và thời điểm tiết khí | Bảng dùng giờ Hong Kong UTC+8; không phải oracle ngày âm Việt Nam | Chưa rà soát quyền tái phân phối bảng |
-| [IANA Time Zone Database](https://data.iana.org/time-zones/tz-link.html) | ID múi giờ và lịch sử DST cho ngày dân sự/notification | Không xác định lịch âm | Trang dự án nêu tz database thuộc public domain |
+| [Quyết định 134/2002/QĐ-TTg](https://vbpl.vn/TW/Pages/vbpq-toanvan.aspx?ItemID=21982) | Giờ chính thức Việt Nam = múi giờ thứ 7 | Không mô tả thuật toán âm lịch | Văn bản pháp quy; không đóng gói toàn văn nếu không cần |
+| [Bản tin VAST 02/2019](https://isdi.vast.vn/bantin/BantinKHCN022019.pdf) | Sóc, Khí, tháng 29/30, tháng nhuận, ca gần nửa đêm | Không phải bộ checksum; dữ liệu phê duyệt khi đó tới 2030 | Chưa thấy giấy phép tái phân phối bảng; dùng để đối chiếu, không nhúng PDF |
+| [Hồ Ngọc Đức — quy tắc](https://www.xemamlich.uhm.vn/calrules_en.html), [VNCal](https://www.xemamlich.uhm.vn/vncal.html) | Mô tả kỹ thuật; khác biệt 1968–1975 | Không phải nguồn nhà nước | Không sao chép code; giấy phép mã chưa xác nhận |
+| [Hong Kong Observatory — 24 Solar Terms](https://www.hko.gov.hk/en/gts/time/24solarterms.htm) | Định nghĩa thiên văn tiết khí | Giờ Hong Kong UTC+8 | Đối chiếu thời điểm, không phải oracle ngày âm Việt |
+| [IANA Time Zone Database](https://data.iana.org/time-zones/tz-link.html) | ID múi giờ, lịch sử DST | Không xác định lịch âm | Public domain theo trang dự án |
 
-Ngày truy cập các URL trên: 07/09/2026. Độ tin cậy cao cho văn bản pháp luật và định nghĩa thiên văn trong đúng phạm vi của chúng; trung bình cho việc chuyển thành quy tắc sản phẩm cho đến khi có chuyên gia duyệt. Không nguồn nào ở bảng trên tự nó là golden oracle.
-
-## Cách đối chiếu đề xuất
-
-1. Calendar Core ghi rõ phiên bản quy tắc, múi giờ tính và độ chính xác thời điểm.
-2. Kết quả được so với một corpus có giá trị kỳ vọng do owner ký; không lấy biểu quyết đa số giữa các website.
-3. Một đường tính thiên văn độc lập kiểm tra Sóc và tiết khí. Sai khác phải được lưu cùng nguyên nhân, nguồn và quyết định xử lý.
-4. Dữ liệu lịch sử trước 1976 phải có nhãn phạm vi. Giai đoạn 1968–1975 cần phân biệt nguồn/lịch sử vùng, không giả vờ chỉ có một ngày âm duy nhất.
+Ngày truy cập URL gốc: 07/09/2026; rà soát vai trò owner: 08/09/2026.
 
 ## Golden corpus tối thiểu
 
-Corpus phải có provenance cho từng bản ghi: ngày dương, kết quả âm kỳ vọng, cờ nhuận, múi giờ, nguồn, phiên bản nguồn, người duyệt và checksum. Các nhóm bắt buộc gồm:
+T044–T047 phải có provenance từng bản ghi: ngày dương, âm kỳ vọng, cờ nhuận, múi giờ, nguồn, phiên bản, người duyệt, checksum.
 
-- Tết, đầu/cuối tháng âm, tháng 29 và 30 ngày;
-- năm có tháng nhuận và hai tháng trùng tên;
-- Sóc hoặc chuyển tiết gần nửa đêm UTC+7;
-- các sai khác lịch sử 1968–1975;
-- các ca biên trong toàn phạm vi năm công bố.
+Nhóm bắt buộc: Tết; đầu/cuối tháng; tháng 29 và 30 ngày; năm nhuận hai tháng trùng tên; Sóc hoặc chuyển tiết gần nửa đêm UTC+7; sai khác 1968–1975; ca biên 1900–2100.
 
-Hiện chưa có file corpus, giá trị kỳ vọng đã ký, checksum hoặc báo cáo sai khác. Danh sách trên là phạm vi cần xây, không phải bằng chứng rằng các ca đã được xác nhận.
+File corpus chưa tồn tại ở thời điểm T017. Owner đã chỉ định; việc xây và ký giá trị kỳ vọng thuộc Phase 2.
 
-## Điều còn thiếu để bỏ `HOLD`
+## Điều T017 đóng / còn mở
 
-- **Calendar Data Owner:** chưa chỉ định người chịu trách nhiệm nguồn, version và quyết định khi có sai khác.
-- **Golden Corpus Owner:** chưa chỉ định người ký giá trị kỳ vọng và quản lý thay đổi.
-- **Chuyên gia độc lập:** chưa có người có chuyên môn lịch pháp Việt Nam nhận review phạm vi 1900–2100 và các ca lịch sử.
-- **Giấy phép:** chưa có kết luận bằng văn bản cho mã/dữ liệu Hồ Ngọc Đức, bảng VAST/HKO và quyền đóng gói trong ứng dụng.
-- **Oracle:** chưa có nguồn thứ hai độc lập với phạm vi và độ chính xác đã chốt.
-- **Artifact:** chưa có corpus có provenance, checksum và báo cáo reconciliation.
+Đóng: owner dữ liệu, owner corpus, hai đường đối chiếu, cấm copy mã chưa rõ phép, UTC+7.
 
-Tài liệu này mới là draft review. Nó **không hoàn tất T017** và không phải phê duyệt để bắt đầu implementation.
+Còn mở: chuyên gia độc lập; giấy phép Hồ Ngọc Đức bằng văn bản; file corpus; báo cáo oracle T047.

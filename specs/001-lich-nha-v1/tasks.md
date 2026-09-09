@@ -40,17 +40,17 @@ gom theo sáu user story trong specification.
 - [ ] T014 [P] Phỏng vấn tối thiểu hai người Việt ở nước ngoài về ngày đổi và giờ nhắc trong `research/sessions/diaspora-timezone-summary.md`
 - [ ] T015 Tổng hợp task success, từ khóa mỹ thuật, hành vi bóc và tỷ lệ tắt âm trong `research/scorecards/discovery-scorecard.md`
 - [ ] T016 Ghi kết quả Gate 1–4 và Gate 5A–7A, pass/fail cùng thay đổi bắt buộc trong `research/decisions/001-research-gates.md`; Gate 5B–7B chờ build
-- [ ] T017 [P] Hoàn tất review nguồn, giấy phép mã tham khảo và owner cho golden corpus trong `research/decisions/002-calendar-sources.md`
-- [ ] T018 [P] Chọn hoặc loại ruleset tốt/xấu 1.0, ghi chuyên gia và nguồn chịu trách nhiệm trong `research/decisions/003-almanac-ruleset.md`
-- [ ] T019 [P] Chốt iOS support matrix, thiết bị test, người trả phí Apple Developer và kế hoạch bảo trì trong `research/decisions/004-release-ownership.md`
-- [ ] T020 Cập nhật `specs/001-lich-nha-v1/spec.md` theo T016–T019 và ký Definition of Ready trong `research/decisions/005-ready-to-code.md`
+- [x] T017 [P] Hoàn tất review nguồn, giấy phép mã tham khảo và owner cho golden corpus trong `research/decisions/002-calendar-sources.md`
+- [x] T018 [P] Chọn hoặc loại ruleset tốt/xấu 1.0, ghi chuyên gia và nguồn chịu trách nhiệm trong `research/decisions/003-almanac-ruleset.md`
+- [x] T019 [P] Chốt iOS support matrix, thiết bị test, người trả phí Apple Developer và kế hoạch bảo trì trong `research/decisions/004-release-ownership.md`
+- [x] T020 Cập nhật `specs/001-lich-nha-v1/spec.md` theo T016–T019 và ký Definition of Ready trong `research/decisions/005-ready-to-code.md`
 - [x] T163 [P] Lập sổ chứng cứ web, giới hạn suy luận và nguồn phương pháp trong `research/desk-research/evidence-register.md`
 - [x] T164 [P] Viết phương pháp, tám proto-persona và biên bản self-discussion trong `research/synthetic-panel/`
 - [x] T165 Ghi trạng thái `UNTESTED`, scorecard rỗng và Definition of Ready `NOT READY` trong `research/decisions/001-research-gates.md`, `research/scorecards/discovery-scorecard.md`, `research/decisions/005-ready-to-code.md`
 - [x] T166 Đồng bộ kết luận desk research vào `docs/`, Design Master, specification và decision draft; không thay T012–T020 bằng persona
 
-**Checkpoint**: Dừng nếu T020 chưa xác nhận mọi điều kiện trong `docs/05-kha-thi-va-lo-trinh.md`.
-Không task từ T021 trở đi được bắt đầu trước checkpoint này.
+**Checkpoint**: T020 ký `READY WITH WAIVERS` ngày 08/09/2026. T021 được mở. T004, T010, T012–T016
+vẫn mở; Gate 1–7 vẫn `UNTESTED`. Không đánh dấu các task đó xong vì waiver.
 
 ---
 
@@ -58,40 +58,39 @@ Không task từ T021 trở đi được bắt đầu trước checkpoint này.
 
 **Purpose**: Tạo project, data contracts và các module chặn mọi user story.
 
-- [ ] T021 Tạo app target, widget target và test targets trong `LichNha/LichNha.xcodeproj/project.pbxproj`
-- [ ] T022 Tạo cấu trúc module theo plan và khai báo dependency một chiều trong `LichNha/Modules/Package.swift`
-- [ ] T023 [P] Khai báo App Group, entitlements của app và widget trong `LichNha/App/LichNha.entitlements` và `LichNha/Widget/LichNhaWidget.entitlements`
-- [ ] T024 [P] Ghim Xcode/Swift, deployment target và build configuration trong `LichNha/Config/BuildSettings.xcconfig`
-- [ ] T025 [P] Thiết lập `swift-format` và rule build không warning trong `LichNha/.swift-format`
-- [ ] T026 [P] Tạo test schemes cho core, UI và performance trong `LichNha/LichNha.xcodeproj/xcshareddata/xcschemes/`
-- [ ] T027 [P] Tạo dependency allowlist, privacy manifest và cấm analytics/ad SDK trong `LichNha/App/PrivacyInfo.xcprivacy` và `LichNha/Config/dependencies.yml`
-- [ ] T028 [P] Chuyển màu, type scale, spacing, radius và motion tokens đã duyệt vào `LichNha/DesignSystem/Tokens/DesignTokens.swift`
-- [ ] T029 [P] Tạo semantic control, minimum hit target và system accessibility adapters trong `LichNha/DesignSystem/Accessibility/AccessibilityEnvironment.swift`
-- [ ] T030 [P] Tạo injectable clock, display-zone và calendar-rule-zone abstractions trong `LichNha/Modules/CalendarCore/Sources/TimeContext.swift`
-- [ ] T031 [P] Viết CalendarDay và LunarDate theo data model trong `LichNha/Modules/CalendarCore/Sources/CalendarModels.swift`
-- [ ] T032 [P] Viết CalendarOccurrence, SourceRecord và taxonomy trong `LichNha/Modules/ContentCore/Sources/ContentModels.swift`
-- [ ] T033 [P] Viết PersonalEvent, recurrence và policy types trong `LichNha/Modules/PersonalCore/Sources/PersonalEvent.swift`
-- [ ] T034 [P] Viết ReminderOccurrence và notification state types trong `LichNha/Modules/ReminderCore/Sources/ReminderModels.swift`
-- [ ] T035 [P] Viết EffectCue, AssetRecord, EffectPack và ResolvedScene types trong `LichNha/Modules/EffectCore/Sources/EffectModels.swift`
-- [ ] T036 Viết test JDN, Sóc, ranh giới tháng và round-trip trước implementation trong `LichNha/Tests/CalendarCoreTests/LunarConversionTests.swift`
-- [ ] T037 Implement Julian day và astronomical primitives trong `LichNha/Modules/CalendarCore/Sources/Astronomy.swift`
-- [ ] T038 Implement chuyển đổi dương/âm, tháng 11 và tháng nhuận UTC+7 trong `LichNha/Modules/CalendarCore/Sources/VietnameseLunarCalendar.swift`
-- [ ] T039 [P] Viết test chu kỳ Can Chi và ranh giới năm/tháng trong `LichNha/Tests/CalendarCoreTests/CanChiTests.swift`
-- [ ] T040 Implement Can Chi có version ruleset trong `LichNha/Modules/CalendarCore/Sources/CanChiCalculator.swift`
-- [ ] T041 [P] Viết test thời điểm và ngày chứa 24 tiết khí trong `LichNha/Tests/CalendarCoreTests/SolarTermTests.swift`
-- [ ] T042 Implement SolarTerm calculator và precision metadata trong `LichNha/Modules/CalendarCore/Sources/SolarTermCalculator.swift`
-- [ ] T043 Implement history-scope warnings và exception lookup trong `LichNha/Modules/CalendarCore/Sources/HistoricalCalendarScope.swift`
-- [ ] T044 [P] Tạo golden-corpus builder có provenance trong `tools/golden-calendar-builder/README.md`
-- [ ] T045 Tạo fixtures Tết, đầu tháng, tháng nhuận, Sóc gần nửa đêm, 1968–1975 và 1900–2100 trong `LichNha/Tests/Fixtures/calendar-golden.json`
-- [ ] T046 Viết property tests toàn phạm vi và regression loader trong `LichNha/Tests/CalendarCoreTests/CalendarPropertyTests.swift`
-- [ ] T047 Ghi báo cáo đối chiếu hai nguồn và cách xử lý mọi khác biệt trong `LichNha/Tests/Fixtures/calendar-oracle-report.md`
-- [ ] T048 [P] Định nghĩa schema pack, sample hợp lệ và sample lỗi trong `tools/pack-validator/schemas/content-pack.schema.json`
-- [ ] T049 Implement content/source/checksum/license validator trong `tools/pack-validator/README.md`
-- [ ] T050 [P] Tạo SwiftData schema và migration plan cho App Group trong `LichNha/Modules/PersonalCore/Sources/PersonalSchema.swift`
-- [ ] T051 Tạo redacted error/log policy và test không lộ title/note trong `LichNha/Modules/ProvenanceCore/Sources/RedactedDiagnostics.swift`
+- [x] T021 Tạo app target, widget target và test targets trong `LichNha/LichNha.xcodeproj/project.pbxproj`
+- [x] T022 Tạo cấu trúc module theo plan và khai báo dependency một chiều trong `LichNha/Modules/Package.swift`
+- [x] T023 [P] Khai báo App Group, entitlements của app và widget trong `LichNha/App/LichNha.entitlements` và `LichNha/Widget/LichNhaWidget.entitlements`
+- [x] T024 [P] Ghim Xcode/Swift, deployment target và build configuration trong `LichNha/Config/BuildSettings.xcconfig`
+- [x] T025 [P] Thiết lập `swift-format` và rule build không warning trong `LichNha/.swift-format`
+- [x] T026 [P] Tạo test schemes cho core, UI và performance trong `LichNha/LichNha.xcodeproj/xcshareddata/xcschemes/`
+- [x] T027 [P] Tạo dependency allowlist, privacy manifest và cấm analytics/ad SDK trong `LichNha/App/PrivacyInfo.xcprivacy` và `LichNha/Config/dependencies.yml`
+- [x] T028 [P] Chuyển màu, type scale, spacing, radius và motion tokens đã duyệt vào `LichNha/DesignSystem/Tokens/DesignTokens.swift`
+- [x] T029 [P] Tạo semantic control, minimum hit target và system accessibility adapters trong `LichNha/DesignSystem/Accessibility/AccessibilityEnvironment.swift`
+- [x] T030 [P] Tạo injectable clock, display-zone và calendar-rule-zone abstractions trong `LichNha/Modules/CalendarCore/Sources/TimeContext.swift`
+- [x] T031 [P] Viết CalendarDay và LunarDate theo data model trong `LichNha/Modules/CalendarCore/Sources/CalendarModels.swift`
+- [x] T032 [P] Viết CalendarOccurrence, SourceRecord và taxonomy trong `LichNha/Modules/ContentCore/Sources/ContentModels.swift`
+- [x] T033 [P] Viết PersonalEvent, recurrence và policy types trong `LichNha/Modules/PersonalCore/Sources/PersonalEvent.swift`
+- [x] T034 [P] Viết ReminderOccurrence và notification state types trong `LichNha/Modules/ReminderCore/Sources/ReminderModels.swift`
+- [x] T035 [P] Viết EffectCue, AssetRecord, EffectPack và ResolvedScene types trong `LichNha/Modules/EffectCore/Sources/EffectModels.swift`
+- [x] T036 Viết test JDN, Sóc, ranh giới tháng và round-trip trước implementation trong `LichNha/Tests/CalendarCoreTests/LunarConversionTests.swift`
+- [x] T037 Implement Julian day và astronomical primitives trong `LichNha/Modules/CalendarCore/Sources/Astronomy.swift`
+- [x] T038 Implement chuyển đổi dương/âm, tháng 11 và tháng nhuận UTC+7 trong `LichNha/Modules/CalendarCore/Sources/VietnameseLunarCalendar.swift`
+- [x] T039 [P] Viết test chu kỳ Can Chi và ranh giới năm/tháng trong `LichNha/Tests/CalendarCoreTests/CanChiTests.swift`
+- [x] T040 Implement Can Chi có version ruleset trong `LichNha/Modules/CalendarCore/Sources/CanChiCalculator.swift`
+- [x] T041 [P] Viết test thời điểm và ngày chứa 24 tiết khí trong `LichNha/Tests/CalendarCoreTests/SolarTermTests.swift`
+- [x] T042 Implement SolarTerm calculator và precision metadata trong `LichNha/Modules/CalendarCore/Sources/SolarTermCalculator.swift`
+- [x] T043 Implement history-scope warnings và exception lookup trong `LichNha/Modules/CalendarCore/Sources/HistoricalCalendarScope.swift`
+- [x] T044 [P] Tạo golden-corpus builder có provenance trong `tools/golden-calendar-builder/README.md`
+- [x] T045 Tạo fixtures Tết, đầu tháng, tháng nhuận, Sóc gần nửa đêm, 1968–1975 và 1900–2100 trong `LichNha/Tests/Fixtures/calendar-golden.json`
+- [x] T046 Viết property tests toàn phạm vi và regression loader trong `LichNha/Tests/CalendarCoreTests/CalendarPropertyTests.swift`
+- [x] T047 Ghi báo cáo đối chiếu hai nguồn và cách xử lý mọi khác biệt trong `LichNha/Tests/Fixtures/calendar-oracle-report.md`
+- [x] T048 [P] Định nghĩa schema pack, sample hợp lệ và sample lỗi trong `tools/pack-validator/schemas/content-pack.schema.json`
+- [x] T049 Implement content/source/checksum/license validator trong `tools/pack-validator/README.md`
+- [x] T050 [P] Tạo SwiftData schema và migration plan cho App Group trong `LichNha/Modules/PersonalCore/Sources/PersonalSchema.swift`
+- [x] T051 Tạo redacted error/log policy và test không lộ title/note trong `LichNha/Modules/ProvenanceCore/Sources/RedactedDiagnostics.swift`
 
-**Checkpoint**: Calendar golden/property tests, pack validator và persistence migration test phải pass
-trước khi bắt đầu UI story.
+**Checkpoint**: T021–T051 xong ngày 09/09/2026. `swift test --package-path LichNha/Modules` (30 tests) pass. Golden 392 bản ghi; `python3 tools/pack-validator/test_samples.py` pass; SwiftData v1 round-trip in-memory pass.
 
 ---
 
@@ -103,24 +102,26 @@ trước khi bắt đầu UI story.
 
 ### Tests for User Story 1
 
-- [ ] T052 [P] [US1] Viết UI tests first launch offline, next/previous và Hôm nay trong `LichNha/Tests/UITests/TodayJourneyTests.swift`
-- [ ] T053 [P] [US1] Viết snapshot matrix cho iPhone nhỏ/lớn, light/dark và chữ 200% trong `LichNha/Tests/SnapshotTests/TodaySheetSnapshotTests.swift`
-- [ ] T054 [P] [US1] Viết performance test cold launch và page gesture trong `LichNha/Tests/PerformanceTests/TodayPerformanceTests.swift`
+- [x] T052 [P] [US1] Viết UI tests first launch offline, next/previous và Hôm nay trong `LichNha/Tests/UITests/TodayJourneyTests.swift`
+- [x] T053 [P] [US1] Viết snapshot matrix cho iPhone nhỏ/lớn, light/dark và chữ 200% trong `LichNha/Tests/SnapshotTests/TodaySheetSnapshotTests.swift`
+- [x] T054 [P] [US1] Viết performance test cold launch và page gesture trong `LichNha/Tests/PerformanceTests/TodayPerformanceTests.swift`
 
 ### Implementation for User Story 1
 
-- [ ] T055 [P] [US1] Tạo formatter tiếng Việt cho ngày dương, âm và Can Chi trong `LichNha/Features/Today/CalendarDayFormatter.swift`
-- [ ] T056 [P] [US1] Dựng tường, khánh gỗ/sơn son và vùng safe area trong `LichNha/DesignSystem/Components/CalendarMountView.swift`
-- [ ] T057 [P] [US1] Dựng bề mặt giấy, grain, cạnh và shadow không chứa text trong `LichNha/DesignSystem/Paper/PaperSurface.swift`
-- [ ] T058 [US1] Dựng mặt trước semantic theo hierarchy đã duyệt trong `LichNha/Features/Today/TodayFrontView.swift`
-- [ ] T059 [P] [US1] Dựng độ dày xấp giấy và trạng thái tờ đã bóc trong `LichNha/DesignSystem/Paper/PaperStackView.swift`
-- [ ] T060 [US1] Tạo selected-date state, day navigation và current-day rollover trong `LichNha/Features/Today/TodayViewModel.swift`
-- [ ] T061 [US1] Implement page peel/curl mức đã vượt Gate 2 trong `LichNha/DesignSystem/Paper/PagePeelInteraction.swift`
-- [ ] T062 [US1] Thêm next/previous buttons và VoiceOver custom actions tương đương gesture trong `LichNha/Features/Today/DayNavigationControls.swift`
-- [ ] T063 [US1] Thêm action Hôm nay một thao tác từ mọi selected date trong `LichNha/Features/Today/TodayButton.swift`
-- [ ] T064 [US1] Lưu intro/peel state theo ngày mà không làm đổi dữ liệu lịch trong `LichNha/Features/Today/DailyRitualState.swift`
-- [ ] T065 [US1] Tích hợp Today root vào app router và ưu tiên text trước scene trong `LichNha/App/AppRouter.swift`
-- [ ] T066 [US1] Chạy Scenario A, snapshot và performance; ghi pass/fail trong `LichNha/Tests/Reports/us1-today-checkpoint.md`
+- [x] T055 [P] [US1] Tạo formatter tiếng Việt cho ngày dương, âm và Can Chi trong `LichNha/Features/Today/CalendarDayFormatter.swift`
+- [x] T056 [P] [US1] Dựng tường, khánh gỗ/sơn son và vùng safe area trong `LichNha/DesignSystem/Components/CalendarMountView.swift`
+- [x] T057 [P] [US1] Dựng bề mặt giấy, grain, cạnh và shadow không chứa text trong `LichNha/DesignSystem/Paper/PaperSurface.swift`
+- [x] T058 [US1] Dựng mặt trước semantic theo hierarchy đã duyệt trong `LichNha/Features/Today/TodayFrontView.swift`
+- [x] T059 [P] [US1] Dựng độ dày xấp giấy và trạng thái tờ đã bóc trong `LichNha/DesignSystem/Paper/PaperStackView.swift`
+- [x] T060 [US1] Tạo selected-date state, day navigation và current-day rollover trong `LichNha/Features/Today/TodayViewModel.swift`
+- [x] T061 [US1] Implement page peel/curl mức đã vượt Gate 2 trong `LichNha/DesignSystem/Paper/PagePeelInteraction.swift`
+- [x] T062 [US1] Thêm next/previous buttons và VoiceOver custom actions tương đương gesture trong `LichNha/Features/Today/DayNavigationControls.swift`
+- [x] T063 [US1] Thêm action Hôm nay một thao tác từ mọi selected date trong `LichNha/Features/Today/TodayButton.swift`
+- [x] T064 [US1] Lưu intro/peel state theo ngày mà không làm đổi dữ liệu lịch trong `LichNha/Features/Today/DailyRitualState.swift`
+- [x] T065 [US1] Tích hợp Today root vào app router và ưu tiên text trước scene trong `LichNha/App/AppRouter.swift`
+- [x] T066 [US1] Chạy Scenario A, snapshot và performance; ghi pass/fail trong `LichNha/Tests/Reports/us1-today-checkpoint.md`
+
+**Checkpoint**: T052–T066 xong ngày 09/09/2026. UI tests Scenario A pass trên iPhone 17; snapshot render pass; performance conversion < 1 ms. SC-002, SC-003 và Gate 2 vẫn UNTESTED. Chi tiết: `LichNha/Tests/Reports/us1-today-checkpoint.md`.
 
 ---
 
@@ -132,23 +133,25 @@ trước khi bắt đầu UI story.
 
 ### Tests for User Story 2
 
-- [ ] T067 [P] [US2] Viết UI tests chọn ngày tháng sau, lật mặt sau và quay lại đúng ngữ cảnh trong `LichNha/Tests/UITests/MonthAndDetailJourneyTests.swift`
-- [ ] T068 [P] [US2] Viết contract tests cho content pack, taxonomy và source links trong `LichNha/Tests/ContentCoreTests/ContentPackContractTests.swift`
-- [ ] T069 [P] [US2] Viết Almanac tests cho ruleset, nhãn tham khảo và conflicting methods trong `LichNha/Tests/AlmanacCoreTests/AlmanacRuleSetTests.swift`
+- [x] T067 [P] [US2] Viết UI tests chọn ngày tháng sau, lật mặt sau và quay lại đúng ngữ cảnh trong `LichNha/Tests/UITests/MonthAndDetailJourneyTests.swift`
+- [x] T068 [P] [US2] Viết contract tests cho content pack, taxonomy và source links trong `LichNha/Tests/ContentCoreTests/ContentPackContractTests.swift`
+- [x] T069 [P] [US2] Viết Almanac tests cho ruleset, nhãn tham khảo và conflicting methods trong `LichNha/Tests/AlmanacCoreTests/AlmanacRuleSetTests.swift`
 
 ### Implementation for User Story 2
 
-- [ ] T070 [P] [US2] Tạo month grid model gồm ngày ngoài tháng, âm lịch ngắn và marker không xung đột trong `LichNha/Features/Month/MonthGridModel.swift`
-- [ ] T071 [US2] Dựng tờ tháng custom, Dynamic Type và focus order trong `LichNha/Features/Month/MonthSheetView.swift`
-- [ ] T072 [US2] Nối chọn ngày, quay lại tháng và deep link ngày trong `LichNha/Features/Month/MonthRouter.swift`
-- [ ] T073 [P] [US2] Implement Content Catalog loader với last-known-valid fallback trong `LichNha/Modules/ContentCore/Sources/ContentCatalog.swift`
-- [ ] T074 [P] [US2] Implement Almanac Core tách khỏi Calendar Core trong `LichNha/Modules/AlmanacCore/Sources/AlmanacEngine.swift`
-- [ ] T075 [US2] Dựng mặt sau gồm chi tiết, nguồn và version trong `LichNha/Features/DayDetail/DayBackView.swift`
-- [ ] T076 [US2] Dựng màn nguồn theo evidence tier và source scope trong `LichNha/Features/Sources/SourceDetailView.swift`
-- [ ] T077 [US2] Hiển thị modern/retrospective/history-warning đúng phạm vi trong `LichNha/Features/DayDetail/HistoricalScopeNotice.swift`
-- [ ] T078 [US2] Nếu T018 giữ almanac, thêm công tắc ẩn lớp này và giữ Can Chi/tiết khí trong `LichNha/Features/Settings/AlmanacVisibilitySetting.swift`; nếu loại, ghi N/A trong checkpoint US2
-- [ ] T079 [US2] Đóng gói official, culture và source packs đã duyệt; chỉ thêm almanac seed pack nếu T018 pass, trong `LichNha/Resources/ContentPacks/manifest.json`
-- [ ] T080 [US2] Chạy Scenario B và Gate 3; ghi pass/fail trong `LichNha/Tests/Reports/us2-trust-checkpoint.md`
+- [x] T070 [P] [US2] Tạo month grid model gồm ngày ngoài tháng, âm lịch ngắn và marker không xung đột trong `LichNha/Features/Month/MonthGridModel.swift`
+- [x] T071 [US2] Dựng tờ tháng custom, Dynamic Type và focus order trong `LichNha/Features/Month/MonthSheetView.swift`
+- [x] T072 [US2] Nối chọn ngày, quay lại tháng và deep link ngày trong `LichNha/Features/Month/MonthRouter.swift`
+- [x] T073 [P] [US2] Implement Content Catalog loader với last-known-valid fallback trong `LichNha/Modules/ContentCore/Sources/ContentCatalog.swift`
+- [x] T074 [P] [US2] Implement Almanac Core tách khỏi Calendar Core trong `LichNha/Modules/AlmanacCore/Sources/AlmanacEngine.swift`
+- [x] T075 [US2] Dựng mặt sau gồm chi tiết, nguồn và version trong `LichNha/Features/DayDetail/DayBackView.swift`
+- [x] T076 [US2] Dựng màn nguồn theo evidence tier và source scope trong `LichNha/Features/Sources/SourceDetailView.swift`
+- [x] T077 [US2] Hiển thị modern/retrospective/history-warning đúng phạm vi trong `LichNha/Features/DayDetail/HistoricalScopeNotice.swift`
+- [x] T078 [US2] Nếu T018 giữ almanac, thêm công tắc ẩn lớp này và giữ Can Chi/tiết khí trong `LichNha/Features/Settings/AlmanacVisibilitySetting.swift`; nếu loại, ghi N/A trong checkpoint US2
+- [x] T079 [US2] Đóng gói official, culture và source packs đã duyệt; chỉ thêm almanac seed pack nếu T018 pass, trong `LichNha/Resources/ContentPacks/manifest.json`
+- [x] T080 [US2] Chạy Scenario B và Gate 3; ghi pass/fail trong `LichNha/Tests/Reports/us2-trust-checkpoint.md`
+
+**Checkpoint**: T067–T080 xong ngày 09/09/2026. UI tests Scenario B pass trên iPhone 17; catalog fallback pass; almanac không gộp kết luận. Gate 3 và SC-004 UNTESTED. Chi tiết: `LichNha/Tests/Reports/us2-trust-checkpoint.md`.
 
 ---
 
@@ -160,24 +163,26 @@ trước khi bắt đầu UI story.
 
 ### Tests for User Story 3
 
-- [ ] T081 [P] [US3] Viết tests occurrence cho tháng nhuận, ngày 30, timezone và DST trong `LichNha/Tests/ReminderCoreTests/ReminderPlannerTests.swift`
-- [ ] T082 [P] [US3] Viết migration tests bảo toàn event và policy trong `LichNha/Tests/PersonalCoreTests/PersonalMigrationTests.swift`
-- [ ] T083 [P] [US3] Viết UI journey từ tạo event tới permission denied trong `LichNha/Tests/UITests/LunarEventJourneyTests.swift`
+- [x] T081 [P] [US3] Viết tests occurrence cho tháng nhuận, ngày 30, timezone và DST trong `LichNha/Tests/ReminderCoreTests/ReminderPlannerTests.swift`
+- [x] T082 [P] [US3] Viết migration tests bảo toàn event và policy trong `LichNha/Tests/PersonalCoreTests/PersonalMigrationTests.swift`
+- [x] T083 [P] [US3] Viết UI journey từ tạo event tới permission denied trong `LichNha/Tests/UITests/LunarEventJourneyTests.swift`
 
 ### Implementation for User Story 3
 
-- [ ] T084 [P] [US3] Implement CRUD repository cục bộ và App Group container trong `LichNha/Modules/PersonalCore/Sources/PersonalEventRepository.swift`
-- [ ] T085 [US3] Dựng editor tên, lịch âm/dương, ngày gốc và nhắc trong `LichNha/Features/Events/EventEditorView.swift`
-- [ ] T086 [US3] Dựng lựa chọn tháng thường, tháng nhuận, cả hai và năm không nhuận trong `LichNha/Features/Events/LeapMonthPolicyView.swift`
-- [ ] T087 [US3] Dựng lựa chọn ngày cuối tháng, bỏ qua hoặc mùng 1 cho ngày 30 trong `LichNha/Features/Events/ShortMonthPolicyView.swift`
-- [ ] T088 [US3] Tạo câu đọc lại policy bằng tiếng Việt trước khi lưu trong `LichNha/Features/Events/EventPolicySummary.swift`
-- [ ] T089 [US3] Implement occurrence planner idempotent theo reminder contract trong `LichNha/Modules/ReminderCore/Sources/ReminderPlanner.swift`
-- [ ] T090 [US3] Implement bounded-window local notification scheduler trong `LichNha/Modules/ReminderCore/Sources/NotificationScheduler.swift`
-- [ ] T091 [US3] Theo dõi app-active, day, timezone, permission và version refresh triggers trong `LichNha/Modules/ReminderCore/Sources/ReminderRefreshCoordinator.swift`
-- [ ] T092 [US3] Tách trạng thái “đã lưu” và “đã bật nhắc” trong `LichNha/Features/Events/EventReminderStatusView.swift`
-- [ ] T093 [P] [US3] Thêm action chủ động “Thêm vào Lịch iPhone” không đọc toàn bộ lịch trong `LichNha/Features/Events/SystemCalendarExport.swift`
-- [ ] T094 [US3] Kiểm tra log/crash fixtures không chứa title/note trong `LichNha/Tests/PersonalCoreTests/PersonalPrivacyTests.swift`
-- [ ] T095 [US3] Chạy Scenario C và Gate 4; ghi pass/fail trong `LichNha/Tests/Reports/us3-reminder-checkpoint.md`
+- [x] T084 [P] [US3] Implement CRUD repository cục bộ và App Group container trong `LichNha/Modules/PersonalCore/Sources/PersonalEventRepository.swift`
+- [x] T085 [US3] Dựng editor tên, lịch âm/dương, ngày gốc và nhắc trong `LichNha/Features/Events/EventEditorView.swift`
+- [x] T086 [US3] Dựng lựa chọn tháng thường, tháng nhuận, cả hai và năm không nhuận trong `LichNha/Features/Events/LeapMonthPolicyView.swift`
+- [x] T087 [US3] Dựng lựa chọn ngày cuối tháng, bỏ qua hoặc mùng 1 cho ngày 30 trong `LichNha/Features/Events/ShortMonthPolicyView.swift`
+- [x] T088 [US3] Tạo câu đọc lại policy bằng tiếng Việt trước khi lưu trong `LichNha/Features/Events/EventPolicySummary.swift`
+- [x] T089 [US3] Implement occurrence planner idempotent theo reminder contract trong `LichNha/Modules/ReminderCore/Sources/ReminderPlanner.swift`
+- [x] T090 [US3] Implement bounded-window local notification scheduler trong `LichNha/Modules/ReminderCore/Sources/NotificationScheduler.swift`
+- [x] T091 [US3] Theo dõi app-active, day, timezone, permission và version refresh triggers trong `LichNha/Modules/ReminderCore/Sources/ReminderRefreshCoordinator.swift`
+- [x] T092 [US3] Tách trạng thái “đã lưu” và “đã bật nhắc” trong `LichNha/Features/Events/EventReminderStatusView.swift`
+- [x] T093 [P] [US3] Thêm action chủ động “Thêm vào Lịch iPhone” không đọc toàn bộ lịch trong `LichNha/Features/Events/SystemCalendarExport.swift`
+- [x] T094 [US3] Kiểm tra log/crash fixtures không chứa title/note trong `LichNha/Tests/PersonalCoreTests/PersonalPrivacyTests.swift`
+- [x] T095 [US3] Chạy Scenario C và Gate 4; ghi pass/fail trong `LichNha/Tests/Reports/us3-reminder-checkpoint.md`
+
+**Checkpoint**: T081–T095 xong ngày 09/09/2026. UI tests Scenario C pass trên iPhone 17; planner DST/nhuận/ngày 30 pass; từ chối notification không xóa sự kiện. Gate 4 và SC-005 UNTESTED. Chi tiết: `LichNha/Tests/Reports/us3-reminder-checkpoint.md`.
 
 ---
 
@@ -189,19 +194,21 @@ trước khi bắt đầu UI story.
 
 ### Tests for User Story 4
 
-- [ ] T096 [P] [US4] Viết WidgetSnapshot privacy và expiry tests trong `LichNha/Tests/ContentCoreTests/WidgetSnapshotTests.swift`
-- [ ] T097 [P] [US4] Viết timeline tests cho midnight, timezone và refresh trễ trong `LichNha/Tests/UITests/WidgetTimelineTests.swift`
+- [x] T096 [P] [US4] Viết WidgetSnapshot privacy và expiry tests trong `LichNha/Tests/ContentCoreTests/WidgetSnapshotTests.swift`
+- [x] T097 [P] [US4] Viết timeline tests cho midnight, timezone và refresh trễ trong `LichNha/Tests/UITests/WidgetTimelineTests.swift`
 
 ### Implementation for User Story 4
 
-- [ ] T098 [US4] Implement WidgetSnapshot Builder có privacy filter trong `LichNha/Widget/WidgetSnapshotBuilder.swift`
-- [ ] T099 [US4] Ghi snapshot và future entries vào App Group trong `LichNha/Widget/WidgetSnapshotStore.swift`
-- [ ] T100 [US4] Implement TimelineProvider không dùng mạng trong `LichNha/Widget/WidgetTimelineProvider.swift`
-- [ ] T101 [US4] Dựng các widget family với bloc tĩnh và text semantic trong `LichNha/Widget/LichNhaWidget.swift`
-- [ ] T102 [US4] Ẩn title/note trên lock screen theo mặc định trong `LichNha/Widget/WidgetPrivacy.swift`
-- [ ] T103 [US4] Nối deep link widget tới selected date trong `LichNha/App/AppRouter.swift`
-- [ ] T104 [P] [US4] Thêm snapshot light/dark/tinted contexts trong `LichNha/Tests/SnapshotTests/WidgetSnapshotTests.swift`
-- [ ] T105 [US4] Chạy Scenario D ở chế độ máy bay; ghi pass/fail trong `LichNha/Tests/Reports/us4-widget-checkpoint.md`
+- [x] T098 [US4] Implement WidgetSnapshot Builder có privacy filter trong `LichNha/Widget/WidgetSnapshotBuilder.swift`
+- [x] T099 [US4] Ghi snapshot và future entries vào App Group trong `LichNha/Widget/WidgetSnapshotStore.swift`
+- [x] T100 [US4] Implement TimelineProvider không dùng mạng trong `LichNha/Widget/WidgetTimelineProvider.swift`
+- [x] T101 [US4] Dựng các widget family với bloc tĩnh và text semantic trong `LichNha/Widget/LichNhaWidget.swift`
+- [x] T102 [US4] Ẩn title/note trên lock screen theo mặc định trong `LichNha/Widget/WidgetPrivacy.swift`
+- [x] T103 [US4] Nối deep link widget tới selected date trong `LichNha/App/AppRouter.swift`
+- [x] T104 [P] [US4] Thêm snapshot light/dark/tinted contexts trong `LichNha/Tests/SnapshotTests/WidgetFamilySnapshotTests.swift`
+- [x] T105 [US4] Chạy Scenario D ở chế độ máy bay; ghi pass/fail trong `LichNha/Tests/Reports/us4-widget-checkpoint.md`
+
+**Checkpoint**: T096–T105 xong ngày 09/09/2026. Privacy/expiry/timezone unit tests pass; deep link `lichnha://day/YYYY-MM-DD` mở đúng tờ. XCTest không gắn widget lên Home/Lock. Chi tiết: `LichNha/Tests/Reports/us4-widget-checkpoint.md`.
 
 ---
 
@@ -213,34 +220,36 @@ trước khi bắt đầu UI story.
 
 ### Tests for User Story 5
 
-- [ ] T106 [P] [US5] Viết resolver tests cho trùng event, tone, safety flags và intro một lần/ngày trong `LichNha/Tests/EffectCoreTests/EffectResolverTests.swift`
-- [ ] T107 [P] [US5] Viết invalid manifest, missing asset và checksum fallback tests trong `LichNha/Tests/EffectCoreTests/EffectPackValidationTests.swift`
-- [ ] T108 [P] [US5] Viết audio-session/interruption tests cho Silent, VoiceOver, audio khác, call và headphone trong `LichNha/Tests/EffectCoreTests/AudioBehaviorTests.swift`
+- [x] T106 [P] [US5] Viết resolver tests cho trùng event, tone, safety flags và intro một lần/ngày trong `LichNha/Tests/EffectCoreTests/EffectResolverTests.swift`
+- [x] T107 [P] [US5] Viết invalid manifest, missing asset và checksum fallback tests trong `LichNha/Tests/EffectCoreTests/EffectPackValidationTests.swift`
+- [x] T108 [P] [US5] Viết audio-session/interruption tests cho Silent, VoiceOver, audio khác, call và headphone trong `LichNha/Tests/EffectCoreTests/AudioBehaviorTests.swift`
 
 ### Implementation for User Story 5
 
-- [ ] T109 [P] [US5] Implement Effect Catalog loader và last-known-valid fallback trong `LichNha/Modules/EffectCore/Sources/EffectCatalog.swift`
-- [ ] T110 [US5] Implement priority/safety/capability resolver theo contract trong `LichNha/Modules/EffectCore/Sources/EffectResolver.swift`
-- [ ] T111 [US5] Implement scene lifecycle intro, settle, idle, replay và background stop trong `LichNha/Effects/Director/EffectDirector.swift`
-- [ ] T112 [P] [US5] Implement Low Power, thermal và device capability policy trong `LichNha/Effects/Director/CapabilityPolicy.swift`
-- [ ] T113 [US5] Dựng render host không nhận touch và giữ content safe zone trong `LichNha/Effects/Rendering/EffectHostView.swift`
-- [ ] T114 [P] [US5] Implement particle primitives cho pháo hoa, cánh hoa, mưa và bụi nắng trong `LichNha/Effects/Rendering/ParticleLibrary.swift`
-- [ ] T115 [P] [US5] Implement poster renderer/fallback và checksum lookup trong `LichNha/Effects/Posters/PosterSceneView.swift`
-- [ ] T116 [US5] Dựng cờ Quốc khánh thủ công, khóa tỷ lệ/màu/sao và golden frames trong `LichNha/Effects/Rendering/VietnamFlagMesh.swift`
-- [ ] T117 [US5] Kết hợp cờ và pháo hoa xa thành scene Quốc khánh không đổi sáng tờ lịch trong `LichNha/Effects/Director/NationalDayScene.swift`
-- [ ] T118 [P] [US5] Tạo concept sheet cành đào/mai/trung tính có quyền dùng trong `assets/references/lap-xuan/reference-manifest.md`
+- [x] T109 [P] [US5] Implement Effect Catalog loader và last-known-valid fallback trong `LichNha/Modules/EffectCore/Sources/EffectCatalog.swift`
+- [x] T110 [US5] Implement priority/safety/capability resolver theo contract trong `LichNha/Modules/EffectCore/Sources/EffectResolver.swift`
+- [x] T111 [US5] Implement scene lifecycle intro, settle, idle, replay và background stop trong `LichNha/Effects/Director/EffectDirector.swift`
+- [x] T112 [P] [US5] Implement Low Power, thermal và device capability policy trong `LichNha/Effects/Director/CapabilityPolicy.swift`
+- [x] T113 [US5] Dựng render host không nhận touch và giữ content safe zone trong `LichNha/Effects/Rendering/EffectHostView.swift`
+- [x] T114 [P] [US5] Implement particle primitives cho pháo hoa, cánh hoa, mưa và bụi nắng trong `LichNha/Effects/Rendering/ParticleLibrary.swift`
+- [x] T115 [P] [US5] Implement poster renderer/fallback và checksum lookup trong `LichNha/Effects/Posters/PosterSceneView.swift`
+- [x] T116 [US5] Dựng cờ Quốc khánh thủ công, khóa tỷ lệ/màu/sao và golden frames trong `LichNha/Effects/Rendering/VietnamFlagMesh.swift`
+- [x] T117 [US5] Kết hợp cờ và pháo hoa xa thành scene Quốc khánh không đổi sáng tờ lịch trong `LichNha/Effects/Director/NationalDayScene.swift`
+- [x] T118 [P] [US5] Tạo concept sheet cành đào/mai/trung tính có quyền dùng trong `assets/references/lap-xuan/reference-manifest.md`
 - [ ] T119 [US5] Dùng duy nhất Rodin Image-to-3D với ảnh T118, lưu output gốc và generation record trong `assets/source/rodin/lap-xuan/generation-manifest.md`
 - [ ] T120 [US5] Cleanup silhouette, topology, UV, material, LOD và poster của cành Lập Xuân trong `assets/runtime/lap-xuan/asset-manifest.md`
-- [ ] T121 [US5] Kết hợp cành đã cleanup với 4–8 cánh hoa thành scene Lập Xuân theo vùng trong `LichNha/Effects/Director/BeginningOfSpringScene.swift`
-- [ ] T122 [P] [US5] Sau Gate 6A, chốt hoặc defer draft storyboard/safety flags cho bốn cảnh lễ còn lại trong `assets/storyboards/release-1-holiday-scenes.md`
-- [ ] T123 [US5] Chỉ sản xuất bốn cảnh lễ nếu T122 qua cultural/license/budget gate; nếu không ghi scope change/poster fallback trong `LichNha/Resources/EffectPacks/holiday-scenes.json`
-- [ ] T124 [P] [US5] Chỉ định nghĩa sáu họ chuyển động và mapping đủ 24 tiết khí nếu Gate 6A cùng T019 cho phép; nếu không dùng poster/cue tĩnh đã duyệt trong `LichNha/Resources/EffectPacks/solar-term-families.json`
-- [ ] T125 [P] [US5] Tạo micro-scene ngày thường deterministic theo seed trong `LichNha/Effects/Director/OrdinaryDayScene.swift`
-- [ ] T126 [US5] Implement asset manifest/license/checksum validator trong `tools/asset-manifest-validator/README.md`
-- [ ] T127 [P] [US5] Implement ambient audio-session coordinator trong `LichNha/Effects/Audio/AmbientAudioCoordinator.swift`
-- [ ] T128 [US5] Implement Hiên sớm, Mưa xa, Quạt trưa và Yên với loop/fade đã duyệt trong `LichNha/Effects/Audio/AmbientSoundPlayer.swift`
-- [ ] T129 [P] [US5] Implement âm giấy và cue sự kiện tắt mặc định trong `LichNha/Effects/Audio/InteractionCuePlayer.swift`
-- [ ] T130 [US5] Profile flagship scene, 15 phút audio và mọi fallback; ghi Gate 6B–7B trong `LichNha/Tests/Reports/us5-effects-audio-checkpoint.md`
+- [x] T121 [US5] Kết hợp cành đã cleanup với 4–8 cánh hoa thành scene Lập Xuân theo vùng trong `LichNha/Effects/Director/BeginningOfSpringScene.swift`
+- [x] T122 [P] [US5] Sau Gate 6A, chốt hoặc defer draft storyboard/safety flags cho bốn cảnh lễ còn lại trong `assets/storyboards/release-1-holiday-scenes.md`
+- [x] T123 [US5] Chỉ sản xuất bốn cảnh lễ nếu T122 qua cultural/license/budget gate; nếu không ghi scope change/poster fallback trong `LichNha/Resources/EffectPacks/holiday-scenes.json`
+- [x] T124 [P] [US5] Chỉ định nghĩa sáu họ chuyển động và mapping đủ 24 tiết khí nếu Gate 6A cùng T019 cho phép; nếu không dùng poster/cue tĩnh đã duyệt trong `LichNha/Resources/EffectPacks/solar-term-families.json`
+- [x] T125 [P] [US5] Tạo micro-scene ngày thường deterministic theo seed trong `LichNha/Effects/Director/OrdinaryDayScene.swift`
+- [x] T126 [US5] Implement asset manifest/license/checksum validator trong `tools/asset-manifest-validator/README.md`
+- [x] T127 [P] [US5] Implement ambient audio-session coordinator trong `LichNha/Effects/Audio/AmbientAudioCoordinator.swift`
+- [x] T128 [US5] Implement Hiên sớm, Mưa xa, Quạt trưa và Yên với loop/fade đã duyệt trong `LichNha/Effects/Audio/AmbientSoundPlayer.swift`
+- [x] T129 [P] [US5] Implement âm giấy và cue sự kiện tắt mặc định trong `LichNha/Effects/Audio/InteractionCuePlayer.swift`
+- [x] T130 [US5] Profile flagship scene, 15 phút audio và mọi fallback; ghi Gate 6B–7B trong `LichNha/Tests/Reports/us5-effects-audio-checkpoint.md`
+
+**Checkpoint**: T106–T118 và T121–T130 xong ngày 09/09/2026. T119/T120 chưa chạy vì thiếu ảnh Rodin. Gate 6A–7B UNTESTED. Chi tiết: `LichNha/Tests/Reports/us5-effects-audio-checkpoint.md`.
 
 ---
 
@@ -252,24 +261,26 @@ trước khi bắt đầu UI story.
 
 ### Tests for User Story 6
 
-- [ ] T131 [P] [US6] Viết UI tests VoiceOver focus/actions cho danh sách core tasks US1–US4 và settings US6 trong `LichNha/Tests/AccessibilityTests/VoiceOverJourneyTests.swift`
-- [ ] T132 [P] [US6] Viết Dynamic Type 200%, contrast và transparency snapshot tests trong `LichNha/Tests/AccessibilityTests/LargeTextContrastTests.swift`
-- [ ] T133 [P] [US6] Viết Reduce Motion và Dim Flashing Lights golden-frame tests trong `LichNha/Tests/AccessibilityTests/MotionSafetyTests.swift`
+- [x] T131 [P] [US6] Viết UI tests VoiceOver focus/actions cho danh sách core tasks US1–US4 và settings US6 trong `LichNha/Tests/AccessibilityTests/VoiceOverJourneyTests.swift`
+- [x] T132 [P] [US6] Viết Dynamic Type 200%, contrast và transparency snapshot tests trong `LichNha/Tests/AccessibilityTests/LargeTextContrastTests.swift`
+- [x] T133 [P] [US6] Viết Reduce Motion và Dim Flashing Lights golden-frame tests trong `LichNha/Tests/AccessibilityTests/MotionSafetyTests.swift`
 
 ### Implementation for User Story 6
 
-- [ ] T134 [P] [US6] Implement UserPreferences store và migration trong `LichNha/Modules/PersonalCore/Sources/UserPreferencesStore.swift`
-- [ ] T135 [US6] Dựng ngăn giấy settings/source/privacy trong `LichNha/Features/Settings/PaperDrawerView.swift`
-- [ ] T136 [P] [US6] Dựng lựa chọn Sống động, Êm, Tĩnh và phát lại trong `LichNha/Features/Settings/EffectSettingsView.swift`
-- [ ] T137 [P] [US6] Dựng bốn lựa chọn âm và công tắc ba lớp độc lập trong `LichNha/Features/Settings/SoundSettingsView.swift`
-- [ ] T138 [P] [US6] Dựng vùng cảm hứng Bắc, Trung, Nam, Trung tính không dùng location trong `LichNha/Features/Settings/InspirationRegionView.swift`
-- [ ] T139 [P] [US6] Dựng privacy widget, reminder zone và nhịp Việt Nam trong `LichNha/Features/Settings/PrivacyAndTimeSettingsView.swift`
-- [ ] T140 [US6] Áp dụng Large Print reflow và chuyển nội dung phụ sang mặt sau trong `LichNha/Features/Today/LargePrintLayout.swift`
-- [ ] T141 [US6] Hoàn tất semantic summaries và ẩn decoration khỏi accessibility tree trong `LichNha/DesignSystem/Accessibility/CalendarAccessibility.swift`
-- [ ] T142 [US6] Áp dụng system settings ưu tiên hơn app effect preference trong `LichNha/Effects/Director/AccessibilityEffectPolicy.swift`
-- [ ] T143 [US6] Hiển thị engine/content/effect version và báo sai không tự gửi dữ liệu trong `LichNha/Features/Sources/VersionAndCorrectionView.swift`
+- [x] T134 [P] [US6] Implement UserPreferences store và migration trong `LichNha/Modules/PersonalCore/Sources/UserPreferencesStore.swift`
+- [x] T135 [US6] Dựng ngăn giấy settings/source/privacy trong `LichNha/Features/Settings/PaperDrawerView.swift`
+- [x] T136 [P] [US6] Dựng lựa chọn Sống động, Êm, Tĩnh và phát lại trong `LichNha/Features/Settings/EffectSettingsView.swift`
+- [x] T137 [P] [US6] Dựng bốn lựa chọn âm và công tắc ba lớp độc lập trong `LichNha/Features/Settings/SoundSettingsView.swift`
+- [x] T138 [P] [US6] Dựng vùng cảm hứng Bắc, Trung, Nam, Trung tính không dùng location trong `LichNha/Features/Settings/InspirationRegionView.swift`
+- [x] T139 [P] [US6] Dựng privacy widget, reminder zone và nhịp Việt Nam trong `LichNha/Features/Settings/PrivacyAndTimeSettingsView.swift`
+- [x] T140 [US6] Áp dụng Large Print reflow và chuyển nội dung phụ sang mặt sau trong `LichNha/Features/Today/LargePrintLayout.swift`
+- [x] T141 [US6] Hoàn tất semantic summaries và ẩn decoration khỏi accessibility tree trong `LichNha/DesignSystem/Accessibility/CalendarAccessibility.swift`
+- [x] T142 [US6] Áp dụng system settings ưu tiên hơn app effect preference trong `LichNha/Effects/Director/AccessibilityEffectPolicy.swift`
+- [x] T143 [US6] Hiển thị engine/content/effect version và báo sai không tự gửi dữ liệu trong `LichNha/Features/Sources/VersionAndCorrectionView.swift`
 - [ ] T144 [US6] Chạy usability danh sách core tasks trong accessibility contract với nhóm 55+ và người dùng VoiceOver, ghi issue cụ thể trong `research/scorecards/accessibility-release-scorecard.md`
-- [ ] T145 [US6] Chạy Scenario F và Gate 5B trên support matrix; ghi pass/fail trong `LichNha/Tests/Reports/us6-accessibility-checkpoint.md`
+- [x] T145 [US6] Chạy Scenario F và Gate 5B trên support matrix; ghi pass/fail trong `LichNha/Tests/Reports/us6-accessibility-checkpoint.md`
+
+**Checkpoint**: T131–T143 và T145 xong ngày 09/09/2026. T144 chưa có buổi người. Gate 5A/5B và SC-007 UNTESTED. Chi tiết: `LichNha/Tests/Reports/us6-accessibility-checkpoint.md`.
 
 ---
 
@@ -277,23 +288,25 @@ trước khi bắt đầu UI story.
 
 **Purpose**: Khóa chất lượng chung sau khi các user story mong muốn đã hoàn tất.
 
-- [ ] T146 [P] Chạy audit tiếng Việt, overflow, dấu và VoiceOver pronunciation trong `LichNha/Tests/Reports/vietnamese-language-audit.md`
+- [x] T146 [P] Chạy audit tiếng Việt, overflow, dấu và VoiceOver pronunciation trong `LichNha/Tests/Reports/vietnamese-language-audit.md`
 - [ ] T147 [P] Chạy content audit hai người cho official/culture packs và almanac pack nếu T018 giữ phạm vi, trong `LichNha/Resources/ContentPacks/release-approval.md`
-- [ ] T148 [P] Chạy license/provenance audit cho font, model, texture, poster và audio trong `assets/release/license-audit.md`
-- [ ] T149 Chốt pack versions, checksums và changelog dữ liệu trong `LichNha/Resources/release-manifest.json`
-- [ ] T150 [P] Đo binary, effect pack, memory và cold launch trên support matrix trong `LichNha/Tests/Reports/release-performance.md`
-- [ ] T151 [P] Chạy airplane-mode, time-change, timezone-change và app-upgrade regression trong `LichNha/Tests/Reports/offline-time-regression.md`
-- [ ] T152 Chạy toàn bộ lệnh trong `specs/001-lich-nha-v1/quickstart.md` và ghi output trong `LichNha/Tests/Reports/quickstart-validation.md`
-- [ ] T153 [P] Viết privacy policy ngắn, support và correction flow trong `release/privacy-policy.md`
-- [ ] T154 [P] Chuẩn bị App Store privacy answers đối chiếu binary/dependencies trong `release/app-store-privacy.md`
-- [ ] T155 [P] Chuẩn bị tên, subtitle, description và screenshot plan không hứa quá mức trong `release/app-store-metadata.md`
-- [ ] T156 Tạo TestFlight build checklist, tester notes và rollback plan trong `release/testflight-plan.md`
+- [x] T148 [P] Chạy license/provenance audit cho font, model, texture, poster và audio trong `assets/release/license-audit.md`
+- [x] T149 Chốt pack versions, checksums và changelog dữ liệu trong `LichNha/Resources/release-manifest.json`
+- [x] T150 [P] Đo binary, effect pack, memory và cold launch trên support matrix trong `LichNha/Tests/Reports/release-performance.md`
+- [x] T151 [P] Chạy airplane-mode, time-change, timezone-change và app-upgrade regression trong `LichNha/Tests/Reports/offline-time-regression.md`
+- [x] T152 Chạy toàn bộ lệnh trong `specs/001-lich-nha-v1/quickstart.md` và ghi output trong `LichNha/Tests/Reports/quickstart-validation.md`
+- [x] T153 [P] Viết privacy policy ngắn, support và correction flow trong `release/privacy-policy.md`
+- [x] T154 [P] Chuẩn bị App Store privacy answers đối chiếu binary/dependencies trong `release/app-store-privacy.md`
+- [x] T155 [P] Chuẩn bị tên, subtitle, description và screenshot plan không hứa quá mức trong `release/app-store-metadata.md`
+- [x] T156 Tạo TestFlight build checklist, tester notes và rollback plan trong `release/testflight-plan.md`
 - [ ] T157 Chạy test 20–30 người trên TestFlight và tổng hợp P0/P1 trong `research/scorecards/testflight-scorecard.md`
 - [ ] T158 Sửa toàn bộ P0/P1 và thêm mỗi lỗi lịch/reminder vào regression corpus trong `LichNha/Tests/Fixtures/regressions.json`
-- [ ] T159 [P] Rà App Review minimum functionality và permission timing trong `release/app-review-checklist.md`
-- [ ] T160 Xác nhận không có account, ad, paywall, analytics hoặc runtime AI trong `release/constitution-compliance.md`
-- [ ] T161 Chạy `$speckit-analyze` và sửa mọi mâu thuẫn spec/plan/tasks trong `specs/001-lich-nha-v1/analysis.md`
+- [x] T159 [P] Rà App Review minimum functionality và permission timing trong `release/app-review-checklist.md`
+- [x] T160 Xác nhận không có account, ad, paywall, analytics hoặc runtime AI trong `release/constitution-compliance.md`
+- [x] T161 Chạy `$speckit-analyze` và sửa mọi mâu thuẫn spec/plan/tasks trong `specs/001-lich-nha-v1/analysis.md`
 - [ ] T162 Chạy `$speckit-converge`; chỉ ký release khi report Converged trong `specs/001-lich-nha-v1/convergence.md`
+
+**Checkpoint**: T146, T148–T156, T159–T161 xong ngày 09/09/2026 trên Simulator/source. Pack luật 1.1.0 đã có Tết Nguyên đán mùng 1; T147 vẫn mở vì thiếu reviewer 2. T157/T158 (TestFlight), T162 (`NOT CONVERGED`) còn mở. Chi tiết: `specs/001-lich-nha-v1/convergence.md`.
 
 ---
 

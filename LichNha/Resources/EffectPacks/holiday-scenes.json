@@ -1,0 +1,93 @@
+{
+  "schemaVersion": "1",
+  "packVersion": "lich-nha-fx-holidays-deferred",
+  "cues": [
+    {
+      "id": "cue-tet-nguyen-dan",
+      "tone": "warm-new-year",
+      "priority": 70,
+      "allowsAutoPlay": true,
+      "nationalFlag": false,
+      "solemn": false,
+      "noConfetti": false,
+      "noAudio": false,
+      "posterOnly": true,
+      "fallbackPosterID": "poster-tet",
+      "triggerOccurrenceID": "tet-nguyen-dan"
+    },
+    {
+      "id": "cue-hung-kings",
+      "tone": "solemn",
+      "priority": 70,
+      "allowsAutoPlay": true,
+      "nationalFlag": false,
+      "solemn": true,
+      "noConfetti": true,
+      "noAudio": true,
+      "posterOnly": true,
+      "fallbackPosterID": "poster-hung-kings",
+      "triggerOccurrenceID": "gio-to-hung-vuong"
+    },
+    {
+      "id": "cue-april-30",
+      "tone": "calm-morning",
+      "priority": 70,
+      "allowsAutoPlay": true,
+      "nationalFlag": true,
+      "solemn": false,
+      "noConfetti": true,
+      "noAudio": false,
+      "posterOnly": true,
+      "fallbackPosterID": "poster-april-30",
+      "triggerOccurrenceID": "giai-phong-30-4"
+    },
+    {
+      "id": "cue-mid-autumn",
+      "tone": "quiet-lantern",
+      "priority": 70,
+      "allowsAutoPlay": true,
+      "nationalFlag": false,
+      "solemn": false,
+      "noConfetti": false,
+      "noAudio": false,
+      "posterOnly": true,
+      "fallbackPosterID": "poster-mid-autumn",
+      "triggerOccurrenceID": "trung-thu"
+    }
+  ],
+  "assets": [
+    {
+      "id": "poster-tet",
+      "kind": "poster",
+      "sourceReference": "deferred-gate-6a",
+      "generationMethod": "manual",
+      "checksum": "ee5ef35f3fc84f97e040980d6af8c2c47c9aa9bbcc1b76fa04d46931d70dc427",
+      "licenseStatus": "original"
+    },
+    {
+      "id": "poster-hung-kings",
+      "kind": "poster",
+      "sourceReference": "deferred-gate-6a",
+      "generationMethod": "manual",
+      "checksum": "ae57950056a18457fb07b6abf73da759dd0ebaea1222a1bf5de4d01d778db276",
+      "licenseStatus": "original"
+    },
+    {
+      "id": "poster-april-30",
+      "kind": "poster",
+      "sourceReference": "deferred-gate-6a",
+      "generationMethod": "manual",
+      "checksum": "35b99775986e2490abe48465b62b5d472936596e8a71b9210cb568370d810804",
+      "licenseStatus": "original"
+    },
+    {
+      "id": "poster-mid-autumn",
+      "kind": "poster",
+      "sourceReference": "deferred-gate-6a",
+      "generationMethod": "manual",
+      "checksum": "7f0020faea690c1f3d500dfc08dd55bf1de617e1e355dc11f77aea4bdfb63f63",
+      "licenseStatus": "original"
+    }
+  ],
+  "recordsChecksum": "f5a7c831c539b2bbbb026ed3b66f1b6323b84280409f356c5324f8ec11fe3133"
+}

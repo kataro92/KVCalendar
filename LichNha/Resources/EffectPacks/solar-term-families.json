@@ -1,0 +1,513 @@
+{
+  "schemaVersion": "1",
+  "packVersion": "lich-nha-fx-terms-static",
+  "cues": [
+    {
+      "id": "cue-term-0",
+      "tone": "static-term",
+      "priority": 20,
+      "allowsAutoPlay": false,
+      "nationalFlag": false,
+      "solemn": false,
+      "noConfetti": false,
+      "noAudio": false,
+      "posterOnly": true,
+      "fallbackPosterID": "poster-term-0",
+      "triggerSolarTermIndex": 0
+    },
+    {
+      "id": "cue-term-1",
+      "tone": "static-term",
+      "priority": 20,
+      "allowsAutoPlay": false,
+      "nationalFlag": false,
+      "solemn": false,
+      "noConfetti": false,
+      "noAudio": false,
+      "posterOnly": true,
+      "fallbackPosterID": "poster-term-1",
+      "triggerSolarTermIndex": 1
+    },
+    {
+      "id": "cue-term-2",
+      "tone": "static-term",
+      "priority": 20,
+      "allowsAutoPlay": false,
+      "nationalFlag": false,
+      "solemn": false,
+      "noConfetti": false,
+      "noAudio": false,
+      "posterOnly": true,
+      "fallbackPosterID": "poster-term-2",
+      "triggerSolarTermIndex": 2
+    },
+    {
+      "id": "cue-term-3",
+      "tone": "static-term",
+      "priority": 20,
+      "allowsAutoPlay": false,
+      "nationalFlag": false,
+      "solemn": false,
+      "noConfetti": false,
+      "noAudio": false,
+      "posterOnly": true,
+      "fallbackPosterID": "poster-term-3",
+      "triggerSolarTermIndex": 3
+    },
+    {
+      "id": "cue-term-4",
+      "tone": "static-term",
+      "priority": 20,
+      "allowsAutoPlay": false,
+      "nationalFlag": false,
+      "solemn": false,
+      "noConfetti": false,
+      "noAudio": false,
+      "posterOnly": true,
+      "fallbackPosterID": "poster-term-4",
+      "triggerSolarTermIndex": 4
+    },
+    {
+      "id": "cue-term-5",
+      "tone": "static-term",
+      "priority": 20,
+      "allowsAutoPlay": false,
+      "nationalFlag": false,
+      "solemn": false,
+      "noConfetti": false,
+      "noAudio": false,
+      "posterOnly": true,
+      "fallbackPosterID": "poster-term-5",
+      "triggerSolarTermIndex": 5
+    },
+    {
+      "id": "cue-term-6",
+      "tone": "static-term",
+      "priority": 20,
+      "allowsAutoPlay": false,
+      "nationalFlag": false,
+      "solemn": false,
+      "noConfetti": false,
+      "noAudio": false,
+      "posterOnly": true,
+      "fallbackPosterID": "poster-term-6",
+      "triggerSolarTermIndex": 6
+    },
+    {
+      "id": "cue-term-7",
+      "tone": "static-term",
+      "priority": 20,
+      "allowsAutoPlay": false,
+      "nationalFlag": false,
+      "solemn": false,
+      "noConfetti": false,
+      "noAudio": false,
+      "posterOnly": true,
+      "fallbackPosterID": "poster-term-7",
+      "triggerSolarTermIndex": 7
+    },
+    {
+      "id": "cue-term-8",
+      "tone": "static-term",
+      "priority": 20,
+      "allowsAutoPlay": false,
+      "nationalFlag": false,
+      "solemn": false,
+      "noConfetti": false,
+      "noAudio": false,
+      "posterOnly": true,
+      "fallbackPosterID": "poster-term-8",
+      "triggerSolarTermIndex": 8
+    },
+    {
+      "id": "cue-term-9",
+      "tone": "static-term",
+      "priority": 20,
+      "allowsAutoPlay": false,
+      "nationalFlag": false,
+      "solemn": false,
+      "noConfetti": false,
+      "noAudio": false,
+      "posterOnly": true,
+      "fallbackPosterID": "poster-term-9",
+      "triggerSolarTermIndex": 9
+    },
+    {
+      "id": "cue-term-10",
+      "tone": "static-term",
+      "priority": 20,
+      "allowsAutoPlay": false,
+      "nationalFlag": false,
+      "solemn": false,
+      "noConfetti": false,
+      "noAudio": false,
+      "posterOnly": true,
+      "fallbackPosterID": "poster-term-10",
+      "triggerSolarTermIndex": 10
+    },
+    {
+      "id": "cue-term-11",
+      "tone": "static-term",
+      "priority": 20,
+      "allowsAutoPlay": false,
+      "nationalFlag": false,
+      "solemn": false,
+      "noConfetti": false,
+      "noAudio": false,
+      "posterOnly": true,
+      "fallbackPosterID": "poster-term-11",
+      "triggerSolarTermIndex": 11
+    },
+    {
+      "id": "cue-term-12",
+      "tone": "static-term",
+      "priority": 20,
+      "allowsAutoPlay": false,
+      "nationalFlag": false,
+      "solemn": false,
+      "noConfetti": false,
+      "noAudio": false,
+      "posterOnly": true,
+      "fallbackPosterID": "poster-term-12",
+      "triggerSolarTermIndex": 12
+    },
+    {
+      "id": "cue-term-13",
+      "tone": "static-term",
+      "priority": 20,
+      "allowsAutoPlay": false,
+      "nationalFlag": false,
+      "solemn": false,
+      "noConfetti": false,
+      "noAudio": false,
+      "posterOnly": true,
+      "fallbackPosterID": "poster-term-13",
+      "triggerSolarTermIndex": 13
+    },
+    {
+      "id": "cue-term-14",
+      "tone": "static-term",
+      "priority": 20,
+      "allowsAutoPlay": false,
+      "nationalFlag": false,
+      "solemn": false,
+      "noConfetti": false,
+      "noAudio": false,
+      "posterOnly": true,
+      "fallbackPosterID": "poster-term-14",
+      "triggerSolarTermIndex": 14
+    },
+    {
+      "id": "cue-term-15",
+      "tone": "static-term",
+      "priority": 20,
+      "allowsAutoPlay": false,
+      "nationalFlag": false,
+      "solemn": false,
+      "noConfetti": false,
+      "noAudio": false,
+      "posterOnly": true,
+      "fallbackPosterID": "poster-term-15",
+      "triggerSolarTermIndex": 15
+    },
+    {
+      "id": "cue-term-16",
+      "tone": "static-term",
+      "priority": 20,
+      "allowsAutoPlay": false,
+      "nationalFlag": false,
+      "solemn": false,
+      "noConfetti": false,
+      "noAudio": false,
+      "posterOnly": true,
+      "fallbackPosterID": "poster-term-16",
+      "triggerSolarTermIndex": 16
+    },
+    {
+      "id": "cue-term-17",
+      "tone": "static-term",
+      "priority": 20,
+      "allowsAutoPlay": false,
+      "nationalFlag": false,
+      "solemn": false,
+      "noConfetti": false,
+      "noAudio": false,
+      "posterOnly": true,
+      "fallbackPosterID": "poster-term-17",
+      "triggerSolarTermIndex": 17
+    },
+    {
+      "id": "cue-term-18",
+      "tone": "static-term",
+      "priority": 20,
+      "allowsAutoPlay": false,
+      "nationalFlag": false,
+      "solemn": false,
+      "noConfetti": false,
+      "noAudio": false,
+      "posterOnly": true,
+      "fallbackPosterID": "poster-term-18",
+      "triggerSolarTermIndex": 18
+    },
+    {
+      "id": "cue-term-19",
+      "tone": "static-term",
+      "priority": 20,
+      "allowsAutoPlay": false,
+      "nationalFlag": false,
+      "solemn": false,
+      "noConfetti": false,
+      "noAudio": false,
+      "posterOnly": true,
+      "fallbackPosterID": "poster-term-19",
+      "triggerSolarTermIndex": 19
+    },
+    {
+      "id": "cue-term-20",
+      "tone": "static-term",
+      "priority": 20,
+      "allowsAutoPlay": false,
+      "nationalFlag": false,
+      "solemn": false,
+      "noConfetti": false,
+      "noAudio": false,
+      "posterOnly": true,
+      "fallbackPosterID": "poster-term-20",
+      "triggerSolarTermIndex": 20
+    },
+    {
+      "id": "cue-term-21",
+      "tone": "static-term",
+      "priority": 20,
+      "allowsAutoPlay": false,
+      "nationalFlag": false,
+      "solemn": false,
+      "noConfetti": false,
+      "noAudio": false,
+      "posterOnly": true,
+      "fallbackPosterID": "poster-term-21",
+      "triggerSolarTermIndex": 21
+    },
+    {
+      "id": "cue-term-22",
+      "tone": "static-term",
+      "priority": 20,
+      "allowsAutoPlay": false,
+      "nationalFlag": false,
+      "solemn": false,
+      "noConfetti": false,
+      "noAudio": false,
+      "posterOnly": true,
+      "fallbackPosterID": "poster-term-22",
+      "triggerSolarTermIndex": 22
+    },
+    {
+      "id": "cue-term-23",
+      "tone": "static-term",
+      "priority": 20,
+      "allowsAutoPlay": false,
+      "nationalFlag": false,
+      "solemn": false,
+      "noConfetti": false,
+      "noAudio": false,
+      "posterOnly": true,
+      "fallbackPosterID": "poster-term-23",
+      "triggerSolarTermIndex": 23
+    }
+  ],
+  "assets": [
+    {
+      "id": "poster-term-0",
+      "kind": "poster",
+      "sourceReference": "static-solar-term:Xuân phân",
+      "generationMethod": "manual",
+      "checksum": "06dcb02e5637436a15e2040f8d8bb8ff0e8b585a06ce35159a385dc37e072946",
+      "licenseStatus": "original"
+    },
+    {
+      "id": "poster-term-1",
+      "kind": "poster",
+      "sourceReference": "static-solar-term:Thanh minh",
+      "generationMethod": "manual",
+      "checksum": "bfd8a15af2ba69195c6ba81b48e4c9108dc24527ef2e45df52c9d1f2128da673",
+      "licenseStatus": "original"
+    },
+    {
+      "id": "poster-term-2",
+      "kind": "poster",
+      "sourceReference": "static-solar-term:Cốc vũ",
+      "generationMethod": "manual",
+      "checksum": "2309ce43a2c93a3312a038286e669a4bb03bdfb9d28b0f1d2c0e2f632fdb70c3",
+      "licenseStatus": "original"
+    },
+    {
+      "id": "poster-term-3",
+      "kind": "poster",
+      "sourceReference": "static-solar-term:Lập hạ",
+      "generationMethod": "manual",
+      "checksum": "8d1d7c926805905204f247e8e9c86e3a57228baccf06a474506bcd9c0606145b",
+      "licenseStatus": "original"
+    },
+    {
+      "id": "poster-term-4",
+      "kind": "poster",
+      "sourceReference": "static-solar-term:Tiểu mãn",
+      "generationMethod": "manual",
+      "checksum": "0356774f4eabdfda3e045477741b53ed1873ca87788da9fd5f518a3ad621fd89",
+      "licenseStatus": "original"
+    },
+    {
+      "id": "poster-term-5",
+      "kind": "poster",
+      "sourceReference": "static-solar-term:Mang chủng",
+      "generationMethod": "manual",
+      "checksum": "f8e8d653235c224c007f35edea2e26a9ab651c8d692126bfd79d7382088e7739",
+      "licenseStatus": "original"
+    },
+    {
+      "id": "poster-term-6",
+      "kind": "poster",
+      "sourceReference": "static-solar-term:Hạ chí",
+      "generationMethod": "manual",
+      "checksum": "1677b5072b9307eef33699b4d225b204274e4032b04eb0df53f299fd3b1f8b5f",
+      "licenseStatus": "original"
+    },
+    {
+      "id": "poster-term-7",
+      "kind": "poster",
+      "sourceReference": "static-solar-term:Tiểu thử",
+      "generationMethod": "manual",
+      "checksum": "b926026e77c7b93819aebd8af60693330f87bee132929a56fdeab4337343ab8f",
+      "licenseStatus": "original"
+    },
+    {
+      "id": "poster-term-8",
+      "kind": "poster",
+      "sourceReference": "static-solar-term:Đại thử",
+      "generationMethod": "manual",
+      "checksum": "89b51c19ca14301d21aca43a412ec2a69b497fdc91811c6585b7d735857fe3ce",
+      "licenseStatus": "original"
+    },
+    {
+      "id": "poster-term-9",
+      "kind": "poster",
+      "sourceReference": "static-solar-term:Lập thu",
+      "generationMethod": "manual",
+      "checksum": "a0a933911f5950cd3a2e5e0e3f97b42c11f5ad6548ab44e5721b88f045a3151a",
+      "licenseStatus": "original"
+    },
+    {
+      "id": "poster-term-10",
+      "kind": "poster",
+      "sourceReference": "static-solar-term:Xử thử",
+      "generationMethod": "manual",
+      "checksum": "f41b61c2eb22c15d88c94bf395858507ac77d2888b5555a155cf60f8d0933ffc",
+      "licenseStatus": "original"
+    },
+    {
+      "id": "poster-term-11",
+      "kind": "poster",
+      "sourceReference": "static-solar-term:Bạch lộ",
+      "generationMethod": "manual",
+      "checksum": "61e0727abbbc8aee0c589a09ac952dd656a63c7da22c074da1d20e8c73e4a9bb",
+      "licenseStatus": "original"
+    },
+    {
+      "id": "poster-term-12",
+      "kind": "poster",
+      "sourceReference": "static-solar-term:Thu phân",
+      "generationMethod": "manual",
+      "checksum": "d6e0653c92afdf24fd2d6e4ea834a07a10c21b22ebb42f1d646800d70b1c245d",
+      "licenseStatus": "original"
+    },
+    {
+      "id": "poster-term-13",
+      "kind": "poster",
+      "sourceReference": "static-solar-term:Hàn lộ",
+      "generationMethod": "manual",
+      "checksum": "f257ade0fb88f86c28cb64e9901ee9a98c362de25f730dd0c027e02b0c6db253",
+      "licenseStatus": "original"
+    },
+    {
+      "id": "poster-term-14",
+      "kind": "poster",
+      "sourceReference": "static-solar-term:Sương giáng",
+      "generationMethod": "manual",
+      "checksum": "1007c3bbba73e53bb7aa39b91cac91d3a7e31ba43c4ebff34912264c441cb988",
+      "licenseStatus": "original"
+    },
+    {
+      "id": "poster-term-15",
+      "kind": "poster",
+      "sourceReference": "static-solar-term:Lập đông",
+      "generationMethod": "manual",
+      "checksum": "4420f819cf5480b41b12add1d0b16c7ef84430412646f0788c134850ba29b709",
+      "licenseStatus": "original"
+    },
+    {
+      "id": "poster-term-16",
+      "kind": "poster",
+      "sourceReference": "static-solar-term:Tiểu tuyết",
+      "generationMethod": "manual",
+      "checksum": "0cb46d06acaecc0a355af8ee8064722e58154676b601b50eeabdf7f3e20d6bbf",
+      "licenseStatus": "original"
+    },
+    {
+      "id": "poster-term-17",
+      "kind": "poster",
+      "sourceReference": "static-solar-term:Đại tuyết",
+      "generationMethod": "manual",
+      "checksum": "f683f46b328800a1ade5294e2dc2ed4fba60b3273ff897959eff035558fd29c0",
+      "licenseStatus": "original"
+    },
+    {
+      "id": "poster-term-18",
+      "kind": "poster",
+      "sourceReference": "static-solar-term:Đông chí",
+      "generationMethod": "manual",
+      "checksum": "385bd8a583c060236166129d928845141c21964735dffbfc0545b65d1f24dc32",
+      "licenseStatus": "original"
+    },
+    {
+      "id": "poster-term-19",
+      "kind": "poster",
+      "sourceReference": "static-solar-term:Tiểu hàn",
+      "generationMethod": "manual",
+      "checksum": "1f312b8c8c01a0ee88d44d3ddd916e3468d57e75b3192d5137d56d0b7e71c1d1",
+      "licenseStatus": "original"
+    },
+    {
+      "id": "poster-term-20",
+      "kind": "poster",
+      "sourceReference": "static-solar-term:Đại hàn",
+      "generationMethod": "manual",
+      "checksum": "1319b10646343ed7c5d2ea7e802ba3a2aca684714209b5989e420ebcbfccf192",
+      "licenseStatus": "original"
+    },
+    {
+      "id": "poster-term-21",
+      "kind": "poster",
+      "sourceReference": "static-solar-term:Lập xuân",
+      "generationMethod": "manual",
+      "checksum": "c537e8d753c69a5d2ca5f4cac55dd916976fc52bebdbfaf1eb66f4b37fc32d6e",
+      "licenseStatus": "original"
+    },
+    {
+      "id": "poster-term-22",
+      "kind": "poster",
+      "sourceReference": "static-solar-term:Vũ thủy",
+      "generationMethod": "manual",
+      "checksum": "03b1520817815113dac518c4bf693eb0a0ab96f0a8232cf7e48202367f474093",
+      "licenseStatus": "original"
+    },
+    {
+      "id": "poster-term-23",
+      "kind": "poster",
+      "sourceReference": "static-solar-term:Kinh trập",
+      "generationMethod": "manual",
+      "checksum": "b18b419f754d5db2097bc66749dabaea2c4ba9bc99691569eb57ade58e4ce893",
+      "licenseStatus": "original"
+    }
+  ],
+  "recordsChecksum": "67960d8472c3402b886033921158e0684d50bb21e3b1e275126d0d4c3788f88e"
+}

@@ -1,0 +1,51 @@
+{
+  "schemaVersion": "1",
+  "packVersion": "1.0.0",
+  "publishedAt": "2026-09-09",
+  "effectiveRange": {
+    "from": 2026,
+    "to": 2026
+  },
+  "minimumAppVersion": "0.1.0",
+  "recordsChecksum": "0000000000000000000000000000000000000000000000000000000000000000",
+  "approvals": [
+    "owner",
+    "second-reviewer"
+  ],
+  "sources": [
+    {
+      "id": "qd-134-2002",
+      "title": "Quyết định 134/2002/QĐ-TTg",
+      "url": "https://vbpl.vn/TW/Pages/vbpq-toanvan.aspx?ItemID=21982",
+      "evidenceTier": "official",
+      "scope": "UTC+7 modern",
+      "licenseStatus": "publicRecord"
+    }
+  ],
+  "occurrences": [
+    {
+      "id": "quoc-khanh-2026",
+      "title": "Quốc khánh",
+      "taxonomy": "statutoryHoliday",
+      "sourceID": "qd-134-2002",
+      "packVersion": "1.0.0",
+      "isDayOff": true,
+      "legalCitation": "Hiến pháp 2013 Điều 13; kiểm tra văn bản năm phát hành"
+    }
+  ],
+  "almanac": {
+    "rulesetId": "lich-nha-truyen-thong-1",
+    "version": "1.0.0-draft",
+    "methods": [
+      {
+        "id": "hoang-hac-dao"
+      },
+      {
+        "id": "luc-dieu"
+      },
+      {
+        "id": "sat-chu-tho-tu"
+      }
+    ]
+  }
+}

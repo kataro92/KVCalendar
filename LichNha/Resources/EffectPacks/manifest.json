@@ -1,0 +1,16 @@
+{
+  "packs": [
+    {
+      "id": "effect-seed",
+      "file": "effect-seed.json"
+    },
+    {
+      "id": "holiday-scenes",
+      "file": "holiday-scenes.json"
+    },
+    {
+      "id": "solar-term-families",
+      "file": "solar-term-families.json"
+    }
+  ]
+}

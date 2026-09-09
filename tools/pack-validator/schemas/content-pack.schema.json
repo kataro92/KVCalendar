@@ -1,0 +1,41 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://lichnha.local/schemas/content-pack.schema.json",
+  "title": "LichNhaContentPack",
+  "type": "object",
+  "required": [
+    "schemaVersion",
+    "packVersion",
+    "publishedAt",
+    "effectiveRange",
+    "minimumAppVersion",
+    "recordsChecksum",
+    "approvals",
+    "sources",
+    "occurrences"
+  ],
+  "properties": {
+    "schemaVersion": { "type": "string" },
+    "packVersion": { "type": "string" },
+    "publishedAt": { "type": "string" },
+    "effectiveRange": {
+      "type": "object",
+      "required": ["from", "to"],
+      "properties": {
+        "from": { "type": "integer" },
+        "to": { "type": "integer" }
+      }
+    },
+    "minimumAppVersion": { "type": "string" },
+    "recordsChecksum": { "type": "string", "minLength": 64, "maxLength": 64 },
+    "approvals": {
+      "type": "array",
+      "minItems": 2,
+      "items": { "type": "string" }
+    },
+    "sources": { "type": "array" },
+    "occurrences": { "type": "array" },
+    "almanac": { "type": ["object", "null"] }
+  },
+  "additionalProperties": false
+}

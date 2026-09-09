@@ -1,6 +1,6 @@
 # KVCalendar — hồ sơ nghiên cứu sản phẩm
 
-Trạng thái: **nghiên cứu và đặc tả, chưa triển khai mã nguồn**
+Trạng thái: **implementation đã mở** (T020 `READY WITH WAIVERS`, 08/09/2026). Gate 1–7 vẫn `UNTESTED`.
 Mốc nghiên cứu thị trường: **07/09/2026**
 Tên sản phẩm trong tài liệu: **Lịch Nhà** (tên làm việc, chưa phải tên phát hành)
 
@@ -57,8 +57,8 @@ Kỹ năng và GitHub Spec Kit được chốt theo phiên bản trong [.agents/
 - [Hiến pháp Lịch Nhà](.specify/memory/constitution.md) giữ các nguyên tắc không thương lượng.
 - [Specification 1.0](specs/001-lich-nha-v1/spec.md) gom sáu user story và tiêu chí chấp nhận.
 - [Implementation plan](specs/001-lich-nha-v1/plan.md) chốt ranh giới module và cách kiểm thử.
-- [Tasks 1.0](specs/001-lich-nha-v1/tasks.md) có 166 task theo phụ thuộc. T001–T020 là
-  Definition of Ready; chưa được bắt đầu mã nguồn trước khi T020 pass.
+- [Tasks 1.0](specs/001-lich-nha-v1/tasks.md) có 166 task theo phụ thuộc. T020 đã ký waiver;
+  T021+ được mở. T012–T016 và Gate 1–7 không vì thế mà được coi là pass.
 
 ## Quyết định nên chốt trước khi bắt đầu code
 
@@ -67,14 +67,13 @@ Các tài liệu đã đưa ra phương án khuyến nghị, nhưng sáu quyết
 1. Dùng tên làm việc **Lịch Nhà** hay chọn một tên khác.
 2. Bản đầu chỉ hỗ trợ iPhone hay làm iPad cùng lúc. Khuyến nghị: iPhone trước, iPad ở giai đoạn kế.
 3. Phạm vi năm công bố: khuyến nghị **1900–2100**, thay vì dùng chữ “vạn niên” nhưng không nói giới hạn.
-4. Có giữ “ngày/giờ tốt xấu” trong 1.0 hay không. Khuyến nghị hiện tại: **HOLD**; nếu T018 không có ruleset, chuyên gia và owner chịu trách nhiệm thì loại khỏi 1.0. Nếu được duyệt sau đó, chỉ đặt nhãn tham khảo ở mặt sau và cho tắt toàn bộ.
+4. Ngày/giờ tốt xấu: **giữ trong 1.0** theo T018. Ba phương pháp tách (Hoàng/Hắc đạo, Lục Diệu dân gian, Sát Chủ/Thọ Tử), nhãn tham khảo, tắt được; không trộn thành một kết luận. Pack chỉ ship khi ấn bản thần sát và test đã khóa.
 5. Mức hiệu ứng và âm mặc định. Khuyến nghị: **Sống động một lần/ngày rồi lắng; bản phát hành mặc định Yên cho tới khi Gate 7 có dữ liệu**, tự hạ về Tĩnh theo Reduce Motion/Low Power; Hiên sớm, âm giấy và cue sự kiện do người dùng chủ động bật.
 6. Mô hình duy trì phí Apple Developer 99 USD/năm. Khuyến nghị: chủ dự án tài trợ hoặc tài trợ công khai; tuyệt đối không biến thành quảng cáo/paywall về sau nếu đã dùng lời hứa “miễn phí hoàn toàn”.
 
 ## Những việc cố ý chưa làm
 
-- Chưa tạo project Xcode, React, Flutter, Godot hay bất kỳ mã nguồn nào.
-- Chưa tạo logo, artwork, texture hoặc prototype tương tác.
-- Chưa sao chép dữ liệu, bài viết hay hình ảnh từ app/lịch thương mại.
-- Chưa tuyên bố thuật toán đã “chính xác” khi chưa có bộ kiểm thử đối chiếu độc lập.
 - Chưa coi persona mô phỏng là người tham gia hoặc dùng chúng để pass Gate 1–7.
+- Chưa sao chép dữ liệu, bài viết hay hình ảnh từ app/lịch thương mại.
+- Chưa tuyên bố thuật toán đã “chính xác” khi chưa có golden corpus và oracle độc lập.
+- Chưa tạo logo, artwork production hoặc gọi Rodin/ElevenLabs lúc runtime.

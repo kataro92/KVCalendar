@@ -1,7 +1,7 @@
 # App Store Privacy — worksheet bản nháp
 
-**Trạng thái:** `DRAFT · NOT RUN`
-**Ngày soạn:** 07/09/2026
+**Trạng thái:** `SOURCE REVIEWED · chưa publish`
+**Ngày soạn:** 07/09/2026; rà source 09/09/2026
 **Kết luận App Store Connect:** chưa chọn.
 
 Apple yêu cầu câu trả lời ở cấp ứng dụng phản ánh cả code của dự án lẫn đối tác/SDK được tích hợp. Phương án mong muốn là **“No, we do not collect data from this app”**, nhưng không được chọn phương án đó trước khi audit đúng binary phát hành.
@@ -39,17 +39,17 @@ Nếu audit tìm thấy bất kỳ dữ liệu nào được truyền khỏi thi
 
 | Kiểm tra | Owner | Trạng thái | Bằng chứng cần lưu |
 |---|---|---|---|
-| Liệt kê Swift Package/CocoaPods/framework nhúng | `[TO FILL]` | `NOT RUN` | Lockfile, build graph, dependency allowlist |
-| Tìm ads, StoreKit/IAP, attribution và tracking SDK | `[TO FILL]` | `NOT RUN` | Dependency + symbol/string scan |
-| Tìm analytics, crash upload, telemetry và remote config | `[TO FILL]` | `NOT RUN` | Source/binary/network scan |
-| Tìm endpoint, `URLSession`, WebSocket và upload task | `[TO FILL]` | `NOT RUN` | Source scan và traffic capture |
-| Kiểm tra log không có title/note | `[TO FILL]` | `NOT RUN` | Privacy tests và redacted sample |
-| Kiểm tra App Group/widget payload tối thiểu | `[TO FILL]` | `NOT RUN` | Snapshot schema và device inspection |
-| Kiểm tra notification content/permission timing | `[TO FILL]` | `NOT RUN` | UI test và device recording |
-| Kiểm tra EventKit scope và purpose string | `[TO FILL]` | `NOT RUN` | Entitlement/API scan và denied-flow test |
-| Kiểm tra không có runtime AI/API key | `[TO FILL]` | `NOT RUN` | Secret scan, dependency scan, network test |
-| Kiểm tra privacy manifest và required-reason APIs | `[TO FILL]` | `NOT RUN` | `PrivacyInfo.xcprivacy` + archive report |
-| So App Store answers với đúng version/build | `[TO FILL]` | `NOT RUN` | App Store Connect export/screenshot |
+| Liệt kê Swift Package/CocoaPods/framework nhúng | engineering | `CODE REVIEWED` | Chỉ `LichNhaModules` path local; không CocoaPods |
+| Tìm ads, StoreKit/IAP, attribution và tracking SDK | engineering | `CODE REVIEWED` | Không StoreKit/ads trong source |
+| Tìm analytics, crash upload, telemetry và remote config | engineering | `CODE REVIEWED` | Không SDK |
+| Tìm endpoint, `URLSession`, WebSocket và upload task | engineering | `CODE REVIEWED` | Không URLSession app code; traffic máy `NOT RUN` |
+| Kiểm tra log không có title/note | engineering | `UNIT TEST` | PersonalPrivacyTests |
+| Kiểm tra App Group/widget payload tối thiểu | engineering | `UNIT TEST` | WidgetSnapshotTests; máy thật `NOT RUN` |
+| Kiểm tra notification content/permission timing | engineering | `UI TEST` | LunarEventJourneyTests |
+| Kiểm tra EventKit scope và purpose string | engineering | `CODE REVIEWED` | Export sau Lưu; purpose string trong project.yml |
+| Kiểm tra không có runtime AI/API key | engineering | `CODE REVIEWED` | Không key trong app |
+| Kiểm tra privacy manifest và required-reason APIs | engineering | `PARTIAL` | UserDefaults CA92.1; Organizer report `NOT RUN` |
+| So App Store answers với đúng version/build | — | `NOT RUN` | Chưa có App Store Connect |
 
 ## Quyền và dữ liệu không được thêm âm thầm
 

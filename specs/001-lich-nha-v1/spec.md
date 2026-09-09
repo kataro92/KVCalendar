@@ -4,7 +4,7 @@
 
 **Created**: 2026-09-07
 
-**Status**: Desk research và đặc tả hoàn tất; chưa sẵn sàng triển khai vì Gate 1–7 cùng T012–T020 còn mở
+**Status**: T020 ký `READY WITH WAIVERS` ngày 08/09/2026. Implementation (T021+) được mở. Gate 1–7 vẫn `UNTESTED`; T012–T016 không được đánh dấu hoàn tất.
 
 **Input**: Ứng dụng lịch bloc Việt Nam trên iPhone, miễn phí, không quảng cáo, không paywall,
 không đăng nhập, hoạt động offline, có mỹ thuật Mộc Son Dịu, hiệu ứng theo mùa/ngày và âm nền
@@ -214,9 +214,11 @@ VoiceOver, chữ 200%, Increase Contrast và Reduce Motion trên iPhone nhỏ nh
   nhân PHẢI có taxonomy riêng.
 - **FR-010**: Mọi dữ liệu không do người dùng nhập và không suy ra trực tiếp từ ngày PHẢI có
   source ID, phiên bản, phạm vi áp dụng và trạng thái quyền phù hợp.
-- **FR-011**: Lớp ngày/giờ tốt xấu là phạm vi có điều kiện của T018. Nếu được giữ, mọi nhận định
-  PHẢI ghi là tham khảo, nêu ruleset/owner/source/version và có thể tắt toàn bộ. Nếu không có đủ
-  trách nhiệm cùng quyền, lớp này PHẢI bị loại khỏi 1.0 và các scenario liên quan được bỏ.
+- **FR-011**: T018 giữ lớp lịch truyền thống trong 1.0 với ba phương pháp tách (`hoang-hac-dao`,
+  `luc-dieu`, `sat-chu-tho-tu`) theo `research/decisions/003-almanac-ruleset.md`. Mọi nhận định
+  PHẢI ghi là tham khảo, nêu ruleset/owner/source/version và có thể tắt toàn bộ. UI KHÔNG ĐƯỢC
+  trộn ba phương pháp thành một kết luận. Pack almanac chỉ vào binary phát hành sau khi ấn bản
+  thần sát và test vector đã khóa.
 - **FR-012**: Ứng dụng PHẢI cho phép tạo, sửa và xóa sự kiện âm hoặc dương được lưu trên máy.
 - **FR-013**: Sự kiện âm lặp PHẢI lưu quy tắc tháng nhuận, tháng thiếu, múi giờ tính lịch và múi
   giờ giao thông báo.

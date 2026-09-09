@@ -180,15 +180,11 @@ Ngày âm không phải ảnh chính xác tuyệt đối của pha trăng tại 
 - khi hai phương pháp mâu thuẫn, không giấu: hiển thị khác biệt hoặc bỏ khỏi giao diện chính;
 - cho người dùng tắt toàn bộ lớp này.
 
-### Phạm vi 1.0 có điều kiện
+### Phạm vi 1.0
 
-- Can Chi;
-- tiết khí;
-- ngày hoàng đạo/hắc đạo, giờ hoàng đạo và “nên/tránh” chỉ được thêm nếu T018 có ruleset, nguồn,
-  chuyên gia cùng owner chịu trách nhiệm.
+T018 (08/09/2026) giữ lớp lịch truyền thống trong 1.0, tách ba phương pháp: giờ Hoàng/Hắc đạo, Lục Diệu dân gian, Sát Chủ/Thọ Tử. Chi tiết nguồn và hợp đồng hiển thị nằm ở `research/decisions/003-almanac-ruleset.md`. Can Chi và tiết khí vẫn thuộc Calendar Core.
 
-Nếu T018 không đạt, 1.0 chỉ giữ Can Chi và tiết khí; loại toàn bộ lớp tốt/xấu. Trực, Nhị thập bát
-tú, sao tốt/xấu, hướng xuất hành và hệ thống chọn việc tiếp tục hoãn.
+Trực, Nhị thập bát tú, sao tốt/xấu ngoài các methodId đã chốt, và hướng xuất hành vẫn hoãn.
 
 ## 8. Nội dung “mỗi ngày một mẩu”
 
