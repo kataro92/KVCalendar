@@ -140,6 +140,28 @@ struct AmbientKeepAwakeBar: View {
     }
 }
 
+struct RestingToolsHint: View {
+    var action: () -> Void
+
+    var body: some View {
+        Button(action: action) {
+            HStack(spacing: 5) {
+                Image(systemName: "chevron.up")
+                    .font(.caption2.weight(.semibold))
+                    .accessibilityHidden(true)
+                Text("Chạm để hiện thao tác")
+                    .font(.system(.caption, design: .rounded).weight(.medium))
+            }
+            .foregroundStyle(DesignTokens.inkSecondary)
+            .frame(minHeight: DesignTokens.minHitTarget)
+            .contentShape(Rectangle())
+        }
+        .buttonStyle(.plain)
+        .accessibilityLabel("Hiện thao tác")
+        .accessibilityIdentifier("reveal-tools")
+    }
+}
+
 struct TodayChromeHeader: View {
     var onSettings: () -> Void
 

@@ -53,6 +53,10 @@ struct TodayRootView: View {
                     Spacer(minLength: showsTools ? 8 : 44)
                         .contentShape(Rectangle())
                         .onTapGesture { revealTools() }
+                    if !showsTools {
+                        RestingToolsHint(action: revealTools)
+                            .padding(.bottom, 2)
+                    }
                     AmbientKeepAwakeBar(
                         ambientOn: session.preferences.isAmbientOn,
                         keepAwake: session.preferences.keepScreenAwake,

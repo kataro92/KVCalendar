@@ -16,6 +16,78 @@
 - Với tiếng Việt, áp dụng nguyên tắc về nhịp, độ cụ thể và cấu trúc; không dịch máy móc danh sách từ cấm tiếng Anh.
 - Không chỉnh nội dung trong `.agents/skills/`; đây là bản cài từ bên thứ ba. Ghi bổ sung của dự án nằm trong `.agents/workflows/`, `.cursor/rules/` hoặc tài liệu dự án.
 
+## Quy trình ủy quyền Codex / Cursor
+
+- Codex là agent chính, điều phối công việc và chịu trách nhiệm cuối cùng. Codex sở hữu UI/UX, mỹ thuật, style, layout, chữ, màu, khoảng cách, animation, asset, icon, responsive/adaptive layout, phần trình bày accessibility, interaction polish, kiểm thử UI, đọc screenshot, visual QA, tích hợp, regression và review cuối.
+- Cursor CLI là worker triển khai cho phần logic phi thị giác đủ lớn khi việc ủy quyền giúp giảm ngữ cảnh mà không tăng chi phí phối hợp. Cursor không phải owner UI, người quyết định kiến trúc hay reviewer cuối.
+- Trước việc không tầm thường, Codex phân loại nội bộ là `VISUAL`, `LOGIC` hoặc `MIXED`. `VISUAL` do Codex làm. `LOGIC` chỉ giao Cursor khi vượt ngưỡng bên dưới. `MIXED` phải tách: Codex giữ presentation; Cursor chỉ nhận phần logic đã cô lập.
+
+### Ngưỡng ủy quyền
+
+- Codex tự làm import, prop wiring, event handler nhỏ, data mapping hiển nhiên, UI-local state, glue code và thay đổi logic rất nhỏ.
+- Dùng Cursor cho business/domain logic nhiều file, thuật toán, state phi thị giác không tầm thường, API/service/repository, persistence, validation, parsing, data transformation, caching, import/export, utility dùng lại, unit test nặng logic hoặc refactor lớn.
+- Không gọi Cursor cho nhiều việc vụn. Gom một phần logic nhất quán thành một task hẹp, có điểm hoàn tất rõ.
+
+### Cách gọi Cursor CLI
+
+- Dùng non-interactive mode từ workspace hiện tại:
+
+  ```bash
+  agent -p "<task>" --output-format text
+  ```
+
+- Prompt phải nêu mục tiêu, file/thư mục liên quan, hành vi mong đợi, ràng buộc kiến trúc, file được sửa, vùng cấm sửa, test cần chạy và tiêu chí hoàn tất. Không đưa bối cảnh mỹ thuật không cần thiết vào prompt logic.
+- Dùng khung sau và điền đường dẫn cụ thể:
+
+  ```text
+  You are the logic implementation worker for this task.
+
+  OBJECTIVE
+  <logic objective>
+
+  RELEVANT FILES
+  <paths>
+
+  EXPECTED BEHAVIOR
+  <requirements>
+
+  ARCHITECTURAL CONSTRAINTS
+  <project-specific constraints>
+
+  YOU MAY MODIFY
+  <allowed paths>
+
+  DO NOT MODIFY
+  <UI / unrelated paths>
+
+  If UI changes appear necessary, do not implement them.
+  Report them back to Codex.
+
+  TESTING
+  Add or update focused tests and run relevant tests.
+
+  COMPLETION
+  Report:
+  - changed files
+  - implementation summary
+  - test results
+  - anything Codex must integrate
+
+  Keep the report concise.
+  ```
+
+### Bảo vệ UI và công việc đang có
+
+- Khi giao logic, mặc định cấm Cursor sửa stylesheet, layout, màu, chữ, khoảng cách, animation, icon, asset, visual markup và presentation component. Nếu logic đang nằm trong view, ưu tiên yêu cầu trích sang hook, service, utility, repository, domain hoặc state module phi thị giác; Codex tự nối lại vào UI.
+- Không giao trọn một feature UI chỉ vì feature đó có logic. Ngoại lệ cho phép Cursor chạm file UI phải được Codex giới hạn rõ theo từng file và từng thay đổi logic, không trao quyền quyết định phần nhìn.
+- Giữ nguyên thay đổi chưa commit và kiến trúc hiện hành. Không reset, bỏ hay revert việc không thuộc task; không dọn code ngoài phạm vi. Trước khi hoàn tác, phân biệt thay đổi có sẵn của người dùng, thay đổi của Codex và thay đổi do Cursor tạo.
+
+### Review sau ủy quyền
+
+- Không nhận output Cursor theo mặc định. Sau mỗi lần giao, Codex kiểm `git status`, danh sách file đổi, `git diff --stat` và diff liên quan; xác nhận Cursor đúng phạm vi và không làm hỏng việc đang dở.
+- Codex chạy lại test liên quan, typecheck/lint/build khi phù hợp, tích hợp logic, chạy UI bị ảnh hưởng, đọc screenshot, tiếp tục polish và kiểm regression. Chỉ Codex kết luận trạng thái cuối.
+- Để tiết kiệm token, sau khi Cursor xong chỉ đọc trước danh sách file đổi, diff summary, đoạn diff liên quan và output test. Không đọc lại file lớn không đổi nếu không cần; tránh trao đổi nhiều vòng khi một prompt đầy đủ có thể giải quyết task.
+
 ## Quy trình Spec Kit
 
 - Spec Kit được ghim ở phiên bản 1.0.4, tích hợp Codex dưới `.agents/skills/speckit-*` và hạ tầng nằm trong `.specify/`.
