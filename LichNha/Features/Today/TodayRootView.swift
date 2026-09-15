@@ -27,7 +27,8 @@ struct TodayRootView: View {
                 }
                 VStack(spacing: 0) {
                     TodayChromeHeader { session.openSettings() }
-                    Spacer(minLength: showsTools ? 8 : 28)
+                    Color.clear
+                        .frame(height: showsTools ? 4 : 10)
                         .contentShape(Rectangle())
                         .onTapGesture { revealTools() }
                     if let day = session.calendarModel.day {
@@ -47,16 +48,22 @@ struct TodayRootView: View {
                     }
                     if showsTools {
                         toolCluster
-                            .padding(.top, DesignTokens.spaceMD)
+                            .padding(.top, 12)
                             .transition(.opacity.combined(with: .move(edge: .bottom)))
+                    } else {
+                        HomeActionDock(
+                            onPrevious: goPrevious,
+                            onDetail: openDetail,
+                            onExpand: revealTools,
+                            onReplay: replayScene,
+                            onNext: goNext
+                        )
+                        .padding(.top, 12)
+                        .transition(.opacity.combined(with: .scale(scale: 0.97)))
                     }
-                    Spacer(minLength: showsTools ? 8 : 44)
+                    Spacer(minLength: showsTools ? 4 : 12)
                         .contentShape(Rectangle())
                         .onTapGesture { revealTools() }
-                    if !showsTools {
-                        RestingToolsHint(action: revealTools)
-                            .padding(.bottom, 2)
-                    }
                     AmbientKeepAwakeBar(
                         ambientOn: session.preferences.isAmbientOn,
                         keepAwake: session.preferences.keepScreenAwake,
@@ -65,8 +72,8 @@ struct TodayRootView: View {
                             session.updatePreferences { $0.keepScreenAwake = value }
                         }
                     )
-                    .padding(.horizontal, 18)
-                    .padding(.bottom, 10)
+                    .padding(.horizontal, 54)
+                    .padding(.bottom, 8)
                 }
                 .padding(.top, 6)
                 .safeAreaPadding(.top)
@@ -113,13 +120,16 @@ struct TodayRootView: View {
 
     private func revealTools() {
         guard !showsTools else { return }
+        director.settleForInteraction()
         toolsExpanded = true
     }
 
     @ViewBuilder
     private func calendarBloc(day: CalendarDay, size: CGSize) -> some View {
         let width = size.width * DesignTokens.blocWidthRatio
-        let height = min(max(size.height * 0.47, 310), 410)
+        let height = typeSize >= .accessibility2
+            ? min(max(size.height * 0.74, 620), 720)
+            : min(max(size.height * 0.60, 440), 520)
         ZStack(alignment: .top) {
             PaperStackView(peeled: DailyRitualState.hasPeeled(on: dayKey)) {
                 PaperSurface {
@@ -133,10 +143,11 @@ struct TodayRootView: View {
             }
             .padding(.top, DesignTokens.headerOverlap)
             BlocHeaderView(
-                title: nil,
-                action: { session.openMonth() },
+                title: "THÁNG \(day.civilDate.month)",
+                action: openMonth,
                 identifier: "month-button",
-                fill: DesignTokens.khanh
+                fill: DesignTokens.khanh,
+                motionActive: director.phase == .intro
             )
         }
         .overlay(alignment: .topLeading) {
@@ -154,29 +165,33 @@ struct TodayRootView: View {
                     VietnamFlagMesh(hoist: 16)
                         .offset(y: -8)
                 }
-                .offset(x: 52, y: -18)
+                .offset(x: 44, y: -12)
                 .allowsHitTesting(false)
                 .accessibilityHidden(true)
             }
         }
         .overlay(alignment: .topTrailing) {
-            if showsTools {
-                FamilyClipButton { session.openEvents() }
-                    .offset(x: 8, y: DesignTokens.headerHeight - 2)
-            }
+            FamilyClipButton(action: openEvents)
+                .offset(x: 8, y: DesignTokens.headerHeight - 2)
         }
         .frame(width: width, height: height)
         .lichNhaPagePeel(
             reduceMotion: reduceMotion,
             onNext: {
+                director.settleForInteraction()
                 DailyRitualState.markPeeled(on: dayKey)
                 session.calendarModel.goToNextDay()
                 session.syncFromCalendarModel()
             },
             onPrevious: {
+                director.settleForInteraction()
                 session.calendarModel.goToPreviousDay()
                 session.syncFromCalendarModel()
             }
+        )
+        .simultaneousGesture(
+            DragGesture(minimumDistance: 0)
+                .onChanged { _ in director.settleForInteraction() }
         )
         .accessibilityActions {
             Button("Ngày sau") {
@@ -191,11 +206,11 @@ struct TodayRootView: View {
                 session.calendarModel.goToToday()
                 session.syncFromCalendarModel()
             }
-            Button("Xem tháng") { session.openMonth() }
-            Button("Xem chi tiết") { session.openDayBack() }
+            Button("Xem tháng", action: openMonth)
+            Button("Xem chi tiết", action: openDetail)
             Button("Phát lại cảnh ngày") { replayScene() }
             Button("Cài đặt") { session.openSettings() }
-            Button("Ngày gia đình") { session.openEvents() }
+            Button("Ngày gia đình", action: openEvents)
             Button(showsTools ? "Ẩn thao tác" : "Hiện thao tác") {
                 toolsExpanded.toggle()
             }
@@ -205,34 +220,58 @@ struct TodayRootView: View {
     @ViewBuilder
     private var toolCluster: some View {
         let stacked = typeSize >= .accessibility2
-        VStack(spacing: DesignTokens.spaceSM) {
-            DayNavigationControls(
-                showsToday: !session.calendarModel.isViewingToday,
-                onPrevious: goPrevious,
-                onToday: goToday,
-                onNext: goNext
-            )
-            TodayActionRow(
-                onDetail: { session.openDayBack() },
-                onReplay: replayScene,
-                returnToMonth: session.canReturnToMonth ? { session.returnToMonth() } : nil
-            )
+        Group {
+            if stacked {
+                VStack(spacing: DesignTokens.spaceSM) {
+                    DayNavigationControls(
+                        showsToday: !session.calendarModel.isViewingToday,
+                        onPrevious: goPrevious,
+                        onToday: goToday,
+                        onNext: goNext
+                    )
+                    TodayActionRow(
+                        onDetail: openDetail,
+                        onReplay: replayScene,
+                        returnToMonth: session.canReturnToMonth ? { session.returnToMonth() } : nil
+                    )
+                }
+            } else {
+                HStack(spacing: 6) {
+                    DayNavigationControls(
+                        showsToday: !session.calendarModel.isViewingToday,
+                        onPrevious: goPrevious,
+                        onToday: goToday,
+                        onNext: goNext
+                    )
+                    TodayActionRow(
+                        onDetail: openDetail,
+                        onReplay: replayScene,
+                        returnToMonth: session.canReturnToMonth ? { session.returnToMonth() } : nil
+                    )
+                }
+                .padding(5)
+                .background(DesignTokens.wood.opacity(0.15), in: Capsule())
+                .overlay(Capsule().stroke(DesignTokens.wood.opacity(0.18), lineWidth: 0.7))
+            }
         }
-        .padding(.horizontal, stacked ? 8 : 16)
+        .padding(.horizontal, stacked ? 8 : 18)
     }
 
     private func goPrevious() {
+        director.settleForInteraction()
         session.calendarModel.goToPreviousDay()
         session.syncFromCalendarModel()
     }
 
     private func goNext() {
+        director.settleForInteraction()
         DailyRitualState.markPeeled(on: dayKey)
         session.calendarModel.goToNextDay()
         session.syncFromCalendarModel()
     }
 
     private func goToday() {
+        director.settleForInteraction()
         session.calendarModel.goToToday()
         session.syncFromCalendarModel()
     }
@@ -253,6 +292,21 @@ struct TodayRootView: View {
         director.requestReplay()
         resolveScene()
         director.noteCalendarTextVisible()
+    }
+
+    private func openMonth() {
+        director.settleForInteraction()
+        session.openMonth()
+    }
+
+    private func openDetail() {
+        director.settleForInteraction()
+        session.openDayBack()
+    }
+
+    private func openEvents() {
+        director.settleForInteraction()
+        session.openEvents()
     }
 
     private func resolveScene() {
@@ -303,6 +357,7 @@ private struct TodayScrollIfNeeded: ViewModifier {
             ScrollView {
                 content
             }
+            .defaultScrollAnchor(.top)
             .scrollBounceBehavior(.basedOnSize)
         } else {
             content

@@ -4,15 +4,17 @@ import EffectCore
 struct NationalDayScene: View {
     var director: EffectDirector
     @Environment(\.accessibilityReduceMotion) private var reduceMotion
+    @Environment(\.lichNhaDimFlashingLights) private var dimFlashingLights
 
     var body: some View {
         ZStack(alignment: .topTrailing) {
+            PosterSceneView(posterID: "poster-quoc-khanh")
             if director.particlesActive {
                 ParticleLibrary(
                     kind: .firework,
                     seed: director.seed,
                     active: true,
-                    dimFlashingLights: false
+                    dimFlashingLights: dimFlashingLights
                 )
             }
         }

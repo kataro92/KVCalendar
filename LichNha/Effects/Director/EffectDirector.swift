@@ -54,6 +54,12 @@ final class EffectDirector {
         phase = .waitingForText
     }
 
+    /// Reading and direct manipulation take priority over an automatic intro.
+    func settleForInteraction() {
+        guard phase == .intro || phase == .settle else { return }
+        phase = .idle
+    }
+
     func stopForBackground() {
         phase = .stopped
     }

@@ -6,9 +6,7 @@ struct EffectSettingsView: View {
 
     var body: some View {
         VStack(alignment: .leading, spacing: DesignTokens.spaceSM) {
-            Text("Cảnh ngày")
-                .font(.headline)
-            Text("Giảm chuyển động, làm mờ đèn nhấp nháy, chế độ nguồn điện thấp và nhiệt máy được ưu tiên hơn lựa chọn này. Lựa chọn vẫn được nhớ.")
+            Text("Máy sẽ tự giảm hiệu ứng khi bạn bật Giảm chuyển động, Giảm đèn nhấp nháy hoặc Chế độ nguồn điện thấp.")
                 .font(.footnote)
                 .foregroundStyle(DesignTokens.inkSecondary)
             HStack {
@@ -27,8 +25,7 @@ struct EffectSettingsView: View {
                 session.closeSettings()
             }
             .lichNhaHitTarget()
-            .buttonStyle(.bordered)
-            .tint(DesignTokens.wood)
+            .buttonStyle(PaperControlStyle())
             .accessibilityIdentifier("settings-replay-scene")
         }
         .accessibilityElement(children: .contain)

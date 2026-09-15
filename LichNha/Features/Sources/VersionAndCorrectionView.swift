@@ -9,8 +9,6 @@ struct VersionAndCorrectionView: View {
 
     var body: some View {
         VStack(alignment: .leading, spacing: DesignTokens.spaceSM) {
-            Text("Phiên bản và báo sai")
-                .font(.headline)
             LabeledContent("Công cụ lịch", value: VietnameseLunarCalendar.ruleSetVersion)
             LabeledContent("Nội dung", value: session.catalog?.activeVersionLabel ?? "chưa đọc pack")
             LabeledContent("Hiệu ứng", value: session.effectCatalog?.versionLabel ?? "chưa đọc pack")

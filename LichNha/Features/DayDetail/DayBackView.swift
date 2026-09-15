@@ -7,30 +7,45 @@ struct DayBackView: View {
     @Bindable var session: AppSession
 
     var body: some View {
-        CalendarMountView {
+        CalendarMountView(headerTitle: "MẶT SAU TỜ LỊCH") {
             ScrollView {
-                VStack(alignment: .leading, spacing: DesignTokens.spaceMD) {
+                MountedPaperPage {
                     if let day = session.day {
-                        Text("Mặt sau")
-                            .font(.headline)
-                            .accessibilityIdentifier("day-back")
-                        Text(CalendarDayFormatter.solarMonthYear(day) + ", ngày \(day.civilDate.day)")
-                        Text(CalendarDayFormatter.lunar(day))
-                        Text("Can Chi: \(CalendarDayFormatter.canChiDay(day))")
-                            .accessibilityIdentifier("can-chi-back")
-                        if let term = day.solarTerm {
-                            Text("Tiết khí: \(term.name)")
+                        VStack(alignment: .leading, spacing: 5) {
+                            Text(CalendarDayFormatter.solarMonthYear(day))
+                                .font(.caption.weight(.bold))
+                                .tracking(1.4)
+                                .foregroundStyle(DesignTokens.son)
+                            Text("Ngày \(day.civilDate.day)")
+                                .font(.system(.largeTitle, design: .rounded).weight(.bold))
+                                .foregroundStyle(DesignTokens.ink)
+                            Text(CalendarDayFormatter.lunar(day))
+                                .font(.system(.title3, design: .rounded).weight(.medium))
+                                .foregroundStyle(DesignTokens.inkSecondary)
                         }
-                        Text("Công cụ lịch \(day.engineVersion)")
-                            .font(.footnote)
-                            .foregroundStyle(DesignTokens.inkSecondary)
+                            .accessibilityIdentifier("day-back")
+
+                        PaperSection(title: "Ngày âm", symbol: "moon.stars") {
+                            Label("Can Chi: \(CalendarDayFormatter.canChiDay(day))", systemImage: "seal")
+                                .accessibilityIdentifier("can-chi-back")
+                            if let term = day.solarTerm {
+                                Label("Tiết khí: \(term.name)", systemImage: "leaf")
+                            }
+                        }
 
                         HistoricalScopeNotice(civil: day.civilDate)
 
-                        occurrenceBlock(day)
-                        if session.almanacVisible {
-                            almanacBlock(day)
+                        PaperSection(title: "Ngày lễ và ghi chú", symbol: "bookmark") {
+                            occurrenceBlock(day)
                         }
+                        if session.almanacVisible {
+                            PaperSection(title: "Lịch truyền thống", symbol: "scroll") {
+                                almanacBlock(day)
+                            }
+                        }
+                        Text("Dữ liệu tính bởi công cụ lịch \(day.engineVersion)")
+                            .font(.caption)
+                            .foregroundStyle(DesignTokens.inkSecondary)
                     }
                     Toggle(isOn: Binding(
                         get: { session.almanacVisible },
@@ -52,7 +67,8 @@ struct DayBackView: View {
                             .accessibilityIdentifier("back-to-month")
                     }
                 }
-                .padding(.bottom, 16)
+                .padding(.top, 6)
+                .padding(.bottom, 20)
             }
         }
     }
@@ -61,7 +77,7 @@ struct DayBackView: View {
     private func occurrenceBlock(_ day: CalendarDay) -> some View {
         let items = session.catalog?.occurrences(on: day) ?? []
         if items.isEmpty {
-            Text("Không có ngày nghỉ hay lễ đóng gói cho ngày này.")
+            Text("Hôm nay không có ngày lễ trong dữ liệu trên máy.")
                 .foregroundStyle(DesignTokens.inkSecondary)
         } else {
             ForEach(items, id: \.id) { item in
@@ -100,7 +116,8 @@ struct DayBackView: View {
     private func almanacBlock(_ day: CalendarDay) -> some View {
         let entries = AlmanacEngine.entries(for: day)
         Text(AlmanacEngine.referenceLabel)
-            .font(.subheadline.weight(.semibold))
+            .font(.caption)
+            .foregroundStyle(DesignTokens.inkSecondary)
             .accessibilityIdentifier("almanac-reference-label")
         Text("Bộ quy tắc \(AlmanacEngine.ruleset.id) · \(AlmanacEngine.ruleset.version)")
             .font(.footnote)

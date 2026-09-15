@@ -40,18 +40,65 @@ struct ParticleLibrary: View {
         time: TimeInterval,
         dim: Bool
     ) {
-        let bursts = 3
+        let bursts = dim ? 2 : 3
         for index in 0..<bursts {
             let origin = CGPoint(
-                x: size.width * CGFloat(0.18 + rng.next() * 0.64),
-                y: size.height * CGFloat(0.08 + rng.next() * 0.18)
+                x: size.width * CGFloat(0.08 + rng.next() * 0.84),
+                y: size.height * CGFloat(0.07 + rng.next() * 0.62)
             )
             let hueShift = index
-            let radius = dim ? 10.0 : 8.0 + 6.0 * abs(sin(time * 0.7 + Double(index)))
-            let color = hueShift == 0 ? Color(red: 0.85, green: 0.22, blue: 0.24).opacity(0.35)
-                : Color(red: 0.95, green: 0.78, blue: 0.28).opacity(0.32)
-            let rect = CGRect(x: origin.x - radius, y: origin.y - radius, width: radius * 2, height: radius * 2)
-            context.fill(Path(ellipseIn: rect), with: .color(color))
+            let age = (time + Double(index) * 0.62).truncatingRemainder(dividingBy: 3.4)
+            let progress = min(max(age / 1.65, 0), 1)
+            let envelope = CGFloat(sin(progress * .pi))
+            let radius = CGFloat(dim ? 16.0 : 24.0 + rng.next() * 18.0) * CGFloat(0.45 + progress * 0.55)
+            let color = hueShift.isMultiple(of: 2)
+                ? DesignTokens.son.opacity((dim ? 0.24 : 0.46) * envelope)
+                : DesignTokens.bronzeLight.opacity((dim ? 0.22 : 0.55) * envelope)
+            let rays = dim ? 7 : 11
+            let haloRect = CGRect(
+                x: origin.x - radius * 0.54,
+                y: origin.y - radius * 0.54,
+                width: radius * 1.08,
+                height: radius * 1.08
+            )
+            context.stroke(
+                Path(ellipseIn: haloRect),
+                with: .color(color.opacity(dim ? 0.10 : 0.18)),
+                lineWidth: dim ? 0.5 : 0.8
+            )
+            for ray in 0..<rays {
+                let angle = CGFloat(ray) * (.pi * 2 / CGFloat(rays)) + CGFloat(rng.next() * 0.08)
+                let inner = radius * 0.34
+                let outer = radius * (0.78 + rng.next() * 0.22)
+                let tail = CGPoint(x: origin.x + cos(angle) * inner, y: origin.y + sin(angle) * inner)
+                let tip = CGPoint(x: origin.x + cos(angle) * outer, y: origin.y + sin(angle) * outer)
+                var stroke = Path()
+                stroke.move(to: tail)
+                stroke.addQuadCurve(
+                    to: tip,
+                    control: CGPoint(
+                        x: (tail.x + tip.x) * 0.5 - sin(angle) * 2.5,
+                        y: (tail.y + tip.y) * 0.5 + cos(angle) * 2.5
+                    )
+                )
+                context.stroke(stroke, with: .color(color), lineWidth: dim ? 0.9 : 1.5)
+                if !dim && ray.isMultiple(of: 2) {
+                    let sparkSize: CGFloat = 2.2
+                    context.fill(
+                        Path(ellipseIn: CGRect(
+                            x: tip.x - sparkSize / 2,
+                            y: tip.y - sparkSize / 2,
+                            width: sparkSize,
+                            height: sparkSize
+                        )),
+                        with: .color(color.opacity(0.88))
+                    )
+                }
+            }
+            context.fill(
+                Path(ellipseIn: CGRect(x: origin.x - 2, y: origin.y - 2, width: 4, height: 4)),
+                with: .color(color)
+            )
         }
     }
 
@@ -59,12 +106,42 @@ struct ParticleLibrary: View {
         let count = 6
         for index in 0..<count {
             let startX = size.width * CGFloat(0.08 + rng.next() * 0.84)
-            let drift = CGFloat(sin(time * 0.4 + Double(index))) * 8
-            let y = size.height * 0.12 + CGFloat(index) * 9 + CGFloat(sin(time + Double(index))) * 4
-            var petal = Path()
-            petal.addEllipse(in: CGRect(x: startX + drift, y: y, width: 9, height: 5))
-            context.fill(petal, with: .color(Color(red: 0.93, green: 0.72, blue: 0.74).opacity(0.55)))
+            let drift = CGFloat(sin(time * 0.34 + Double(index) * 1.7)) * 13
+            let y = size.height * 0.11 + CGFloat(index) * 10 + CGFloat(sin(time * 0.75 + Double(index))) * 5
+            let angle = CGFloat(sin(time * 0.55 + Double(index) * 1.3)) * 0.45
+            let scale = 0.82 + CGFloat((index % 3)) * 0.08
+            drawPetal(
+                context: context,
+                center: CGPoint(x: startX + drift, y: y),
+                angle: angle,
+                scale: scale,
+                color: index.isMultiple(of: 2)
+                    ? Color(red: 0.93, green: 0.72, blue: 0.74)
+                    : Color(red: 0.88, green: 0.62, blue: 0.60)
+            )
         }
+    }
+
+    private func drawPetal(context: GraphicsContext, center: CGPoint, angle: CGFloat, scale: CGFloat, color: Color) {
+        let length = 13 * scale
+        let width = 7 * scale
+        let direction = CGVector(dx: cos(angle), dy: sin(angle))
+        let normal = CGVector(dx: -direction.dy, dy: direction.dx)
+        let tip = CGPoint(x: center.x + direction.dx * length * 0.5, y: center.y + direction.dy * length * 0.5)
+        let tail = CGPoint(x: center.x - direction.dx * length * 0.5, y: center.y - direction.dy * length * 0.5)
+        let upper = CGPoint(x: center.x + normal.dx * width * 0.5, y: center.y + normal.dy * width * 0.5)
+        let lower = CGPoint(x: center.x - normal.dx * width * 0.5, y: center.y - normal.dy * width * 0.5)
+
+        var shape = Path()
+        shape.move(to: tip)
+        shape.addQuadCurve(to: tail, control: upper)
+        shape.addQuadCurve(to: tip, control: lower)
+        context.fill(shape, with: .color(color.opacity(0.62)))
+
+        var crease = Path()
+        crease.move(to: tail)
+        crease.addLine(to: tip)
+        context.stroke(crease, with: .color(Color.white.opacity(0.25)), lineWidth: 0.6)
     }
 
     private func drawRain(_ rng: inout SeededRandom, context: GraphicsContext, size: CGSize, time: TimeInterval) {

@@ -8,17 +8,14 @@ struct EffectHostView: View {
     var region: InspirationRegion = .neutral
 
     var body: some View {
-        GeometryReader { proxy in
-            let safe = contentSafeRect(in: proxy.size)
-            Group {
-                if director.resolved.quality == .resolvedStatic {
-                    PosterSceneView(posterID: director.resolved.posterID)
-                } else {
-                    scene
-                }
+        Group {
+            if director.resolved.quality == .resolvedStatic {
+                PosterSceneView(posterID: director.resolved.posterID)
+            } else {
+                scene
             }
-            .mask(particleMask(size: proxy.size, safe: safe))
         }
+        .frame(maxWidth: .infinity, maxHeight: .infinity)
         .allowsHitTesting(false)
         .accessibilityHidden(true)
     }
@@ -37,20 +34,4 @@ struct EffectHostView: View {
         }
     }
 
-    private func contentSafeRect(in size: CGSize) -> CGRect {
-        CGRect(
-            x: size.width * 0.12,
-            y: size.height * 0.22,
-            width: size.width * 0.76,
-            height: size.height * 0.48
-        )
-    }
-
-    private func particleMask(size: CGSize, safe: CGRect) -> some View {
-        Canvas { context, canvasSize in
-            context.fill(Path(CGRect(origin: .zero, size: canvasSize)), with: .color(.white))
-            context.blendMode = .destinationOut
-            context.fill(Path(roundedRect: safe, cornerRadius: 12), with: .color(.white))
-        }
-    }
 }

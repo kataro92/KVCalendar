@@ -6,9 +6,7 @@ struct InspirationRegionView: View {
 
     var body: some View {
         VStack(alignment: .leading, spacing: DesignTokens.spaceSM) {
-            Text("Vùng cảm hứng")
-                .font(.headline)
-            Text("Chọn bằng tay. Ứng dụng không dùng vị trí máy.")
+            Text("Chọn nét vùng miền cho cảnh ngày. Lịch Nhà không dùng vị trí của máy.")
                 .font(.footnote)
                 .foregroundStyle(DesignTokens.inkSecondary)
             ForEach(InspirationRegion.allCases, id: \.self) { region in

@@ -7,8 +7,6 @@ struct PrivacyAndTimeSettingsView: View {
 
     var body: some View {
         VStack(alignment: .leading, spacing: DesignTokens.spaceSM) {
-            Text("Riêng tư và giờ")
-                .font(.headline)
             Text("Ngày âm luôn theo lịch Việt UTC+7. Đổi múi giờ máy không sửa một ngày đã mở.")
                 .font(.footnote)
                 .foregroundStyle(DesignTokens.inkSecondary)

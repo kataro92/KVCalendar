@@ -34,19 +34,20 @@ enum DesignTokens {
         dark: (0.290, 0.220, 0.310)
     )
 
-    static let spaceSM: CGFloat = 8
-    static let spaceMD: CGFloat = 16
-    static let spaceLG: CGFloat = 24
-    static let radiusSheet: CGFloat = 16
+    static let spaceXS: CGFloat = 6
+    static let spaceSM: CGFloat = 10
+    static let spaceMD: CGFloat = 18
+    static let spaceLG: CGFloat = 26
+    static let radiusSheet: CGFloat = 13
     static let radiusChip: CGFloat = 22
     static let minHitTarget: CGFloat = 44
     static let motionFast: Double = 0.18
     static let motionPage: Double = 0.42
-    static let blocWidthRatio: CGFloat = 0.70
-    static let brassSize: CGFloat = 18
-    static let headerHeight: CGFloat = 56
-    static let headerRail: CGFloat = 8
-    static let headerOverlap: CGFloat = 50
+    static let blocWidthRatio: CGFloat = 0.88
+    static let brassSize: CGFloat = 15
+    static let headerHeight: CGFloat = 72
+    static let headerRail: CGFloat = 9
+    static let headerOverlap: CGFloat = 62
 
     private static func adaptive(
         light: (CGFloat, CGFloat, CGFloat),

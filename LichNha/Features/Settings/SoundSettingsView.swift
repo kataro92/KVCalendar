@@ -6,12 +6,10 @@ struct SoundSettingsView: View {
 
     var body: some View {
         VStack(alignment: .leading, spacing: DesignTokens.spaceSM) {
-            Text("Âm")
-                .font(.headline)
-            Text("Bản cài mới dùng Yên. Hiên sớm không tranh VoiceOver, Silent hay audio khác. Không tuyên bố trị liệu.")
+            Text("Ứng dụng bắt đầu ở chế độ Yên và luôn tôn trọng nút im lặng, VoiceOver cùng âm thanh đang phát.")
                 .font(.footnote)
                 .foregroundStyle(DesignTokens.inkSecondary)
-            VStack(spacing: 8) {
+            LazyVGrid(columns: [GridItem(.flexible()), GridItem(.flexible())], spacing: 8) {
                 PaperChoiceButton(title: "Yên", selected: session.preferences.ambient == .yen, identifier: "ambient-yen") {
                     session.updatePreferences { $0.ambient = .yen }
                 }
@@ -28,15 +26,14 @@ struct SoundSettingsView: View {
             Toggle("Âm giấy", isOn: binding(\.paperCuesEnabled))
                 .lichNhaHitTarget()
                 .accessibilityIdentifier("paper-cues-toggle")
-            Toggle("Cue sự kiện", isOn: binding(\.eventCuesEnabled))
+            Toggle("Âm báo ngày đặc biệt", isOn: binding(\.eventCuesEnabled))
                 .lichNhaHitTarget()
                 .accessibilityIdentifier("event-cues-toggle")
-            Button("Tắt hết âm") {
+            Button("Chuyển về Yên") {
                 session.updatePreferences { $0.silenceAllAudio() }
             }
             .lichNhaHitTarget()
-            .buttonStyle(.borderedProminent)
-            .tint(DesignTokens.son)
+            .buttonStyle(PaperControlStyle())
             .accessibilityIdentifier("silence-all-audio")
         }
         .accessibilityElement(children: .contain)

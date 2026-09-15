@@ -6,36 +6,42 @@ struct PaperStackView<Content: View>: View {
 
     var body: some View {
         ZStack(alignment: .bottomLeading) {
-            ForEach(0..<7, id: \.self) { index in
-                let depth = CGFloat(7 - index)
+            RoundedRectangle(cornerRadius: 10, style: .continuous)
+                .fill(Color.black.opacity(0.10))
+                .blur(radius: 6)
+                .offset(y: 10)
+                .padding(.horizontal, 5)
+                .accessibilityHidden(true)
+            ForEach(0..<5, id: \.self) { index in
+                let depth = CGFloat(5 - index)
                 UnevenRoundedRectangle(
-                    topLeadingRadius: 4,
+                    topLeadingRadius: 2,
                     bottomLeadingRadius: DesignTokens.radiusSheet,
                     bottomTrailingRadius: DesignTokens.radiusSheet,
-                    topTrailingRadius: 4,
+                    topTrailingRadius: 2,
                     style: .continuous
                 )
-                .fill(DesignTokens.paper.opacity(0.97 - Double(index) * 0.03))
+                .fill(index.isMultiple(of: 2) ? DesignTokens.paper : DesignTokens.chipFill)
                 .overlay {
                     UnevenRoundedRectangle(
-                        topLeadingRadius: 4,
+                        topLeadingRadius: 2,
                         bottomLeadingRadius: DesignTokens.radiusSheet,
                         bottomTrailingRadius: DesignTokens.radiusSheet,
-                        topTrailingRadius: 4,
+                        topTrailingRadius: 2,
                         style: .continuous
                     )
-                    .stroke(Color.black.opacity(0.04), lineWidth: 0.5)
+                    .stroke(DesignTokens.wood.opacity(0.10), lineWidth: 0.55)
                 }
-                .offset(x: -depth * 2.1, y: depth * 2.6)
-                .padding(.trailing, depth * 1.1)
+                .offset(x: index.isMultiple(of: 2) ? -depth * 0.65 : depth * 0.35, y: depth * 2.2)
+                .padding(.horizontal, depth * 0.45)
                 .accessibilityHidden(true)
             }
             content()
                 .offset(y: peeled ? 6 : 0)
         }
-        .padding(.leading, 16)
-        .padding(.bottom, 18)
+        .padding(.horizontal, 5)
+        .padding(.bottom, 14)
         .compositingGroup()
-        .shadow(color: .black.opacity(0.16), radius: 16, y: 10)
+        .shadow(color: .black.opacity(0.14), radius: 18, y: 12)
     }
 }

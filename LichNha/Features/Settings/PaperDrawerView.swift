@@ -5,29 +5,43 @@ struct PaperDrawerView: View {
     @Bindable var session: AppSession
 
     var body: some View {
-        CalendarMountView {
+        CalendarMountView(headerTitle: "CÀI ĐẶT") {
             ScrollView {
-                VStack(alignment: .leading, spacing: DesignTokens.spaceLG) {
-                    Text("Cài đặt")
-                        .font(.title2.weight(.semibold))
+                MountedPaperPage {
+                    Text("Chỉnh Lịch Nhà theo nhịp của bạn")
+                        .font(.system(.title3, design: .rounded).weight(.bold))
+                        .foregroundStyle(DesignTokens.ink)
                         .accessibilityIdentifier("settings-title")
-                    EffectSettingsView(session: session)
-                    SoundSettingsView(session: session)
-                    InspirationRegionView(session: session)
-                    PrivacyAndTimeSettingsView(session: session)
-                    Toggle("Hiện lớp lịch truyền thống", isOn: Binding(
-                        get: { session.almanacVisible },
-                        set: { session.setAlmanacVisible($0) }
-                    ))
-                    .lichNhaHitTarget()
-                    .tint(DesignTokens.wood)
-                    .accessibilityIdentifier("almanac-toggle")
-                    VersionAndCorrectionView(session: session)
+                    PaperSection(title: "Cảnh ngày", symbol: "sparkles") {
+                        EffectSettingsView(session: session)
+                    }
+                    PaperSection(title: "Âm thanh", symbol: "speaker.wave.2") {
+                        SoundSettingsView(session: session)
+                    }
+                    PaperSection(title: "Vùng cảm hứng", symbol: "map") {
+                        InspirationRegionView(session: session)
+                    }
+                    PaperSection(title: "Riêng tư và giờ", symbol: "hand.raised") {
+                        PrivacyAndTimeSettingsView(session: session)
+                    }
+                    PaperSection(title: "Lịch truyền thống", symbol: "scroll") {
+                        Toggle("Hiện trên mặt sau tờ lịch", isOn: Binding(
+                            get: { session.almanacVisible },
+                            set: { session.setAlmanacVisible($0) }
+                        ))
+                        .lichNhaHitTarget()
+                        .tint(DesignTokens.son)
+                        .accessibilityIdentifier("almanac-toggle")
+                    }
+                    PaperSection(title: "Phiên bản và báo sai", symbol: "info.circle") {
+                        VersionAndCorrectionView(session: session)
+                    }
                     Button("Đóng cài đặt") { session.closeSettings() }
                         .lichNhaHitTarget()
                         .buttonStyle(PaperControlStyle())
                         .accessibilityIdentifier("close-settings")
                 }
+                .padding(.top, 6)
                 .padding(.bottom, 24)
             }
         }
