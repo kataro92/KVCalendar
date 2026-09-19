@@ -1,4 +1,4 @@
-import SwiftUI
+﻿import SwiftUI
 import CalendarCore
 import ContentCore
 import EffectCore
@@ -34,7 +34,7 @@ struct TodayRootView: View {
                     if let day = session.calendarModel.day {
                         calendarBloc(day: day, size: proxy.size)
                     } else {
-                        Text(session.calendarModel.loadError ?? "Không tính được ngày hôm nay")
+                        Text(session.calendarModel.loadError ?? "KhÃ´ng tÃ­nh Ä‘Æ°á»£c ngÃ y hÃ´m nay")
                             .foregroundStyle(DesignTokens.chromeInk)
                             .padding()
                     }
@@ -127,9 +127,9 @@ struct TodayRootView: View {
     @ViewBuilder
     private func calendarBloc(day: CalendarDay, size: CGSize) -> some View {
         let width = size.width * DesignTokens.blocWidthRatio
-        let height = typeSize >= .accessibility2
-            ? min(max(size.height * 0.74, 620), 720)
-            : min(max(size.height * 0.60, 440), 520)
+        // R0: object silhouette ~14.5:20.5; a11y slightly taller for Dynamic Type
+        let aspect: CGFloat = typeSize >= .accessibility2 ? (14.5 / 18.0) : (14.5 / 20.5)
+
         ZStack(alignment: .top) {
             PaperStackView(peeled: DailyRitualState.hasPeeled(on: dayKey)) {
                 PaperSurface {
@@ -143,7 +143,7 @@ struct TodayRootView: View {
             }
             .padding(.top, DesignTokens.headerOverlap)
             BlocHeaderView(
-                title: "THÁNG \(day.civilDate.month)",
+                title: "THÃNG \(day.civilDate.month)",
                 action: openMonth,
                 identifier: "month-button",
                 fill: DesignTokens.khanh,
@@ -174,7 +174,8 @@ struct TodayRootView: View {
             FamilyClipButton(action: openEvents)
                 .offset(x: 8, y: DesignTokens.headerHeight - 2)
         }
-        .frame(width: width, height: height)
+        .frame(width: width)
+        .aspectRatio(aspect, contentMode: .fit)
         .lichNhaPagePeel(
             reduceMotion: reduceMotion,
             onNext: {
@@ -194,24 +195,24 @@ struct TodayRootView: View {
                 .onChanged { _ in director.settleForInteraction() }
         )
         .accessibilityActions {
-            Button("Ngày sau") {
+            Button("NgÃ y sau") {
                 session.calendarModel.goToNextDay()
                 session.syncFromCalendarModel()
             }
-            Button("Ngày trước") {
+            Button("NgÃ y trÆ°á»›c") {
                 session.calendarModel.goToPreviousDay()
                 session.syncFromCalendarModel()
             }
-            Button("Hôm nay") {
+            Button("HÃ´m nay") {
                 session.calendarModel.goToToday()
                 session.syncFromCalendarModel()
             }
-            Button("Xem tháng", action: openMonth)
-            Button("Xem chi tiết", action: openDetail)
-            Button("Phát lại cảnh ngày") { replayScene() }
-            Button("Cài đặt") { session.openSettings() }
-            Button("Ngày gia đình", action: openEvents)
-            Button(showsTools ? "Ẩn thao tác" : "Hiện thao tác") {
+            Button("Xem thÃ¡ng", action: openMonth)
+            Button("Xem chi tiáº¿t", action: openDetail)
+            Button("PhÃ¡t láº¡i cáº£nh ngÃ y") { replayScene() }
+            Button("CÃ i Ä‘áº·t") { session.openSettings() }
+            Button("NgÃ y gia Ä‘Ã¬nh", action: openEvents)
+            Button(showsTools ? "áº¨n thao tÃ¡c" : "Hiá»‡n thao tÃ¡c") {
                 toolsExpanded.toggle()
             }
         }
@@ -364,3 +365,4 @@ private struct TodayScrollIfNeeded: ViewModifier {
         }
     }
 }
+
