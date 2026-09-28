@@ -1,14 +1,19 @@
 # Lịch Nhà
 
+> **DEPRECATED — không còn phát triển.** Repo công khai, mã nguồn giữ nguyên để tham khảo. Không nhận issue/PR mới, không TestFlight, không nộp App Store.
+
 [![License](https://img.shields.io/badge/License-Apache_2.0-blue.svg)](LICENSE)
+[![Status](https://img.shields.io/badge/status-deprecated-red.svg)](README.md)
 
 Lịch bloc Việt Nam trên iPhone. Mở app là tờ hôm nay: ngày dương, ngày âm, Can Chi. Kéo hoặc bấm để đổi ngày, tra tháng, tạo ngày giỗ, xem nguồn. Miễn phí, không quảng cáo, không đăng nhập. Lõi chạy offline.
 
-English: Lịch Nhà is a Vietnamese tear-off calendar for iPhone (iOS 17+, Swift 6). Working name, not the App Store title. Source and original project docs are Apache 2.0. See `LICENSE` and `NOTICE`.
+English: Lịch Nhà is a Vietnamese tear-off calendar for iPhone (iOS 17+, Swift 6). Working name, not the App Store title. **This project is deprecated and no longer maintained.** Source and original project docs are Apache 2.0. See `LICENSE` and `NOTICE`.
 
 ## Trạng thái
 
-Bản Simulator đã có sáu user story (tờ ngày, tháng, nguồn, ngày gia đình, widget snapshot, cảnh/âm, cài đặt). T020 ký `READY WITH WAIVERS` ngày 08/09/2026. Gate 1–7 vẫn `UNTESTED`. Báo cáo hội tụ: `NOT CONVERGED`. Chưa archive, chưa TestFlight, chưa nộp store.
+**Deprecated (28/09/2026).** Phát triển dừng. Mã và tài liệu còn trong repo; không cam kết sửa lỗi hay tiếp tục feature.
+
+Bản Simulator lúc dừng có sáu user story (tờ ngày, tháng, nguồn, ngày gia đình, widget snapshot, cảnh/âm, cài đặt). T020 đã ký `READY WITH WAIVERS` ngày 08/09/2026. Gate 1–7 vẫn `UNTESTED`. Báo cáo hội tụ: `NOT CONVERGED`. Chưa TestFlight, chưa nộp store.
 
 | Có | Chưa |
 |---|---|
